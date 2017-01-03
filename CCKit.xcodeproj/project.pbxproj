@@ -47,6 +47,7 @@
 		36ADC76F1E1BB44C0098B59D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36ADC7721E1BB44C0098B59D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36ADC7741E1BB44C0098B59D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36ADC7781E1BB8020098B59D /* CCDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDefines.h; sourceTree = "<group>"; };
 		F219A63D85C197A967172DC2 /* Pods-CCKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCKit/Pods-CCKit.release.xcconfig"; sourceTree = "<group>"; };
 		FE749053F07A522193DF8164 /* libPods-CCKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				36ADC7461E1BB2FD0098B59D /* CCKit.h */,
+				36ADC7781E1BB8020098B59D /* CCDefines.h */,
 				36ADC7471E1BB2FD0098B59D /* Info.plist */,
 			);
 			path = CCKit;
@@ -598,6 +600,7 @@
 				36ADC7761E1BB44C0098B59D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

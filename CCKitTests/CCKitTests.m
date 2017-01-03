@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 
+#import "CCDefines.h"
+
 @interface CCKitTests : XCTestCase
 
 @end
@@ -34,6 +36,14 @@
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
     }];
+}
+
+- (void)testDefines {
+    CCLog(@"aaaaa");
+    
+    CCLogDebug(@"DEBUG:%@", @"testDefines");
+    
+    CCLogError(@"ERROR:%@", @"testDefines");
 }
 
 @end
