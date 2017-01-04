@@ -10,6 +10,10 @@
 
 #import "CCDefines.h"
 
+#import "UIColor+CCAddition.h"
+#import "UIImage+CCAddition.h"
+#import "UIScreen+CCAddition.h"
+
 @interface CCKitTests : XCTestCase
 
 @end
@@ -44,6 +48,30 @@
     CCLogDebug(@"DEBUG:%@", @"testDefines");
     
     CCLogError(@"ERROR:%@", @"testDefines");
+}
+
+- (void)testAdditions {
+    UIColor *c = [UIColor colorWithRGB:0xaabbcc];
+    CCLog(@"color:%@", c);
+    c = [UIColor colorWithRGBA:0xaabbccdd];
+    CCLog(@"color:%@", c);
+    
+    c = [UIColor colorWithR:111 g:112 b:113];
+    CCLog(@"color:%@", c);
+    c = [UIColor colorWithR:111 g:112 b:113 alpha:233];
+    CCLog(@"color:%@", c);
+    
+    UIImage *i = [UIImage imageWithColor:[UIColor whiteColor] size:CGSizeMake(2, 2)];
+    CCLog(@"image:%@", i);
+    i = [UIImage imageWithColor:[UIColor whiteColor]];
+    CCLog(@"image:%@", i);
+    
+    CGFloat width = [UIScreen mainScreenWidth];
+    CCLog(@"mainScreenWidth:%f", width);
+    CGFloat height = [UIScreen mainScreenHeight];
+    CCLog(@"mainScreenHeight:%f", height);
+    CGSize size = [UIScreen mainScreenSize];
+    CCLog(@"mainScreenSize:%@", NSStringFromCGSize(size));
 }
 
 @end

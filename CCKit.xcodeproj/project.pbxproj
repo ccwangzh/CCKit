@@ -16,6 +16,12 @@
 		36ADC76E1E1BB44C0098B59D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36ADC76C1E1BB44C0098B59D /* Main.storyboard */; };
 		36ADC7701E1BB44C0098B59D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36ADC76F1E1BB44C0098B59D /* Assets.xcassets */; };
 		36ADC7731E1BB44C0098B59D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36ADC7711E1BB44C0098B59D /* LaunchScreen.storyboard */; };
+		36DEE3271E1C9ED50087C209 /* UIColor+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36DEE3251E1C9ED50087C209 /* UIColor+CCAddition.h */; };
+		36DEE3281E1C9ED50087C209 /* UIColor+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DEE3261E1C9ED50087C209 /* UIColor+CCAddition.m */; };
+		36DEE32B1E1CC3A40087C209 /* UIImage+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36DEE3291E1CC3A40087C209 /* UIImage+CCAddition.h */; };
+		36DEE32C1E1CC3A40087C209 /* UIImage+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DEE32A1E1CC3A40087C209 /* UIImage+CCAddition.m */; };
+		36DEE32F1E1CC66F0087C209 /* UIScreen+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36DEE32D1E1CC66F0087C209 /* UIScreen+CCAddition.h */; };
+		36DEE3301E1CC66F0087C209 /* UIScreen+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DEE32E1E1CC66F0087C209 /* UIScreen+CCAddition.m */; };
 		B97F56191518587A1314ABBB /* libPods-CCKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE749053F07A522193DF8164 /* libPods-CCKit.a */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +54,12 @@
 		36ADC7721E1BB44C0098B59D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36ADC7741E1BB44C0098B59D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36ADC7781E1BB8020098B59D /* CCDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDefines.h; sourceTree = "<group>"; };
+		36DEE3251E1C9ED50087C209 /* UIColor+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CCAddition.h"; sourceTree = "<group>"; };
+		36DEE3261E1C9ED50087C209 /* UIColor+CCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CCAddition.m"; sourceTree = "<group>"; };
+		36DEE3291E1CC3A40087C209 /* UIImage+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CCAddition.h"; sourceTree = "<group>"; };
+		36DEE32A1E1CC3A40087C209 /* UIImage+CCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CCAddition.m"; sourceTree = "<group>"; };
+		36DEE32D1E1CC66F0087C209 /* UIScreen+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CCAddition.h"; sourceTree = "<group>"; };
+		36DEE32E1E1CC66F0087C209 /* UIScreen+CCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+CCAddition.m"; sourceTree = "<group>"; };
 		F219A63D85C197A967172DC2 /* Pods-CCKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCKit/Pods-CCKit.release.xcconfig"; sourceTree = "<group>"; };
 		FE749053F07A522193DF8164 /* libPods-CCKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -106,6 +118,12 @@
 			children = (
 				36ADC7461E1BB2FD0098B59D /* CCKit.h */,
 				36ADC7781E1BB8020098B59D /* CCDefines.h */,
+				36DEE3251E1C9ED50087C209 /* UIColor+CCAddition.h */,
+				36DEE3261E1C9ED50087C209 /* UIColor+CCAddition.m */,
+				36DEE3291E1CC3A40087C209 /* UIImage+CCAddition.h */,
+				36DEE32A1E1CC3A40087C209 /* UIImage+CCAddition.m */,
+				36DEE32D1E1CC66F0087C209 /* UIScreen+CCAddition.h */,
+				36DEE32E1E1CC66F0087C209 /* UIScreen+CCAddition.m */,
 				36ADC7471E1BB2FD0098B59D /* Info.plist */,
 			);
 			path = CCKit;
@@ -168,6 +186,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36DEE3271E1C9ED50087C209 /* UIColor+CCAddition.h in Headers */,
+				36DEE32B1E1CC3A40087C209 /* UIImage+CCAddition.h in Headers */,
+				36DEE32F1E1CC66F0087C209 /* UIScreen+CCAddition.h in Headers */,
 				36ADC7541E1BB2FD0098B59D /* CCKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +359,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36DEE3281E1C9ED50087C209 /* UIColor+CCAddition.m in Sources */,
+				36DEE3301E1CC66F0087C209 /* UIScreen+CCAddition.m in Sources */,
+				36DEE32C1E1CC3A40087C209 /* UIImage+CCAddition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
