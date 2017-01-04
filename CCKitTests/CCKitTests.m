@@ -13,6 +13,8 @@
 #import "UIColor+CCAddition.h"
 #import "UIImage+CCAddition.h"
 #import "UIScreen+CCAddition.h"
+#import "NSObject+CCAddition.h"
+
 
 @interface CCKitTests : XCTestCase
 
@@ -72,6 +74,33 @@
     CCLog(@"mainScreenHeight:%f", height);
     CGSize size = [UIScreen mainScreenSize];
     CCLog(@"mainScreenSize:%@", NSStringFromCGSize(size));
+    
+    NSString *object = @"object";
+    const void *kk = &kk;
+    
+    CCLog(@"%p,%p", kk, &kk);
+    
+    [self setAssociatedObject:object key:kk];
+    
+    NSString *objectNew = [self getAssociatedObjectForKey:kk];
+    
+    NSLog(@"object:%@", objectNew);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end
