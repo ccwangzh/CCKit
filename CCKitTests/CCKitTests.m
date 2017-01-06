@@ -13,6 +13,8 @@
 #import "UIColor+CCAddition.h"
 #import "UIImage+CCAddition.h"
 #import "UIScreen+CCAddition.h"
+
+#import "NSURL+CCAddition.h"
 #import "NSObject+CCAddition.h"
 
 
@@ -50,6 +52,22 @@
     CCLogDebug(@"DEBUG:%@", @"testDefines");
     
     CCLogError(@"ERROR:%@", @"testDefines");
+}
+
+- (void)testNSURL {
+    NSURL *url = [NSURL URLWithString:@"https://ddd.bbb.com:8080/rrr;aaa?opop=ggy&nn=77&ff=dd#djajd_dhja"];
+    NSURL *urlNew = [url URLByAppendingQueryString:@"aa=cc&bb=cc"];
+    NSLog(@"url:%@,new:%@", url, urlNew);
+    NSDictionary *parameters = @{};
+    
+    NSMutableString *paraString = [NSMutableString new];
+    [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        [paraString appendFormat:@"%@=%@&", key, obj];
+    }];
+    if (paraString.length && [paraString hasSuffix:@"&"]) {
+        [paraString deleteCharactersInRange:NSMakeRange(paraString.length - 1, 1)];
+    }
+    NSLog(@"paraString:%@", paraString);
 }
 
 - (void)testAdditions {
