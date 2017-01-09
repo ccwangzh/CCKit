@@ -15,6 +15,7 @@
 #import "UIScreen+CCAddition.h"
 
 #import "NSURL+CCAddition.h"
+#import "NSString+CCAddition.h"
 #import "NSObject+CCAddition.h"
 
 
@@ -54,20 +55,31 @@
     CCLogError(@"ERROR:%@", @"testDefines");
 }
 
-- (void)testNSURL {
+- (void)testNSString_CCAddition {
+    XCTAssertTrue([[@"123" md5Value] isEqualToString:@"202cb962ac59075b964b07152d234b70"]);
+    
+    XCTAssertTrue([[@"123" sha1Value] isEqualToString:@"40bd001563085fc35165329ea1ff5c5ecbdbbeef"]);
+
+    XCTAssertTrue([@"ddd@sina.com" isEmail]);
+    
+    XCTAssertFalse([@"ddd@sina" isEmail]);
+ 
+    XCTAssertTrue([@"18012345678" isPhone]);
+    
+    XCTAssertFalse([@"188123456" isPhone]);
+
+    XCTAssertTrue([@"18012345678" isDigit]);
+    
+    XCTAssertFalse([@"188O123456" isDigit]);
+    
+}
+
+- (void)testNSURL_CCAddition {
     NSURL *url = [NSURL URLWithString:@"https://ddd.bbb.com:8080/rrr;aaa?opop=ggy&nn=77&ff=dd#djajd_dhja"];
     NSURL *urlNew = [url URLByAppendingQueryString:@"aa=cc&bb=cc"];
-    NSLog(@"url:%@,new:%@", url, urlNew);
-    NSDictionary *parameters = @{};
+    NSString *string = @"https://ddd.bbb.com:8080/rrr;aaa?opop=ggy&nn=77&ff=dd&aa=cc&bb=cc#djajd_dhja";
     
-    NSMutableString *paraString = [NSMutableString new];
-    [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        [paraString appendFormat:@"%@=%@&", key, obj];
-    }];
-    if (paraString.length && [paraString hasSuffix:@"&"]) {
-        [paraString deleteCharactersInRange:NSMakeRange(paraString.length - 1, 1)];
-    }
-    NSLog(@"paraString:%@", paraString);
+    XCTAssertTrue([string isEqualToString:urlNew.absoluteString]);
 }
 
 - (void)testAdditions {

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UIAlertView (CCAddition)
-
+- (void)setClickHandler:(void (^)(UIAlertView *alertView, NSInteger buttonIndex))clickHandler;
 @end
