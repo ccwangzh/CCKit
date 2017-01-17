@@ -8,8 +8,6 @@
 
 #import "ViewController.h"
 
-#import "UIAlertView+CCAddition.h"
-
 @interface ViewController ()
 
 @end
@@ -19,11 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"aaa" message:@"bbb" delegate:self cancelButtonTitle:@"cc" otherButtonTitles:@"dd", @"ee", nil];
-    [alertView setClickHandler:^(UIAlertView *alertView, NSInteger buttonIndex) {
-        NSLog(@"buttonIndex:%ld", buttonIndex);
-    }];
-    [alertView show];
 }
 
 
