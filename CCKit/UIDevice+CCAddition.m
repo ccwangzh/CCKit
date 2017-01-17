@@ -31,7 +31,7 @@
                 _idfa = [NSKeyedUnarchiver unarchiveObjectWithData:(__bridge_transfer NSData *)result];
             } @catch (NSException *exception) {} @finally {}
         }
-        if (_idfa == nil || [_idfa isKindOfClass:[NSString class]] || _idfa.length == 0) {
+        if (_idfa == nil || ![_idfa isKindOfClass:[NSString class]] || _idfa.length == 0) {
             CFUUIDRef uuidRef = CFUUIDCreate(NULL);
             CFStringRef uuidStrRef = CFUUIDCreateString(NULL, uuidRef);
             _idfa = (__bridge_transfer NSString *)uuidStrRef;
@@ -45,6 +45,7 @@
             query[(__bridge NSString *)kSecValueData] =  [NSKeyedArchiver archivedDataWithRootObject:_idfa];
             
             SecItemDelete((__bridge CFDictionaryRef)query);
+            SecItemAdd((__bridge CFDictionaryRef)query, NULL);
         }
     });
     return _idfa;
