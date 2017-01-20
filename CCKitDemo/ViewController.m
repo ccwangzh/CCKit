@@ -76,9 +76,23 @@ typedef void(^CCTableViewTestCellSelectHandler)(CCTableViewTestCell *cell);
     CCTableViewTestCellModel *cell = nil;
     
     cell = [CCTableViewTestCellModel new];
-    cell.title = @"测试1";
+    cell.title = @"测试：ViewIndex";
     cell.selectHandler = ^(CCTableViewTestCell *cell) {
-        NSLog(@"cell点击");
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        UIView *view = [UIView new];
+        view.frame = CGRectMake(0, 0, 100, 100);
+        view.backgroundColor = [UIColor redColor];
+        [window insertSubview:view atIndex:80];
+        
+        view = [UIView new];
+        view.frame = CGRectMake(20, 20, 100, 100);
+        view.backgroundColor = [UIColor blueColor];
+        [window insertSubview:view atIndex:70];
+        
+        view = [UIView new];
+        view.frame = CGRectMake(30, 30, 100, 100);
+        view.backgroundColor = [UIColor greenColor];
+        [window insertSubview:view atIndex:90];
     };
     [section addObject:cell];
 }

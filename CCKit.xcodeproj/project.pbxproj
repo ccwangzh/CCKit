@@ -15,6 +15,8 @@
 		3611A0131E2E1E1C004D2BFC /* CCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3611A0111E2E1E1C004D2BFC /* CCTableViewController.m */; };
 		3611A0161E2E1ED3004D2BFC /* CCTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 3611A0141E2E1ED3004D2BFC /* CCTableViewDataSource.h */; };
 		3611A0171E2E1ED3004D2BFC /* CCTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3611A0151E2E1ED3004D2BFC /* CCTableViewDataSource.m */; };
+		3611A01A1E30627E004D2BFC /* CCWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3611A0181E30627E004D2BFC /* CCWebViewController.h */; };
+		3611A01B1E30627E004D2BFC /* CCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3611A0191E30627E004D2BFC /* CCWebViewController.m */; };
 		3662D84F1E20749400F0CF2C /* NSString+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 3662D84D1E20749400F0CF2C /* NSString+CCAddition.h */; };
 		3662D8501E20749400F0CF2C /* NSString+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3662D84E1E20749400F0CF2C /* NSString+CCAddition.m */; };
 		3662D8531E20871B00F0CF2C /* CCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36ADC7431E1BB2FD0098B59D /* CCKit.framework */; };
@@ -69,6 +71,8 @@
 		3611A0111E2E1E1C004D2BFC /* CCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewController.m; sourceTree = "<group>"; };
 		3611A0141E2E1ED3004D2BFC /* CCTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableViewDataSource.h; sourceTree = "<group>"; };
 		3611A0151E2E1ED3004D2BFC /* CCTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewDataSource.m; sourceTree = "<group>"; };
+		3611A0181E30627E004D2BFC /* CCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWebViewController.h; sourceTree = "<group>"; };
+		3611A0191E30627E004D2BFC /* CCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWebViewController.m; sourceTree = "<group>"; };
 		3662D84D1E20749400F0CF2C /* NSString+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CCAddition.h"; sourceTree = "<group>"; };
 		3662D84E1E20749400F0CF2C /* NSString+CCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CCAddition.m"; sourceTree = "<group>"; };
 		3662D8541E2088F000F0CF2C /* UIDevice+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+CCAddition.h"; sourceTree = "<group>"; };
@@ -177,6 +181,8 @@
 				36DEE3321E1CF7D90087C209 /* UIAlertView+CCAddition.m */,
 				3611A00C1E2E1DFF004D2BFC /* CCViewController.h */,
 				3611A00D1E2E1DFF004D2BFC /* CCViewController.m */,
+				3611A0181E30627E004D2BFC /* CCWebViewController.h */,
+				3611A0191E30627E004D2BFC /* CCWebViewController.m */,
 				3611A0101E2E1E1C004D2BFC /* CCTableViewController.h */,
 				3611A0111E2E1E1C004D2BFC /* CCTableViewController.m */,
 				3611A0141E2E1ED3004D2BFC /* CCTableViewDataSource.h */,
@@ -248,6 +254,7 @@
 				36DEE3371E1CF8170087C209 /* NSObject+CCAddition.h in Headers */,
 				36DEE3271E1C9ED50087C209 /* UIColor+CCAddition.h in Headers */,
 				36DEE32B1E1CC3A40087C209 /* UIImage+CCAddition.h in Headers */,
+				3611A01A1E30627E004D2BFC /* CCWebViewController.h in Headers */,
 				36DEE32F1E1CC66F0087C209 /* UIScreen+CCAddition.h in Headers */,
 				3611A00E1E2E1DFF004D2BFC /* CCViewController.h in Headers */,
 				36119EA71E1F6DE8004D2BFC /* NSURL+CCAddition.h in Headers */,
@@ -432,6 +439,7 @@
 				3611A0171E2E1ED3004D2BFC /* CCTableViewDataSource.m in Sources */,
 				36DEE3281E1C9ED50087C209 /* UIColor+CCAddition.m in Sources */,
 				3662D8571E2088F000F0CF2C /* UIDevice+CCAddition.m in Sources */,
+				3611A01B1E30627E004D2BFC /* CCWebViewController.m in Sources */,
 				36DEE3341E1CF7D90087C209 /* UIAlertView+CCAddition.m in Sources */,
 				36DEE3301E1CC66F0087C209 /* UIScreen+CCAddition.m in Sources */,
 				36119EA81E1F6DE8004D2BFC /* NSURL+CCAddition.m in Sources */,
