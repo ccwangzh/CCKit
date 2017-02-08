@@ -41,6 +41,10 @@
 		36DEE3341E1CF7D90087C209 /* UIAlertView+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DEE3321E1CF7D90087C209 /* UIAlertView+CCAddition.m */; };
 		36DEE3371E1CF8170087C209 /* NSObject+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36DEE3351E1CF8170087C209 /* NSObject+CCAddition.h */; };
 		36DEE3381E1CF8170087C209 /* NSObject+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DEE3361E1CF8170087C209 /* NSObject+CCAddition.m */; };
+		36FE0B101E4B0C85002A4379 /* CCNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FE0B0E1E4B0C85002A4379 /* CCNetworking.h */; };
+		36FE0B111E4B0C85002A4379 /* CCNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FE0B0F1E4B0C85002A4379 /* CCNetworking.m */; };
+		36FE0B141E4B182B002A4379 /* NSObject+CCModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FE0B121E4B182B002A4379 /* NSObject+CCModel.h */; };
+		36FE0B151E4B182B002A4379 /* NSObject+CCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FE0B131E4B182B002A4379 /* NSObject+CCModel.m */; };
 		B97F56191518587A1314ABBB /* libPods-CCKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE749053F07A522193DF8164 /* libPods-CCKit.a */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +108,10 @@
 		36DEE3321E1CF7D90087C209 /* UIAlertView+CCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+CCAddition.m"; sourceTree = "<group>"; };
 		36DEE3351E1CF8170087C209 /* NSObject+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CCAddition.h"; sourceTree = "<group>"; };
 		36DEE3361E1CF8170087C209 /* NSObject+CCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CCAddition.m"; sourceTree = "<group>"; };
+		36FE0B0E1E4B0C85002A4379 /* CCNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNetworking.h; sourceTree = "<group>"; };
+		36FE0B0F1E4B0C85002A4379 /* CCNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNetworking.m; sourceTree = "<group>"; };
+		36FE0B121E4B182B002A4379 /* NSObject+CCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CCModel.h"; sourceTree = "<group>"; };
+		36FE0B131E4B182B002A4379 /* NSObject+CCModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CCModel.m"; sourceTree = "<group>"; };
 		F219A63D85C197A967172DC2 /* Pods-CCKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCKit/Pods-CCKit.release.xcconfig"; sourceTree = "<group>"; };
 		FE749053F07A522193DF8164 /* libPods-CCKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -179,6 +187,10 @@
 				36DEE32E1E1CC66F0087C209 /* UIScreen+CCAddition.m */,
 				36DEE3311E1CF7D90087C209 /* UIAlertView+CCAddition.h */,
 				36DEE3321E1CF7D90087C209 /* UIAlertView+CCAddition.m */,
+				36FE0B121E4B182B002A4379 /* NSObject+CCModel.h */,
+				36FE0B131E4B182B002A4379 /* NSObject+CCModel.m */,
+				36FE0B0E1E4B0C85002A4379 /* CCNetworking.h */,
+				36FE0B0F1E4B0C85002A4379 /* CCNetworking.m */,
 				3611A00C1E2E1DFF004D2BFC /* CCViewController.h */,
 				3611A00D1E2E1DFF004D2BFC /* CCViewController.m */,
 				3611A0181E30627E004D2BFC /* CCWebViewController.h */,
@@ -254,11 +266,13 @@
 				36DEE3371E1CF8170087C209 /* NSObject+CCAddition.h in Headers */,
 				36DEE3271E1C9ED50087C209 /* UIColor+CCAddition.h in Headers */,
 				36DEE32B1E1CC3A40087C209 /* UIImage+CCAddition.h in Headers */,
+				36FE0B141E4B182B002A4379 /* NSObject+CCModel.h in Headers */,
 				3611A01A1E30627E004D2BFC /* CCWebViewController.h in Headers */,
 				36DEE32F1E1CC66F0087C209 /* UIScreen+CCAddition.h in Headers */,
 				3611A00E1E2E1DFF004D2BFC /* CCViewController.h in Headers */,
 				36119EA71E1F6DE8004D2BFC /* NSURL+CCAddition.h in Headers */,
 				36DEE3331E1CF7D90087C209 /* UIAlertView+CCAddition.h in Headers */,
+				36FE0B101E4B0C85002A4379 /* CCNetworking.h in Headers */,
 				36ADC7541E1BB2FD0098B59D /* CCKit.h in Headers */,
 				3611A0121E2E1E1C004D2BFC /* CCTableViewController.h in Headers */,
 				3662D8561E2088F000F0CF2C /* UIDevice+CCAddition.h in Headers */,
@@ -435,7 +449,9 @@
 				3662D8501E20749400F0CF2C /* NSString+CCAddition.m in Sources */,
 				36DEE3381E1CF8170087C209 /* NSObject+CCAddition.m in Sources */,
 				3611A00F1E2E1DFF004D2BFC /* CCViewController.m in Sources */,
+				36FE0B111E4B0C85002A4379 /* CCNetworking.m in Sources */,
 				3611A0131E2E1E1C004D2BFC /* CCTableViewController.m in Sources */,
+				36FE0B151E4B182B002A4379 /* NSObject+CCModel.m in Sources */,
 				3611A0171E2E1ED3004D2BFC /* CCTableViewDataSource.m in Sources */,
 				36DEE3281E1C9ED50087C209 /* UIColor+CCAddition.m in Sources */,
 				3662D8571E2088F000F0CF2C /* UIDevice+CCAddition.m in Sources */,

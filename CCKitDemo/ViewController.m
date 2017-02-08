@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "CCNetworking.h"
+
 @class CCTableViewTestCell;
 
 typedef void(^CCTableViewTestCellSelectHandler)(CCTableViewTestCell *cell);
@@ -62,6 +64,17 @@ typedef void(^CCTableViewTestCellSelectHandler)(CCTableViewTestCell *cell);
 
 @end
 
+@interface CCTestRequest : CCHttpRequest
+
+@end
+
+@implementation CCTestRequest
+- (NSString *)requestUrl {
+    return @"http://jr-api.vip.com/common/now_time/v1";
+}
+
+@end
+
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -76,23 +89,12 @@ typedef void(^CCTableViewTestCellSelectHandler)(CCTableViewTestCell *cell);
     CCTableViewTestCellModel *cell = nil;
     
     cell = [CCTableViewTestCellModel new];
-    cell.title = @"测试：ViewIndex";
+    cell.title = @"测试：网络";
     cell.selectHandler = ^(CCTableViewTestCell *cell) {
-        UIWindow *window = [UIApplication sharedApplication].keyWindow;
-        UIView *view = [UIView new];
-        view.frame = CGRectMake(0, 0, 100, 100);
-        view.backgroundColor = [UIColor redColor];
-        [window insertSubview:view atIndex:80];
-        
-        view = [UIView new];
-        view.frame = CGRectMake(20, 20, 100, 100);
-        view.backgroundColor = [UIColor blueColor];
-        [window insertSubview:view atIndex:70];
-        
-        view = [UIView new];
-        view.frame = CGRectMake(30, 30, 100, 100);
-        view.backgroundColor = [UIColor greenColor];
-        [window insertSubview:view atIndex:90];
+        CCTestRequest *request = [CCTestRequest new];
+        [[CCApiClient apiClient] sendRequest:request completionHandler:^(CCHttpResponse *response, NSError *error) {
+            
+        }];
     };
     [section addObject:cell];
 }
