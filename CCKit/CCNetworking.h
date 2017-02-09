@@ -37,8 +37,19 @@ typedef void(^CCHttpCompletionHandler)(CCHttpResponse *response, NSError *error)
 
 @interface CCHttpTask : NSObject
 - (void)cancel;
+- (void)suspend;
+- (void)resume;
+@end
+
+@interface CCApiRequest : CCHttpRequest
+
+@end
+
+@interface CCApiResponse : CCHttpResponse
+
 @end
 
 @interface CCApiClient : CCHttpClient
 + (instancetype)apiClient;
 @end
+

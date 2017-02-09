@@ -10,9 +10,6 @@
 
 #import <AFNetworking/AFNetworking.h>
 
-typedef void(^CCHttpSuccessCompletionHandler)(NSURLSessionDataTask *task, id responseObject);
-typedef void(^CCHttpFailureCompletionHandler)(NSURLSessionDataTask *task, NSError *error);
-
 @implementation CCHttpRequest
 - (NSString *)requestUrl {
     return nil;
@@ -42,7 +39,7 @@ typedef void(^CCHttpFailureCompletionHandler)(NSURLSessionDataTask *task, NSErro
 @end
 
 @implementation CCHttpResponse
-- (instancetype)initWithSessionResponse:(id)responseObject {
+- (instancetype)initWithResponseObject:(id)responseObject {
     if (self = [super init]) {
         _responseObject = responseObject;
     }
@@ -67,9 +64,19 @@ typedef void(^CCHttpFailureCompletionHandler)(NSURLSessionDataTask *task, NSErro
     }
     return self;
 }
+
 - (void)cancel {
     [_sessionTask cancel];
 }
+
+- (void)suspend {
+    [_sessionTask suspend];
+}
+
+- (void)resume {
+    [_sessionTask resume];
+}
+
 @end
 
 @interface CCHttpClient ()
@@ -100,44 +107,76 @@ typedef void(^CCHttpFailureCompletionHandler)(NSURLSessionDataTask *task, NSErro
     NSAssert(requestUrl != nil, @"requestUrl == nil");
     
     id requestParameters = [request requestParameters];
+    id requestHeaders = [request requestHeaders];
+    
     Class responseClass = [request responseClass];
     
-    CCHttpSuccessCompletionHandler __successCompletionHandler = ^(NSURLSessionDataTask *task, id responseObject) {
-#ifdef DEBUG
-        NSLog(@"\nrequest:{\n\turl:%@\n\n\tparameters:%@\n}\nresponse:%@", task.originalRequest.URL, requestParameters ? [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:requestParameters options:NSJSONWritingPrettyPrinted error:NULL] encoding:NSUTF8StringEncoding] : @{}, responseObject ? [[NSString alloc]initWithData:[NSJSONSerialization dataWithJSONObject:responseObject options:NSJSONWritingPrettyPrinted error:NULL] encoding:NSUTF8StringEncoding] : @{});
-#endif
-        id responseReturned = nil;
-        if (responseClass && [responseObject isKindOfClass:[NSDictionary class]]) {
-            responseReturned = [responseClass cc_modelWithDictionary:responseObject];
-        }
-        if (!responseReturned) {
-            responseReturned = [[CCHttpResponse alloc] initWithSessionResponse:responseObject];
-        }
+    NSError *serializationError = nil;
+    AFHTTPSessionManager *manager = self.manager;
+    dispatch_queue_t completionQueue = manager.completionQueue;
+    AFHTTPRequestSerializer *requestSerializer = manager.requestSerializer;
+    NSMutableURLRequest *urlRequest = [requestSerializer requestWithMethod:requestMethod URLString:requestUrl parameters:requestParameters error:&serializationError];
+    if (serializationError) {
         if (completionHandler) {
-            completionHandler(responseReturned, nil);
-        }
-    };
-    
-    CCHttpFailureCompletionHandler __failureCompletionHandler = ^(NSURLSessionDataTask *task, NSError *error) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu"
+            dispatch_async(completionQueue ?: dispatch_get_main_queue(), ^{
 #ifdef DEBUG
-        NSLog(@"\nrequest:{\n\turl:%@\n\n\tparameters:%@\n}\nerror:%@", task.originalRequest.URL, requestParameters ? [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:requestParameters options:NSJSONWritingPrettyPrinted error:NULL] encoding:NSUTF8StringEncoding] : @{}, error);
+                NSLog(@"\n{\nurl:%@,\nheaders:%@,\nparameters:%@,\nresult:%@}",requestUrl, urlRequest.allHTTPHeaderFields ? [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:urlRequest.allHTTPHeaderFields options:NSJSONWritingPrettyPrinted error:NULL] encoding:NSUTF8StringEncoding] : @{}, requestParameters ? [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:requestParameters options:NSJSONWritingPrettyPrinted error:NULL] encoding:NSUTF8StringEncoding] : @{}, serializationError);
 #endif
-        if (completionHandler) {
-            completionHandler(nil, error);
+                completionHandler(nil, serializationError);
+            });
+#pragma clang diagnostic pop
         }
-    };
-    
-    NSURLSessionDataTask *task = nil;
-    if ([requestMethod isEqualToString:@"GET"]) {
-        task = [self.manager GET:requestUrl parameters:requestParameters
-                        progress:NULL success:__successCompletionHandler failure:__failureCompletionHandler];
-    } else if ([requestMethod isEqualToString:@"POST"]) {
-        task = [self.manager POST:requestUrl parameters:requestParameters
-                         progress:NULL success:__successCompletionHandler failure:__failureCompletionHandler];
+        
+        return nil;
     }
     
-    return [[CCHttpTask alloc] initWithSessionTask:task];
+    if (requestHeaders && [requestHeaders isKindOfClass:[NSDictionary class]]) {
+        [requestHeaders enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+            [urlRequest setValue:[obj description] forHTTPHeaderField:[key description]];
+        }];
+    }
+    
+    __block NSURLSessionDataTask *dataTask = nil;
+    dataTask = [manager dataTaskWithRequest:urlRequest uploadProgress:NULL downloadProgress:NULL completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+#ifdef DEBUG
+        NSLog(@"\n{\nurl:%@,\nheaders:%@,\nparameters:%@,\nresult:%@}",requestUrl, urlRequest.allHTTPHeaderFields ? [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:urlRequest.allHTTPHeaderFields options:NSJSONWritingPrettyPrinted error:NULL] encoding:NSUTF8StringEncoding] : @{}, requestParameters ? [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:requestParameters options:NSJSONWritingPrettyPrinted error:NULL] encoding:NSUTF8StringEncoding] : @{}, responseObject ? [[NSString alloc]initWithData:[NSJSONSerialization dataWithJSONObject:responseObject options:NSJSONWritingPrettyPrinted error:NULL] encoding:NSUTF8StringEncoding] : error);
+#endif
+        if (completionHandler) {
+            id responseReturned = nil;
+            if (responseClass && [responseObject isKindOfClass:[NSDictionary class]]) {
+                responseReturned = [responseClass cc_modelWithDictionary:responseObject];
+            }
+            if (!responseReturned) {
+                responseReturned = [[CCHttpResponse alloc] initWithResponseObject:responseObject];
+            }
+            completionHandler(responseReturned, error);
+        }
+    }];
+    
+    CCHttpTask *httpTask = [[CCHttpTask alloc] initWithSessionTask:dataTask];
+    [httpTask resume];
+    return httpTask;
 }
+
+@end
+
+@interface CCApiRequest ()
+
+@end
+
+@implementation CCApiRequest
+- (Class)responseClass {
+    return [CCApiResponse class];
+}
+@end
+
+@interface CCApiResponse ()
+
+@end
+
+@implementation CCApiResponse
 
 @end
 
@@ -154,16 +193,9 @@ typedef void(^CCHttpFailureCompletionHandler)(NSURLSessionDataTask *task, NSErro
     if (self = [super init]) {
         AFHTTPSessionManager *manager = self.manager;
         AFHTTPResponseSerializer *responseSerializer = manager.responseSerializer;
-        NSSet *acceptableContentTypes = [responseSerializer acceptableContentTypes];
-        NSMutableSet *mutableSet = nil;
-        if (acceptableContentTypes) {
-            mutableSet = [acceptableContentTypes mutableCopy];
-        } else {
-            mutableSet = [NSMutableSet new];
-        }
-        [mutableSet addObject:@"text/plain"];
-        [mutableSet addObject:@"text/html"];
-        responseSerializer.acceptableContentTypes = mutableSet;
+        NSSet *oldSet = responseSerializer.acceptableContentTypes;
+        NSSet *newSet = [NSSet setWithObjects:@"text/plain", @"text/html", nil];
+        responseSerializer.acceptableContentTypes = [newSet setByAddingObjectsFromSet:oldSet];
     }
     return self;
 }

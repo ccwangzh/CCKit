@@ -45,6 +45,8 @@
 		36FE0B111E4B0C85002A4379 /* CCNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FE0B0F1E4B0C85002A4379 /* CCNetworking.m */; };
 		36FE0B141E4B182B002A4379 /* NSObject+CCModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FE0B121E4B182B002A4379 /* NSObject+CCModel.h */; };
 		36FE0B151E4B182B002A4379 /* NSObject+CCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FE0B131E4B182B002A4379 /* NSObject+CCModel.m */; };
+		36FE0B211E4C60D4002A4379 /* CCTableViewTestNetworkingCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FE0B201E4C60D4002A4379 /* CCTableViewTestNetworkingCellModel.m */; };
+		36FE0B241E4C6126002A4379 /* CCTableViewTestCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FE0B231E4C6126002A4379 /* CCTableViewTestCellModel.m */; };
 		B97F56191518587A1314ABBB /* libPods-CCKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE749053F07A522193DF8164 /* libPods-CCKit.a */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +114,10 @@
 		36FE0B0F1E4B0C85002A4379 /* CCNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNetworking.m; sourceTree = "<group>"; };
 		36FE0B121E4B182B002A4379 /* NSObject+CCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CCModel.h"; sourceTree = "<group>"; };
 		36FE0B131E4B182B002A4379 /* NSObject+CCModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CCModel.m"; sourceTree = "<group>"; };
+		36FE0B1F1E4C60D4002A4379 /* CCTableViewTestNetworkingCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableViewTestNetworkingCellModel.h; sourceTree = "<group>"; };
+		36FE0B201E4C60D4002A4379 /* CCTableViewTestNetworkingCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewTestNetworkingCellModel.m; sourceTree = "<group>"; };
+		36FE0B221E4C6126002A4379 /* CCTableViewTestCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableViewTestCellModel.h; sourceTree = "<group>"; };
+		36FE0B231E4C6126002A4379 /* CCTableViewTestCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewTestCellModel.m; sourceTree = "<group>"; };
 		F219A63D85C197A967172DC2 /* Pods-CCKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCKit/Pods-CCKit.release.xcconfig"; sourceTree = "<group>"; };
 		FE749053F07A522193DF8164 /* libPods-CCKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -220,6 +226,7 @@
 				36ADC7671E1BB44C0098B59D /* AppDelegate.m */,
 				36ADC7691E1BB44C0098B59D /* ViewController.h */,
 				36ADC76A1E1BB44C0098B59D /* ViewController.m */,
+				36FE0B1E1E4C60A2002A4379 /* TestCellModels */,
 				36ADC76C1E1BB44C0098B59D /* Main.storyboard */,
 				36ADC76F1E1BB44C0098B59D /* Assets.xcassets */,
 				36ADC7711E1BB44C0098B59D /* LaunchScreen.storyboard */,
@@ -235,6 +242,17 @@
 				36ADC7641E1BB44C0098B59D /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36FE0B1E1E4C60A2002A4379 /* TestCellModels */ = {
+			isa = PBXGroup;
+			children = (
+				36FE0B221E4C6126002A4379 /* CCTableViewTestCellModel.h */,
+				36FE0B231E4C6126002A4379 /* CCTableViewTestCellModel.m */,
+				36FE0B1F1E4C60D4002A4379 /* CCTableViewTestNetworkingCellModel.h */,
+				36FE0B201E4C60D4002A4379 /* CCTableViewTestNetworkingCellModel.m */,
+			);
+			path = TestCellModels;
 			sourceTree = "<group>";
 		};
 		4BD06F69A5F5F461B83C444D /* Frameworks */ = {
@@ -475,7 +493,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36FE0B241E4C6126002A4379 /* CCTableViewTestCellModel.m in Sources */,
 				36ADC76B1E1BB44C0098B59D /* ViewController.m in Sources */,
+				36FE0B211E4C60D4002A4379 /* CCTableViewTestNetworkingCellModel.m in Sources */,
 				36ADC7681E1BB44C0098B59D /* AppDelegate.m in Sources */,
 				36ADC7651E1BB44C0098B59D /* main.m in Sources */,
 			);

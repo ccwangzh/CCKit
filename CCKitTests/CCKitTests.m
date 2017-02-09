@@ -19,6 +19,7 @@
 #import "NSObject+CCAddition.h"
 
 #import "CCCipher.h"
+#import "CCNetworking.h"
 
 @interface CCKitTests : XCTestCase
 
@@ -138,20 +139,16 @@
     NSLog(@"object:%@", objectNew);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- (void)testNetworking {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"test"];
+    
+    [[CCApiClient apiClient] sendRequest:[CCApiRequest new] completionHandler:^(CCHttpResponse *response, NSError *error) {
+         [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:10 handler:^(NSError * _Nullable error) {
+        NSLog(@"error:%@", error);
+    }];
+}
 
 @end
