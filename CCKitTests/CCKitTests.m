@@ -18,6 +18,7 @@
 #import "NSString+CCAddition.h"
 #import "NSObject+CCAddition.h"
 
+#import "CCCipher.h"
 
 @interface CCKitTests : XCTestCase
 
@@ -80,6 +81,26 @@
     NSString *string = @"https://ddd.bbb.com:8080/rrr;aaa?opop=ggy&nn=77&ff=dd&aa=cc&bb=cc#djajd_dhja";
     
     XCTAssertTrue([string isEqualToString:urlNew.absoluteString]);
+}
+
+- (void)testCipher
+{
+    NSString *inString = @"18049962392";
+    NSString *key = @"6b3fbd498e9b40c6924b6c6660f6fe60";
+    NSString *outString = @"eMwM+V7R63mfjlo/l9gh7w==";
+    
+    CCCipher *c = [CCCipher cipherWithAlgorithm:kCCAlgorithm3DES operation:kCCEncrypt options: kCCOptionPKCS7Padding | kCCOptionECBMode];
+    
+    NSData *keyData = [[NSData alloc] initWithBase64EncodedString:key options:0];
+    NSData *inData = [inString dataUsingEncoding:NSUTF8StringEncoding];
+    [c init:keyData];
+    [c update:inData];
+    
+    NSData *data = [c final];
+    data = [data base64EncodedDataWithOptions:0];
+    NSString *datString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    XCTAssertTrue([outString isEqualToString:datString]);
+    NSLog(@"data:%@", datString);
 }
 
 - (void)testAdditions {
