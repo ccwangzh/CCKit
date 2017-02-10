@@ -71,3 +71,9 @@
     return dictionary;
 }
 @end
+
+@implementation CCSecKeyItem
+- (id)generatePair {
+    return nil;
+}
+@end

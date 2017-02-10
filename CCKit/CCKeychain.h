@@ -26,3 +26,7 @@
 - (OSStatus)secAddObject:(id)object;
 - (OSStatus)secGetOneObject:(id *)objectRef;
 @end
+
+@interface CCSecKeyItem : CCSecItem
+
+@end
