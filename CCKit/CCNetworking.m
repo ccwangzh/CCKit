@@ -196,6 +196,12 @@
         NSSet *oldSet = responseSerializer.acceptableContentTypes;
         NSSet *newSet = [NSSet setWithObjects:@"text/plain", @"text/html", nil];
         responseSerializer.acceptableContentTypes = [newSet setByAddingObjectsFromSet:oldSet];
+#if DEBUG
+        AFSecurityPolicy *securityPolicy = [AFSecurityPolicy defaultPolicy];
+        securityPolicy.allowInvalidCertificates = YES;
+        securityPolicy.validatesDomainName = NO;
+        manager.securityPolicy = securityPolicy;
+#endif
     }
     return self;
 }

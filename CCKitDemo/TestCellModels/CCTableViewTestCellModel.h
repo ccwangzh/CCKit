@@ -10,10 +10,6 @@
 
 #import "CCTableViewController.h"
 
-@class CCTableViewTestCell;
-
-typedef void(^CCTableViewTestCellSelectHandler)(CCTableViewTestCell *cell);
-
 @interface CCTableViewTestCellModel : CCTableViewCellModel
 @property (nonatomic, strong) NSString *title;
 - (void)setUp;

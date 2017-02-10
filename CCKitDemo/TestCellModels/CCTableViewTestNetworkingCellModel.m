@@ -32,7 +32,7 @@
 
 @implementation CCTimeRequest
 - (NSString *)requestUrl {
-    return @"http://jr-api.vip.com/common/now_time/v1";
+    return @"https://jr-api.vip.com/common/now_time/v1";
 }
 - (NSString *)t {
     return @"0";
@@ -53,7 +53,7 @@
     return @"419f11987313ee6afc33ea750f9686c554bae086";
 }
 - (NSString *)apiKey {
-    return @"b11731399a584063be7a2ddeffc5d5ea";
+    return @"0c22f9330fb14d93b64d827b4c92242d";
 }
 - (NSString *)app_version {
     return @"1.1.0";
@@ -63,7 +63,7 @@
 }
 - (id)requestHeaders {
     NSDictionary *parameters = [self requestParameters];
-    NSString *apiSign = VFApiSign(parameters, @"6b3fbd498e9b40c6924b6c6660f6fe60" , nil);
+    NSString *apiSign = VFApiSign(parameters, @"ec0aa8fa2f36499eb04ad0e7e49fb666" , nil);
     apiSign = [@"OAuth sign=" stringByAppendingString:apiSign];
     return @{@"Authorization": apiSign};
 }

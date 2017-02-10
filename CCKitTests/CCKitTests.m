@@ -19,6 +19,7 @@
 #import "NSObject+CCAddition.h"
 
 #import "CCCipher.h"
+#import "CCKeychain.h"
 #import "CCNetworking.h"
 
 @interface CCKitTests : XCTestCase
@@ -137,6 +138,11 @@
     NSString *objectNew = [self getAssociatedObjectForKey:kk];
     
     NSLog(@"object:%@", objectNew);
+}
+
+- (void)testKeychain {
+    CCSecGenericPasswordItem *gpi = [CCSecGenericPasswordItem new];
+    XCTAssertTrue(gpi != nil);
 }
 
 - (void)testNetworking {

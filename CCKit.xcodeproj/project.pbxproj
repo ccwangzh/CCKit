@@ -49,6 +49,9 @@
 		36FE0B241E4C6126002A4379 /* CCTableViewTestCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FE0B231E4C6126002A4379 /* CCTableViewTestCellModel.m */; };
 		36FE0B271E4C7424002A4379 /* CCCipher.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FE0B251E4C7424002A4379 /* CCCipher.h */; };
 		36FE0B281E4C7424002A4379 /* CCCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FE0B261E4C7424002A4379 /* CCCipher.m */; };
+		36FE0B2B1E4D6551002A4379 /* CCKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FE0B291E4D6551002A4379 /* CCKeychain.h */; };
+		36FE0B2C1E4D6551002A4379 /* CCKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FE0B2A1E4D6551002A4379 /* CCKeychain.m */; };
+		36FE0B2F1E4D8DCC002A4379 /* CCTableViewTestKeychainCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FE0B2E1E4D8DCC002A4379 /* CCTableViewTestKeychainCellModel.m */; };
 		B97F56191518587A1314ABBB /* libPods-CCKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE749053F07A522193DF8164 /* libPods-CCKit.a */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +125,10 @@
 		36FE0B231E4C6126002A4379 /* CCTableViewTestCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewTestCellModel.m; sourceTree = "<group>"; };
 		36FE0B251E4C7424002A4379 /* CCCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCipher.h; sourceTree = "<group>"; };
 		36FE0B261E4C7424002A4379 /* CCCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCipher.m; sourceTree = "<group>"; };
+		36FE0B291E4D6551002A4379 /* CCKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCKeychain.h; sourceTree = "<group>"; };
+		36FE0B2A1E4D6551002A4379 /* CCKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCKeychain.m; sourceTree = "<group>"; };
+		36FE0B2D1E4D8DCC002A4379 /* CCTableViewTestKeychainCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableViewTestKeychainCellModel.h; sourceTree = "<group>"; };
+		36FE0B2E1E4D8DCC002A4379 /* CCTableViewTestKeychainCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewTestKeychainCellModel.m; sourceTree = "<group>"; };
 		F219A63D85C197A967172DC2 /* Pods-CCKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCKit/Pods-CCKit.release.xcconfig"; sourceTree = "<group>"; };
 		FE749053F07A522193DF8164 /* libPods-CCKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -201,6 +208,8 @@
 				36FE0B131E4B182B002A4379 /* NSObject+CCModel.m */,
 				36FE0B251E4C7424002A4379 /* CCCipher.h */,
 				36FE0B261E4C7424002A4379 /* CCCipher.m */,
+				36FE0B291E4D6551002A4379 /* CCKeychain.h */,
+				36FE0B2A1E4D6551002A4379 /* CCKeychain.m */,
 				36FE0B0E1E4B0C85002A4379 /* CCNetworking.h */,
 				36FE0B0F1E4B0C85002A4379 /* CCNetworking.m */,
 				3611A00C1E2E1DFF004D2BFC /* CCViewController.h */,
@@ -255,6 +264,8 @@
 			children = (
 				36FE0B221E4C6126002A4379 /* CCTableViewTestCellModel.h */,
 				36FE0B231E4C6126002A4379 /* CCTableViewTestCellModel.m */,
+				36FE0B2D1E4D8DCC002A4379 /* CCTableViewTestKeychainCellModel.h */,
+				36FE0B2E1E4D8DCC002A4379 /* CCTableViewTestKeychainCellModel.m */,
 				36FE0B1F1E4C60D4002A4379 /* CCTableViewTestNetworkingCellModel.h */,
 				36FE0B201E4C60D4002A4379 /* CCTableViewTestNetworkingCellModel.m */,
 			);
@@ -294,6 +305,7 @@
 				36FE0B141E4B182B002A4379 /* NSObject+CCModel.h in Headers */,
 				3611A01A1E30627E004D2BFC /* CCWebViewController.h in Headers */,
 				36DEE32F1E1CC66F0087C209 /* UIScreen+CCAddition.h in Headers */,
+				36FE0B2B1E4D6551002A4379 /* CCKeychain.h in Headers */,
 				3611A00E1E2E1DFF004D2BFC /* CCViewController.h in Headers */,
 				36119EA71E1F6DE8004D2BFC /* NSURL+CCAddition.h in Headers */,
 				36DEE3331E1CF7D90087C209 /* UIAlertView+CCAddition.h in Headers */,
@@ -480,6 +492,7 @@
 				36FE0B151E4B182B002A4379 /* NSObject+CCModel.m in Sources */,
 				3611A0171E2E1ED3004D2BFC /* CCTableViewDataSource.m in Sources */,
 				36DEE3281E1C9ED50087C209 /* UIColor+CCAddition.m in Sources */,
+				36FE0B2C1E4D6551002A4379 /* CCKeychain.m in Sources */,
 				3662D8571E2088F000F0CF2C /* UIDevice+CCAddition.m in Sources */,
 				3611A01B1E30627E004D2BFC /* CCWebViewController.m in Sources */,
 				36DEE3341E1CF7D90087C209 /* UIAlertView+CCAddition.m in Sources */,
@@ -504,6 +517,7 @@
 				36FE0B241E4C6126002A4379 /* CCTableViewTestCellModel.m in Sources */,
 				36ADC76B1E1BB44C0098B59D /* ViewController.m in Sources */,
 				36FE0B211E4C60D4002A4379 /* CCTableViewTestNetworkingCellModel.m in Sources */,
+				36FE0B2F1E4D8DCC002A4379 /* CCTableViewTestKeychainCellModel.m in Sources */,
 				36ADC7681E1BB44C0098B59D /* AppDelegate.m in Sources */,
 				36ADC7651E1BB44C0098B59D /* main.m in Sources */,
 			);
