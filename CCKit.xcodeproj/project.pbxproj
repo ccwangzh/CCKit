@@ -31,6 +31,8 @@
 		36ADC76E1E1BB44C0098B59D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36ADC76C1E1BB44C0098B59D /* Main.storyboard */; };
 		36ADC7701E1BB44C0098B59D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36ADC76F1E1BB44C0098B59D /* Assets.xcassets */; };
 		36ADC7731E1BB44C0098B59D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36ADC7711E1BB44C0098B59D /* LaunchScreen.storyboard */; };
+		36B3CF481E51AA2E00910072 /* CCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36ADC7431E1BB2FD0098B59D /* CCKit.framework */; };
+		36B3CF491E51AA2E00910072 /* CCKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 36ADC7431E1BB2FD0098B59D /* CCKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		36DEE3271E1C9ED50087C209 /* UIColor+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36DEE3251E1C9ED50087C209 /* UIColor+CCAddition.h */; };
 		36DEE3281E1C9ED50087C209 /* UIColor+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DEE3261E1C9ED50087C209 /* UIColor+CCAddition.m */; };
 		36DEE32B1E1CC3A40087C209 /* UIImage+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36DEE3291E1CC3A40087C209 /* UIImage+CCAddition.h */; };
@@ -73,6 +75,20 @@
 			remoteInfo = CCKit;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		36B3CF4A1E51AA2E00910072 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				36B3CF491E51AA2E00910072 /* CCKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2F860BA6C6613352B7DAB262 /* Pods-CCKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCKit/Pods-CCKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +181,7 @@
 			files = (
 				3662D8531E20871B00F0CF2C /* CCKit.framework in Frameworks */,
 				A445014ED8637AC77F4CAAE5 /* libPods-CCKitDemo.a in Frameworks */,
+				36B3CF481E51AA2E00910072 /* CCKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +403,7 @@
 				36ADC75F1E1BB44C0098B59D /* Resources */,
 				17DFB5618C69899609105A7D /* [CP] Embed Pods Frameworks */,
 				3CF8A4FA797AA3581D61C8F2 /* [CP] Copy Pods Resources */,
+				36B3CF4A1E51AA2E00910072 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -774,6 +792,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -793,6 +812,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -810,6 +830,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A6E24BBC76DBB778465092F /* Pods-CCKitTests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CCKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.womob.CCKitTests;
@@ -821,6 +842,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE9EBE489249AFE738C42CCA /* Pods-CCKitTests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CCKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.womob.CCKitTests;
@@ -833,6 +855,7 @@
 			baseConfigurationReference = 8337C7F28FB455C5F439C836 /* Pods-CCKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CCKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.womob.CCKitDemo;
@@ -845,6 +868,7 @@
 			baseConfigurationReference = C11789D5366857FB80F92579 /* Pods-CCKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CCKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.womob.CCKitDemo;

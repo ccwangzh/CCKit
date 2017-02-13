@@ -9,16 +9,30 @@
 #import "CCTableViewTestNetworkingCellModel.h"
 
 #import <CommonCrypto/CommonCrypto.h>
+#import <AFNetworking/AFNetworkReachabilityManager.h>
+
+@interface CCTableViewTestNetworkingCellModel ()
+{
+    AFNetworkReachabilityManager *_reachabilityManager;
+}
+@end
 
 @implementation CCTableViewTestNetworkingCellModel
 - (instancetype)init {
     if (self = [super init]) {
         self.title = @"测试：网络";
+        _reachabilityManager = [AFNetworkReachabilityManager manager];
+        [_reachabilityManager startMonitoring];
+        [_reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+            NSLog(@"AFNetworkReachabilityStatus:%ld", status);
+        }];
     }
     return self;
 }
 
 - (void)doTest {
+    NSLog(@"doTest");
+    NSLog(@"AFNetworkReachabilityStatus:%ld", [_reachabilityManager networkReachabilityStatus]);
     CCTimeRequest *request = [CCTimeRequest new];
     [[CCApiClient apiClient] sendRequest:request completionHandler:^(CCHttpResponse *response, NSError *error) {
         if (error) {
