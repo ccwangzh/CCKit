@@ -18,34 +18,120 @@
     return self;
 }
 
-- (void)testKeyItemDigest {
+- (void)testKeyItemPrivate {
+    NSMutableDictionary *privateKeyQuery = [NSMutableDictionary new];
+    privateKeyQuery[(__bridge NSString *)kSecClass] = (__bridge id)kSecClassKey;
+    privateKeyQuery[(__bridge NSString *)kSecAttrApplicationTag] = @"com.womob.pay.key.private";
+    privateKeyQuery[(__bridge NSString *)kSecReturnData] = (__bridge id)kCFBooleanTrue;
+    
+    CFDataRef dataRef = NULL;
+    OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)privateKeyQuery, (CFTypeRef *)&dataRef);
+    NSData *data = (__bridge_transfer NSData *)dataRef;
+    
+    if (status != errSecSuccess || data == nil) {
+        [self testKeyItemGenerate];
+        
+        status = SecItemCopyMatching((__bridge CFDictionaryRef)privateKeyQuery, (CFTypeRef *)&dataRef);
+        data = (__bridge_transfer NSData *)dataRef;
+    }
+    
+    NSString *privateKey = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    NSLog(@"testKeyItemPrivate:%d, %@", status, privateKey);
+}
+
+- (void)testKeyItemPublic {
+    NSMutableDictionary *publicKeyQuery = [NSMutableDictionary new];
+    publicKeyQuery[(__bridge NSString *)kSecClass] = (__bridge id)kSecClassKey;
+    publicKeyQuery[(__bridge NSString *)kSecAttrApplicationTag] = @"com.womob.pay.key.public";
+    publicKeyQuery[(__bridge NSString *)kSecReturnData] = (__bridge id)kCFBooleanTrue;
+    
+    CFDataRef dataRef = NULL;
+    OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)publicKeyQuery, (CFTypeRef *)&dataRef);
+    NSData *data = (__bridge_transfer NSData *)dataRef;
+
+    if (status != errSecSuccess || data == nil) {
+        [self testKeyItemGenerate];
+        
+        status = SecItemCopyMatching((__bridge CFDictionaryRef)publicKeyQuery, (CFTypeRef *)&dataRef);
+        data = (__bridge_transfer NSData *)dataRef;
+    }
+    
+    NSString *publicKey = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    NSLog(@"testKeyItemPublic:%d, %@", status, publicKey);
+}
+
+- (void)testKeyItemGenerate {
     SecKeyRef publicKey = nil;
     SecKeyRef privateKey = nil;
+    
+    NSMutableDictionary *publicKeyParameters = [NSMutableDictionary new];
+    publicKeyParameters[(__bridge NSString *)kSecAttrIsPermanent] = (__bridge id)kCFBooleanTrue;
+    publicKeyParameters[(__bridge NSString *)kSecAttrApplicationTag] = @"com.womob.pay.key.public";
+    
+    NSMutableDictionary *privateKeyParameters = [NSMutableDictionary new];
+    privateKeyParameters[(__bridge NSString *)kSecAttrIsPermanent] = (__bridge id)kCFBooleanTrue;
+    privateKeyParameters[(__bridge NSString *)kSecAttrApplicationTag] = @"com.womob.pay.key.private";
     
     NSMutableDictionary *dictionary = [NSMutableDictionary new];
     dictionary[(__bridge NSString *)kSecAttrKeyType] = (__bridge id)kSecAttrKeyTypeRSA;
     dictionary[(__bridge NSString *)kSecAttrKeySizeInBits] = @(1024);
     
+    dictionary[(__bridge NSString *)kSecPublicKeyAttrs] = publicKeyParameters;
+    dictionary[(__bridge NSString *)kSecPrivateKeyAttrs] = privateKeyParameters;
+    
     OSStatus status = SecKeyGeneratePair((__bridge CFDictionaryRef)dictionary, &publicKey, &privateKey);
     
-    NSLog(@"status:%d, %@, %@", status, publicKey, privateKey);
+    NSLog(@"SecKeyGeneratePair:%d", status);
+}
+
+- (void)testKeyItemDestory {
+    NSMutableDictionary *privateKeyQuery = [NSMutableDictionary new];
+    privateKeyQuery[(__bridge NSString *)kSecClass] = (__bridge id)kSecClassKey;
+    privateKeyQuery[(__bridge NSString *)kSecAttrApplicationTag] = @"com.womob.pay.key.private";
+    privateKeyQuery[(__bridge NSString *)kSecReturnData] = (__bridge id)kCFBooleanTrue;
     
-    NSString *plainText = @"YWFhYQ==";
-    CFErrorRef errorRef = nil; NSData *signatureData = nil;
-    NSData *data = [[NSData alloc] initWithBase64EncodedString:plainText options:0];
-    BOOL isSupport = SecKeyIsAlgorithmSupported(privateKey, kSecKeyOperationTypeSign, kSecKeyAlgorithmRSASignatureDigestPKCS1v15SHA1);
-    NSLog(@"isSupport:%d", isSupport);
-    if (isSupport) {
-        signatureData = (__bridge_transfer NSData *)SecKeyCreateSignature(privateKey, kSecKeyAlgorithmRSASignatureDigestPKCS1v15SHA1, (__bridge CFDataRef)data, &errorRef);
-        NSLog(@"signatureData:%@, error:%@", signatureData, errorRef);
+    NSMutableDictionary *publicKeyQuery = [NSMutableDictionary new];
+    publicKeyQuery[(__bridge NSString *)kSecClass] = (__bridge id)kSecClassKey;
+    publicKeyQuery[(__bridge NSString *)kSecAttrApplicationTag] = @"com.womob.pay.key.public";
+    publicKeyQuery[(__bridge NSString *)kSecReturnData] = (__bridge id)kCFBooleanTrue;
+    
+    CFDataRef dataRef = NULL;
+    OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)privateKeyQuery, (CFTypeRef *)&dataRef);
+    NSData *data = (__bridge_transfer NSData *)dataRef;
+    if (status == errSecSuccess || data != nil) {
+        status = SecItemDelete((__bridge CFDictionaryRef)privateKeyQuery);
+        
+        NSLog(@"testKeyItemDestory-SecItemDelete-privateKeyQuery:%d", status);
     }
     
-    isSupport = SecKeyIsAlgorithmSupported(publicKey, kSecKeyOperationTypeVerify, kSecKeyAlgorithmRSASignatureDigestPKCS1v15SHA1);
-    NSLog(@"isSupport:%d", isSupport);
-    if (isSupport) {
-        BOOL isVerifyied = SecKeyVerifySignature(publicKey, kSecKeyAlgorithmRSASignatureDigestPKCS1v15SHA1, (__bridge CFDataRef)data, (__bridge CFDataRef)signatureData, &errorRef);
-        NSLog(@"isVerifyied:%d", isVerifyied);
+    SecItemCopyMatching((__bridge CFDictionaryRef)publicKeyQuery, (CFTypeRef *)&dataRef);
+    data = (__bridge_transfer NSData *)dataRef;
+    if (status == errSecSuccess || data != nil) {
+        status = SecItemDelete((__bridge CFDictionaryRef)publicKeyQuery);
+        
+        NSLog(@"testKeyItemDestory-SecItemDelete-publicKeyQuery:%d", status);
     }
+}
+
+- (void)testKeyItemQuery {
+    NSMutableDictionary *privateKeyQuery = [NSMutableDictionary new];
+    privateKeyQuery[(__bridge NSString *)kSecClass] = (__bridge id)kSecClassKey;
+    privateKeyQuery[(__bridge NSString *)kSecAttrApplicationTag] = @"com.womob.pay.key.private";
+    privateKeyQuery[(__bridge NSString *)kSecReturnData] = (__bridge id)kCFBooleanTrue;
+    
+    NSMutableDictionary *publicKeyQuery = [NSMutableDictionary new];
+    publicKeyQuery[(__bridge NSString *)kSecClass] = (__bridge id)kSecClassKey;
+    publicKeyQuery[(__bridge NSString *)kSecAttrApplicationTag] = @"com.womob.pay.key.public";
+    publicKeyQuery[(__bridge NSString *)kSecReturnData] = (__bridge id)kCFBooleanTrue;
+    
+    CFDataRef dataRef = NULL;
+    OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)privateKeyQuery, (CFTypeRef *)&dataRef);
+    
+    NSLog(@"testKeyItemQuery-SecItemCopyMatching-privateKeyQuery:%d", status);
+
+    SecItemCopyMatching((__bridge CFDictionaryRef)publicKeyQuery, (CFTypeRef *)&dataRef);
+    
+    NSLog(@"testKeyItemQuery-SecItemCopyMatching-publicKeyQuery:%d", status);
     
 }
 
@@ -116,6 +202,13 @@
 }
 
 - (void)doTest {
-    [self testKeyItemDigest];
+    [self testPasswordItem];
+    
+//    [self testKeyItemGenerate];
+//    [self testKeyItemQuery];
+//    [self testKeyItemPrivate];
+//    [self testKeyItemPublic];
+//    [self testKeyItemDestory];
+//    [self testKeyItemQuery];
 }
 @end
