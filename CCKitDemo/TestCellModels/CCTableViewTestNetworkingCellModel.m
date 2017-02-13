@@ -24,7 +24,7 @@
         _reachabilityManager = [AFNetworkReachabilityManager manager];
         [_reachabilityManager startMonitoring];
         [_reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-            NSLog(@"AFNetworkReachabilityStatus:%ld", status);
+            NSLog(@"AFNetworkReachabilityStatus:%ld", (long)status);
         }];
     }
     return self;
@@ -32,13 +32,13 @@
 
 - (void)doTest {
     NSLog(@"doTest");
-    NSLog(@"AFNetworkReachabilityStatus:%ld", [_reachabilityManager networkReachabilityStatus]);
+    NSLog(@"AFNetworkReachabilityStatus:%ld", (long)[_reachabilityManager networkReachabilityStatus]);
     CCTimeRequest *request = [CCTimeRequest new];
     [[CCApiClient apiClient] sendRequest:request completionHandler:^(CCHttpResponse *response, NSError *error) {
         if (error) {
             NSLog(@"error:%@", error);
         } else {
-            NSLog(@"response:%d,%@,%ld,%@", response.success, response.message, response.resultCode, response.results);
+            NSLog(@"response:%d,%@,%ld,%@", response.success, response.message, (long)response.resultCode, response.results);
         }
     }];
 }

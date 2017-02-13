@@ -36,7 +36,7 @@
     }
     
     NSString *privateKey = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    NSLog(@"testKeyItemPrivate:%d, %@", status, privateKey);
+    NSLog(@"testKeyItemPrivate:%ld, %@", (long)status, privateKey);
 }
 
 - (void)testKeyItemPublic {
@@ -57,7 +57,7 @@
     }
     
     NSString *publicKey = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    NSLog(@"testKeyItemPublic:%d, %@", status, publicKey);
+    NSLog(@"testKeyItemPublic:%ld, %@",(long)status, publicKey);
 }
 
 - (void)testKeyItemGenerate {
@@ -81,7 +81,7 @@
     
     OSStatus status = SecKeyGeneratePair((__bridge CFDictionaryRef)dictionary, &publicKey, &privateKey);
     
-    NSLog(@"SecKeyGeneratePair:%d", status);
+    NSLog(@"SecKeyGeneratePair:%ld", (long)status);
 }
 
 - (void)testKeyItemDestory {
@@ -101,7 +101,7 @@
     if (status == errSecSuccess || data != nil) {
         status = SecItemDelete((__bridge CFDictionaryRef)privateKeyQuery);
         
-        NSLog(@"testKeyItemDestory-SecItemDelete-privateKeyQuery:%d", status);
+        NSLog(@"testKeyItemDestory-SecItemDelete-privateKeyQuery:%ld", (long)status);
     }
     
     SecItemCopyMatching((__bridge CFDictionaryRef)publicKeyQuery, (CFTypeRef *)&dataRef);
@@ -109,7 +109,7 @@
     if (status == errSecSuccess || data != nil) {
         status = SecItemDelete((__bridge CFDictionaryRef)publicKeyQuery);
         
-        NSLog(@"testKeyItemDestory-SecItemDelete-publicKeyQuery:%d", status);
+        NSLog(@"testKeyItemDestory-SecItemDelete-publicKeyQuery:%ld", (long)status);
     }
 }
 
@@ -127,11 +127,11 @@
     CFDataRef dataRef = NULL;
     OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)privateKeyQuery, (CFTypeRef *)&dataRef);
     
-    NSLog(@"testKeyItemQuery-SecItemCopyMatching-privateKeyQuery:%d", status);
+    NSLog(@"testKeyItemQuery-SecItemCopyMatching-privateKeyQuery:%ld", (long)status);
 
     SecItemCopyMatching((__bridge CFDictionaryRef)publicKeyQuery, (CFTypeRef *)&dataRef);
     
-    NSLog(@"testKeyItemQuery-SecItemCopyMatching-publicKeyQuery:%d", status);
+    NSLog(@"testKeyItemQuery-SecItemCopyMatching-publicKeyQuery:%ld", (long)status);
     
 }
 
@@ -145,7 +145,7 @@
     
     OSStatus status = SecKeyGeneratePair((__bridge CFDictionaryRef)dictionary, &publicKey, &privateKey);
     
-    NSLog(@"status:%d, %@, %@", status, publicKey, privateKey);
+    NSLog(@"status:%ld, %@, %@", (long)status, publicKey, privateKey);
     
     NSString *plainText = @"aGFsbG8=";
     CFErrorRef errorRef = nil; NSData *cipherData = nil; NSData *plainData = nil;
@@ -175,29 +175,29 @@
     id object = nil;
     status = [gpi secGetOneObject:&object];
     if (status == errSecSuccess && object) {
-        NSLog(@"status:%d,%@", status, object);
+        NSLog(@"status:%ld,%@", (long)status, object);
         status = [gpi secDelete];
-        NSLog(@"status:%d", status);
+        NSLog(@"status:%ld", (long)status);
         NSAssert(status == errSecSuccess, @"status != errSecSuccess");
     }
     object = @"1234567890-no-acc-no-srv";
     status = [gpi secAddObject:object];
-    NSLog(@"status:%d", status);
+    NSLog(@"status:%ld", (long)status);
     NSAssert(status == errSecSuccess, @"status != errSecSuccess");
     
     id result = nil;
     status = [gpi secGetOneObject:&result];
-    NSLog(@"status:%d,%@", status, result);
+    NSLog(@"status:%ld,%@", (long)status, result);
     NSAssert(status == errSecSuccess, @"status != errSecSuccess");
     NSAssert([result isEqualToString:object], @"status != errSecSuccess");
     
     status = [gpi secDelete];
-    NSLog(@"status:%d", status);
+    NSLog(@"status:%ld", (long)status);
     NSAssert(status == errSecSuccess, @"status != errSecSuccess");
     
     result = nil;
     status = [gpi secGetOneObject:&result];
-    NSLog(@"status:%d,%@", status, result);
+    NSLog(@"status:%ld,%@", (long)status, result);
     NSAssert(status != errSecSuccess, @"status == errSecSuccess");
 }
 
