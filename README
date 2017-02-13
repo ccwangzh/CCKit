@@ -1,0 +1,9 @@
+# CCKit
+==============
+CCKit is a collection of iOS components.
+
+* [CCCategories] — A set of useful categories for Foundation and UIKit.
+* [CCKeychain] - A wrapper of iOS Keychain.
+* [CCNetworking] - A wrapper of AFNetworking.
+* [CCCipher] - A wrapper of CommonCrypto.
+* [CCTableViewController] - A wrapper of Table View.
