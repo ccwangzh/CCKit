@@ -30,7 +30,7 @@
     return [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1];
 }
 
-+ (UIColor *)colorWithR:(NSUInteger)r g:(NSUInteger)g b:(NSUInteger)b alpha:(NSUInteger)a {
++ (UIColor *)colorWithR:(NSUInteger)r g:(NSUInteger)g b:(NSUInteger)b a:(NSUInteger)a {
     return [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a/255.0f];
 }
 

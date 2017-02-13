@@ -41,5 +41,5 @@
  *  @param a 如 255 对应透明色值
  *  @return UIColor instance
  */
-+ (UIColor *)colorWithR:(NSUInteger)r g:(NSUInteger)g b:(NSUInteger)b alpha:(NSUInteger)a;
++ (UIColor *)colorWithR:(NSUInteger)r g:(NSUInteger)g b:(NSUInteger)b a:(NSUInteger)a;
 @end

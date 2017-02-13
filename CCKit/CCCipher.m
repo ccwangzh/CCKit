@@ -17,17 +17,13 @@
 @end
 
 @implementation CCCipher
-+ (instancetype)cipherWithAlgorithm:(CCAlgorithm)alg
-                          operation:(CCOperation)op
-                            options:(CCOptions)ops
++ (instancetype)cipherWithAlgorithm:(CCAlgorithm)alg operation:(CCOperation)op options:(CCOptions)ops
 {
     return [[self alloc] initWithAlgorithm:alg operation:op options:ops];
 }
 
 
-- (instancetype)initWithAlgorithm:(CCAlgorithm)alg
-                        operation:(CCOperation)op
-                          options:(CCOptions)ops
+- (instancetype)initWithAlgorithm:(CCAlgorithm)alg operation:(CCOperation)op options:(CCOptions)ops
 {
     if (self = [super init]) {
         _algorithm = alg;

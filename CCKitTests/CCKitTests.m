@@ -113,7 +113,7 @@
     
     c = [UIColor colorWithR:111 g:112 b:113];
     CCLog(@"color:%@", c);
-    c = [UIColor colorWithR:111 g:112 b:113 alpha:233];
+    c = [UIColor colorWithR:111 g:112 b:113 a:233];
     CCLog(@"color:%@", c);
     
     UIImage *i = [UIImage imageWithColor:[UIColor whiteColor] size:CGSizeMake(2, 2)];

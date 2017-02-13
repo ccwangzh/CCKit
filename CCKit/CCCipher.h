@@ -10,9 +10,7 @@
 #import <CommonCrypto/CommonCrypto.h>
 
 @interface CCCipher : NSObject
-+ (instancetype)cipherWithAlgorithm:(CCAlgorithm)alg
-                          operation:(CCOperation)op
-                            options:(CCOptions)ops;
++ (instancetype)cipherWithAlgorithm:(CCAlgorithm)alg operation:(CCOperation)op options:(CCOptions)ops;
 - (BOOL)init:(NSData *)key;
 - (BOOL)update:(NSData *)data;
 - (NSData *)final;
