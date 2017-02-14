@@ -9,11 +9,11 @@
 #import "CCTableViewTestNetworkingCellModel.h"
 
 #import <CommonCrypto/CommonCrypto.h>
-#import <AFNetworking/AFNetworkReachabilityManager.h>
+#import "CCNetworkInfo.h"
 
 @interface CCTableViewTestNetworkingCellModel ()
 {
-    AFNetworkReachabilityManager *_reachabilityManager;
+    CCNetworkInfo *_networkInfo;
 }
 @end
 
@@ -21,18 +21,16 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.title = @"测试：网络";
-        _reachabilityManager = [AFNetworkReachabilityManager manager];
-        [_reachabilityManager startMonitoring];
-        [_reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-            NSLog(@"AFNetworkReachabilityStatus:%ld", (long)status);
-        }];
+        _networkInfo = [CCNetworkInfo networkInfo];
+        
     }
     return self;
 }
 
 - (void)doTest {
     NSLog(@"doTest");
-    NSLog(@"AFNetworkReachabilityStatus:%ld", (long)[_reachabilityManager networkReachabilityStatus]);
+    NSLog(@"isReachable:%d,%ld", _networkInfo.isReachable, (long)_networkInfo.networkType);
+    NSLog(@"isReachableViaWWAN:%d,%ld", _networkInfo.isReachableViaWWAN, (long)_networkInfo.networkWWANType);
     CCTimeRequest *request = [CCTimeRequest new];
     [[CCApiClient apiClient] sendRequest:request completionHandler:^(CCHttpResponse *response, NSError *error) {
         if (error) {

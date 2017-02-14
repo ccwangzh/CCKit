@@ -33,6 +33,8 @@
 		36ADC7731E1BB44C0098B59D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36ADC7711E1BB44C0098B59D /* LaunchScreen.storyboard */; };
 		36B3CF481E51AA2E00910072 /* CCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36ADC7431E1BB2FD0098B59D /* CCKit.framework */; };
 		36B3CF491E51AA2E00910072 /* CCKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 36ADC7431E1BB2FD0098B59D /* CCKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		36B3CF511E529E5D00910072 /* CCNetworkInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B3CF4F1E529E5D00910072 /* CCNetworkInfo.h */; };
+		36B3CF521E529E5D00910072 /* CCNetworkInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B3CF501E529E5D00910072 /* CCNetworkInfo.m */; };
 		36DEE3271E1C9ED50087C209 /* UIColor+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36DEE3251E1C9ED50087C209 /* UIColor+CCAddition.h */; };
 		36DEE3281E1C9ED50087C209 /* UIColor+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DEE3261E1C9ED50087C209 /* UIColor+CCAddition.m */; };
 		36DEE32B1E1CC3A40087C209 /* UIImage+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36DEE3291E1CC3A40087C209 /* UIImage+CCAddition.h */; };
@@ -123,6 +125,8 @@
 		36ADC7721E1BB44C0098B59D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36ADC7741E1BB44C0098B59D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36ADC7781E1BB8020098B59D /* CCDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDefines.h; sourceTree = "<group>"; };
+		36B3CF4F1E529E5D00910072 /* CCNetworkInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNetworkInfo.h; sourceTree = "<group>"; };
+		36B3CF501E529E5D00910072 /* CCNetworkInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNetworkInfo.m; sourceTree = "<group>"; };
 		36DEE3251E1C9ED50087C209 /* UIColor+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CCAddition.h"; sourceTree = "<group>"; };
 		36DEE3261E1C9ED50087C209 /* UIColor+CCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CCAddition.m"; sourceTree = "<group>"; };
 		36DEE3291E1CC3A40087C209 /* UIImage+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CCAddition.h"; sourceTree = "<group>"; };
@@ -239,6 +243,8 @@
 				36FE0B2A1E4D6551002A4379 /* CCKeychain.m */,
 				36FE0B0E1E4B0C85002A4379 /* CCNetworking.h */,
 				36FE0B0F1E4B0C85002A4379 /* CCNetworking.m */,
+				36B3CF4F1E529E5D00910072 /* CCNetworkInfo.h */,
+				36B3CF501E529E5D00910072 /* CCNetworkInfo.m */,
 				3611A00C1E2E1DFF004D2BFC /* CCViewController.h */,
 				3611A00D1E2E1DFF004D2BFC /* CCViewController.m */,
 				3611A0181E30627E004D2BFC /* CCWebViewController.h */,
@@ -330,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3662D84F1E20749400F0CF2C /* NSString+CCAddition.h in Headers */,
+				36B3CF511E529E5D00910072 /* CCNetworkInfo.h in Headers */,
 				36FE0B271E4C7424002A4379 /* CCCipher.h in Headers */,
 				3611A0161E2E1ED3004D2BFC /* CCTableViewDataSource.h in Headers */,
 				36DEE3371E1CF8170087C209 /* NSObject+CCAddition.h in Headers */,
@@ -629,6 +636,7 @@
 				36DEE3301E1CC66F0087C209 /* UIScreen+CCAddition.m in Sources */,
 				36119EA81E1F6DE8004D2BFC /* NSURL+CCAddition.m in Sources */,
 				36DEE32C1E1CC3A40087C209 /* UIImage+CCAddition.m in Sources */,
+				36B3CF521E529E5D00910072 /* CCNetworkInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
