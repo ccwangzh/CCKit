@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 
+#import "CCTableViewTestCacheCellModel.h"
 #import "CCTableViewTestAdditionCellModel.h"
 #import "CCTableViewTestKeychainCellModel.h"
 #import "CCTableViewTestNetworkingCellModel.h"
@@ -22,6 +23,8 @@
     
     CCTableViewSection *section = [CCTableViewSection new];
     [dataSource addObject:section];
+    
+    [section addObject:[CCTableViewTestCacheCellModel new]];
 
     [section addObject:[CCTableViewTestAdditionCellModel new]];
     
