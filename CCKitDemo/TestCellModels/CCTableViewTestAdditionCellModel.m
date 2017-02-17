@@ -49,7 +49,5 @@
 }
 - (void)doTest {
     NSLog(@"doTest");
-    UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-    [(UINavigationController *)rootVC pushViewController:[CCTestViewController new] animated:YES];
 }
 @end

@@ -43,6 +43,12 @@
 		36B3CF601E53FD2C00910072 /* CCFileCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B3CF5E1E53FD2C00910072 /* CCFileCache.h */; };
 		36B3CF611E53FD2C00910072 /* CCFileCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B3CF5F1E53FD2C00910072 /* CCFileCache.m */; };
 		36B3CF641E5402AD00910072 /* CCTableViewTestCacheCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B3CF631E5402AD00910072 /* CCTableViewTestCacheCellModel.m */; };
+		36B3CF6A1E5445C300910072 /* CCKVStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B3CF681E5445C300910072 /* CCKVStore.h */; };
+		36B3CF6B1E5445C300910072 /* CCKVStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B3CF691E5445C300910072 /* CCKVStore.m */; };
+		36B3CF6D1E55597000910072 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 36B3CF6C1E55597000910072 /* libsqlite3.tbd */; };
+		36B3CF6E1E5559CC00910072 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 36B3CF6C1E55597000910072 /* libsqlite3.tbd */; };
+		36B3CF711E56A9FA00910072 /* CCMemCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B3CF6F1E56A9FA00910072 /* CCMemCache.h */; };
+		36B3CF721E56A9FA00910072 /* CCMemCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B3CF701E56A9FA00910072 /* CCMemCache.m */; };
 		36DEE3271E1C9ED50087C209 /* UIColor+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36DEE3251E1C9ED50087C209 /* UIColor+CCAddition.h */; };
 		36DEE3281E1C9ED50087C209 /* UIColor+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DEE3261E1C9ED50087C209 /* UIColor+CCAddition.m */; };
 		36DEE32B1E1CC3A40087C209 /* UIImage+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36DEE3291E1CC3A40087C209 /* UIImage+CCAddition.h */; };
@@ -145,6 +151,11 @@
 		36B3CF5F1E53FD2C00910072 /* CCFileCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFileCache.m; sourceTree = "<group>"; };
 		36B3CF621E5402AD00910072 /* CCTableViewTestCacheCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableViewTestCacheCellModel.h; sourceTree = "<group>"; };
 		36B3CF631E5402AD00910072 /* CCTableViewTestCacheCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewTestCacheCellModel.m; sourceTree = "<group>"; };
+		36B3CF681E5445C300910072 /* CCKVStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCKVStore.h; sourceTree = "<group>"; };
+		36B3CF691E5445C300910072 /* CCKVStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCKVStore.m; sourceTree = "<group>"; };
+		36B3CF6C1E55597000910072 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		36B3CF6F1E56A9FA00910072 /* CCMemCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMemCache.h; sourceTree = "<group>"; };
+		36B3CF701E56A9FA00910072 /* CCMemCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMemCache.m; sourceTree = "<group>"; };
 		36DEE3251E1C9ED50087C209 /* UIColor+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CCAddition.h"; sourceTree = "<group>"; };
 		36DEE3261E1C9ED50087C209 /* UIColor+CCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CCAddition.m"; sourceTree = "<group>"; };
 		36DEE3291E1CC3A40087C209 /* UIImage+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CCAddition.h"; sourceTree = "<group>"; };
@@ -184,6 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B3CF6E1E5559CC00910072 /* libsqlite3.tbd in Frameworks */,
 				B97F56191518587A1314ABBB /* libPods-CCKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +213,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B3CF6D1E55597000910072 /* libsqlite3.tbd in Frameworks */,
 				3662D8531E20871B00F0CF2C /* CCKit.framework in Frameworks */,
 				A445014ED8637AC77F4CAAE5 /* libPods-CCKitDemo.a in Frameworks */,
 				36B3CF481E51AA2E00910072 /* CCKit.framework in Frameworks */,
@@ -263,8 +276,12 @@
 				36FE0B261E4C7424002A4379 /* CCCipher.m */,
 				36FE0B291E4D6551002A4379 /* CCKeychain.h */,
 				36FE0B2A1E4D6551002A4379 /* CCKeychain.m */,
+				36B3CF681E5445C300910072 /* CCKVStore.h */,
+				36B3CF691E5445C300910072 /* CCKVStore.m */,
 				36B3CF5E1E53FD2C00910072 /* CCFileCache.h */,
 				36B3CF5F1E53FD2C00910072 /* CCFileCache.m */,
+				36B3CF6F1E56A9FA00910072 /* CCMemCache.h */,
+				36B3CF701E56A9FA00910072 /* CCMemCache.m */,
 				36FE0B0E1E4B0C85002A4379 /* CCNetworking.h */,
 				36FE0B0F1E4B0C85002A4379 /* CCNetworking.m */,
 				36B3CF4F1E529E5D00910072 /* CCNetworkInfo.h */,
@@ -336,6 +353,7 @@
 		4BD06F69A5F5F461B83C444D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36B3CF6C1E55597000910072 /* libsqlite3.tbd */,
 				FE749053F07A522193DF8164 /* libPods-CCKit.a */,
 				9AFD84A34018EED3E3A3FFBC /* libPods-CCKitDemo.a */,
 				AA13267F3377EA73EE87F4F8 /* libPods-CCKitTests.a */,
@@ -372,6 +390,7 @@
 				36B3CF601E53FD2C00910072 /* CCFileCache.h in Headers */,
 				36DEE3271E1C9ED50087C209 /* UIColor+CCAddition.h in Headers */,
 				36DEE32B1E1CC3A40087C209 /* UIImage+CCAddition.h in Headers */,
+				36B3CF6A1E5445C300910072 /* CCKVStore.h in Headers */,
 				36FE0B141E4B182B002A4379 /* NSObject+CCModel.h in Headers */,
 				3611A01A1E30627E004D2BFC /* CCWebViewController.h in Headers */,
 				36DEE32F1E1CC66F0087C209 /* UIScreen+CCAddition.h in Headers */,
@@ -380,6 +399,7 @@
 				36119EA71E1F6DE8004D2BFC /* NSURL+CCAddition.h in Headers */,
 				36DEE3331E1CF7D90087C209 /* UIAlertView+CCAddition.h in Headers */,
 				36B3CF5C1E52FFF400910072 /* CCRouter.h in Headers */,
+				36B3CF711E56A9FA00910072 /* CCMemCache.h in Headers */,
 				36FE0B101E4B0C85002A4379 /* CCNetworking.h in Headers */,
 				36ADC7541E1BB2FD0098B59D /* CCKit.h in Headers */,
 				3611A0121E2E1E1C004D2BFC /* CCTableViewController.h in Headers */,
@@ -663,10 +683,12 @@
 				3611A0171E2E1ED3004D2BFC /* CCTableViewDataSource.m in Sources */,
 				36DEE3281E1C9ED50087C209 /* UIColor+CCAddition.m in Sources */,
 				36B3CF5D1E52FFF400910072 /* CCRouter.m in Sources */,
+				36B3CF721E56A9FA00910072 /* CCMemCache.m in Sources */,
 				36FE0B2C1E4D6551002A4379 /* CCKeychain.m in Sources */,
 				3662D8571E2088F000F0CF2C /* UIDevice+CCAddition.m in Sources */,
 				3611A01B1E30627E004D2BFC /* CCWebViewController.m in Sources */,
 				36DEE3341E1CF7D90087C209 /* UIAlertView+CCAddition.m in Sources */,
+				36B3CF6B1E5445C300910072 /* CCKVStore.m in Sources */,
 				36DEE3301E1CC66F0087C209 /* UIScreen+CCAddition.m in Sources */,
 				36119EA81E1F6DE8004D2BFC /* NSURL+CCAddition.m in Sources */,
 				36DEE32C1E1CC3A40087C209 /* UIImage+CCAddition.m in Sources */,
