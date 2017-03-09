@@ -83,6 +83,16 @@
     NSString *string = @"https://ddd.bbb.com:8080/rrr;aaa?opop=ggy&nn=77&ff=dd&aa=cc&bb=cc#djajd_dhja";
     
     XCTAssertTrue([string isEqualToString:urlNew.absoluteString]);
+    
+    url = [NSURL URLWithString:@"https://mlc.vip.com/pages/finance/home.html?source=app&app_version=1.2.0&client=iphone&mobile_platform=3&mobile_channel=19pm07uiv:al80ssgp:wz6wvw80:19pm07ve3&idfv=1594CE5B-A70C-46C1-9EDF-A93006B0CF44&mars_cid=419f11987313ee6afc33ea750f9686c554bae086&net=WIFI&app_name=vipfinance_iphone"];
+    NSDictionary *queryDictionary = [url queryDictionary];
+    NSLog(@"%@", queryDictionary);
+    
+    NSLog(@"hasQueryDictionary:%d", [url hasQueryDictionary:@{@"mobile_platform":@"3", @"mobile_channel":@"19",@"a":@"aa"}]);
+    
+    NSLog(@"url:%@", url);
+    url = [url URLByReplacingQueryDictionary:@{@"mobile_platform":@"111"}];
+    NSLog(@"url:%@", url);
 }
 
 - (void)testCipher

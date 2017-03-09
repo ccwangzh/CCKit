@@ -17,6 +17,7 @@
 		3611A0171E2E1ED3004D2BFC /* CCTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3611A0151E2E1ED3004D2BFC /* CCTableViewDataSource.m */; };
 		3611A01A1E30627E004D2BFC /* CCWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3611A0181E30627E004D2BFC /* CCWebViewController.h */; };
 		3611A01B1E30627E004D2BFC /* CCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3611A0191E30627E004D2BFC /* CCWebViewController.m */; };
+		361B917D1E700BCB0079274E /* CCTableViewTestWebviewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 361B917C1E700BCB0079274E /* CCTableViewTestWebviewCellModel.m */; };
 		3662D84F1E20749400F0CF2C /* NSString+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 3662D84D1E20749400F0CF2C /* NSString+CCAddition.h */; };
 		3662D8501E20749400F0CF2C /* NSString+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3662D84E1E20749400F0CF2C /* NSString+CCAddition.m */; };
 		3662D8531E20871B00F0CF2C /* CCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36ADC7431E1BB2FD0098B59D /* CCKit.framework */; };
@@ -118,6 +119,8 @@
 		3611A0151E2E1ED3004D2BFC /* CCTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewDataSource.m; sourceTree = "<group>"; };
 		3611A0181E30627E004D2BFC /* CCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWebViewController.h; sourceTree = "<group>"; };
 		3611A0191E30627E004D2BFC /* CCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWebViewController.m; sourceTree = "<group>"; };
+		361B917B1E700BCB0079274E /* CCTableViewTestWebviewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableViewTestWebviewCellModel.h; sourceTree = "<group>"; };
+		361B917C1E700BCB0079274E /* CCTableViewTestWebviewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewTestWebviewCellModel.m; sourceTree = "<group>"; };
 		3662D84D1E20749400F0CF2C /* NSString+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CCAddition.h"; sourceTree = "<group>"; };
 		3662D84E1E20749400F0CF2C /* NSString+CCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CCAddition.m"; sourceTree = "<group>"; };
 		3662D8541E2088F000F0CF2C /* UIDevice+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+CCAddition.h"; sourceTree = "<group>"; };
@@ -346,6 +349,8 @@
 				36FE0B2E1E4D8DCC002A4379 /* CCTableViewTestKeychainCellModel.m */,
 				36FE0B1F1E4C60D4002A4379 /* CCTableViewTestNetworkingCellModel.h */,
 				36FE0B201E4C60D4002A4379 /* CCTableViewTestNetworkingCellModel.m */,
+				361B917B1E700BCB0079274E /* CCTableViewTestWebviewCellModel.h */,
+				361B917C1E700BCB0079274E /* CCTableViewTestWebviewCellModel.m */,
 			);
 			path = TestCellModels;
 			sourceTree = "<group>";
@@ -716,6 +721,7 @@
 				36FE0B2F1E4D8DCC002A4379 /* CCTableViewTestKeychainCellModel.m in Sources */,
 				36ADC7681E1BB44C0098B59D /* AppDelegate.m in Sources */,
 				36ADC7651E1BB44C0098B59D /* main.m in Sources */,
+				361B917D1E700BCB0079274E /* CCTableViewTestWebviewCellModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
