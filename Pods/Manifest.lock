@@ -14,16 +14,19 @@ PODS:
   - AFNetworking/Serialization (3.0.4)
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
+  - Cordova (4.3.0)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking (= 3.0.4)
+  - Cordova (= 4.3.0)
   - YYModel (= 1.0.4)
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  Cordova: 9dda9e4a521d8f0af561cba93e59f142ed7b306f
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 8a6aca568068ca48c08d1a556916d33ca0a852be
+PODFILE CHECKSUM: dbc28f5e93c42d4162fa6ad7f10eff5426be34b7
 
 COCOAPODS: 1.1.1
