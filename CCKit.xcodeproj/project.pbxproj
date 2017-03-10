@@ -35,7 +35,6 @@
 		36ADC76E1E1BB44C0098B59D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36ADC76C1E1BB44C0098B59D /* Main.storyboard */; };
 		36ADC7701E1BB44C0098B59D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36ADC76F1E1BB44C0098B59D /* Assets.xcassets */; };
 		36ADC7731E1BB44C0098B59D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36ADC7711E1BB44C0098B59D /* LaunchScreen.storyboard */; };
-		36B3CF481E51AA2E00910072 /* CCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36ADC7431E1BB2FD0098B59D /* CCKit.framework */; };
 		36B3CF491E51AA2E00910072 /* CCKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 36ADC7431E1BB2FD0098B59D /* CCKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		36B3CF511E529E5D00910072 /* CCNetworkInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B3CF4F1E529E5D00910072 /* CCNetworkInfo.h */; };
 		36B3CF521E529E5D00910072 /* CCNetworkInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B3CF501E529E5D00910072 /* CCNetworkInfo.m */; };
@@ -226,7 +225,6 @@
 				36B3CF6D1E55597000910072 /* libsqlite3.tbd in Frameworks */,
 				3662D8531E20871B00F0CF2C /* CCKit.framework in Frameworks */,
 				A445014ED8637AC77F4CAAE5 /* libPods-CCKitDemo.a in Frameworks */,
-				36B3CF481E51AA2E00910072 /* CCKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,7 +501,7 @@
 		36ADC73A1E1BB2FD0098B59D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = womob.com;
 				TargetAttributes = {
 					36ADC7421E1BB2FD0098B59D = {
