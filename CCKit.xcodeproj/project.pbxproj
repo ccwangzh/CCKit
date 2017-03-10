@@ -20,6 +20,7 @@
 		361B917D1E700BCB0079274E /* CCTableViewTestWebviewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 361B917C1E700BCB0079274E /* CCTableViewTestWebviewCellModel.m */; };
 		361B91811E7159560079274E /* CCTableViewTestCordovaCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 361B91801E7159560079274E /* CCTableViewTestCordovaCellModel.m */; };
 		361B91831E715C630079274E /* CCTableViewTestCordovaCellModel.xml in Resources */ = {isa = PBXBuildFile; fileRef = 361B91821E715C630079274E /* CCTableViewTestCordovaCellModel.xml */; };
+		362FD0761E729107003F71C8 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 362FD0751E729107003F71C8 /* www */; };
 		3662D84F1E20749400F0CF2C /* NSString+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 3662D84D1E20749400F0CF2C /* NSString+CCAddition.h */; };
 		3662D8501E20749400F0CF2C /* NSString+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3662D84E1E20749400F0CF2C /* NSString+CCAddition.m */; };
 		3662D8531E20871B00F0CF2C /* CCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36ADC7431E1BB2FD0098B59D /* CCKit.framework */; };
@@ -126,6 +127,7 @@
 		361B917F1E7159560079274E /* CCTableViewTestCordovaCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableViewTestCordovaCellModel.h; sourceTree = "<group>"; };
 		361B91801E7159560079274E /* CCTableViewTestCordovaCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewTestCordovaCellModel.m; sourceTree = "<group>"; };
 		361B91821E715C630079274E /* CCTableViewTestCordovaCellModel.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CCTableViewTestCordovaCellModel.xml; sourceTree = "<group>"; };
+		362FD0751E729107003F71C8 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		3662D84D1E20749400F0CF2C /* NSString+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CCAddition.h"; sourceTree = "<group>"; };
 		3662D84E1E20749400F0CF2C /* NSString+CCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CCAddition.m"; sourceTree = "<group>"; };
 		3662D8541E2088F000F0CF2C /* UIDevice+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+CCAddition.h"; sourceTree = "<group>"; };
@@ -231,6 +233,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		362FD0741E7290CC003F71C8 /* TestResources */ = {
+			isa = PBXGroup;
+			children = (
+				362FD0751E729107003F71C8 /* www */,
+			);
+			path = TestResources;
+			sourceTree = "<group>";
+		};
 		36ADC7391E1BB2FD0098B59D = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +334,7 @@
 				36ADC7691E1BB44C0098B59D /* ViewController.h */,
 				36ADC76A1E1BB44C0098B59D /* ViewController.m */,
 				36FE0B1E1E4C60A2002A4379 /* TestCellModels */,
+				362FD0741E7290CC003F71C8 /* TestResources */,
 				36ADC76C1E1BB44C0098B59D /* Main.storyboard */,
 				36ADC76F1E1BB44C0098B59D /* Assets.xcassets */,
 				36ADC7711E1BB44C0098B59D /* LaunchScreen.storyboard */,
@@ -551,6 +562,7 @@
 				36ADC7731E1BB44C0098B59D /* LaunchScreen.storyboard in Resources */,
 				36ADC7701E1BB44C0098B59D /* Assets.xcassets in Resources */,
 				361B91831E715C630079274E /* CCTableViewTestCordovaCellModel.xml in Resources */,
+				362FD0761E729107003F71C8 /* www in Resources */,
 				36ADC76E1E1BB44C0098B59D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
