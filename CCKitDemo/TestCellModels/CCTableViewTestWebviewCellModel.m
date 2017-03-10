@@ -51,6 +51,7 @@
     UINavigationController *navController = [tabController selectedViewController];
     
     CCTestWebViewController *testController = [CCTestWebViewController new];
+    testController.hidesBottomBarWhenPushed = YES;
     [navController pushViewController:testController animated:YES];
     
 }
