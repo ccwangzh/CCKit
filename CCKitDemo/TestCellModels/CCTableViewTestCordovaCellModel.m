@@ -8,25 +8,12 @@
 
 #import "CCTableViewTestCordovaCellModel.h"
 
-#import <Cordova/CDVViewController.h>
+#import "CCCordovaViewController.h"
 
-@interface CCTestCordovaController : CDVViewController
-
+@interface CCWebLoginHandler : CDVPlugin
 @end
 
-@implementation CCTestCordovaController
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
+@interface CCTestCordovaController : CCCordovaViewController
 @end
 
 @interface CCTableViewTestCordovaCellModel ()
@@ -51,7 +38,29 @@
     
     CCTestCordovaController *testController = [CCTestCordovaController new];
     testController.configFile = @"CCTableViewTestCordovaCellModel.xml";
+    testController.startPage = @"https://mlc.vip.com/pages/finance/home.html";
     testController.hidesBottomBarWhenPushed = YES;
     [navController pushViewController:testController animated:YES];
 }
+@end
+
+@implementation CCWebLoginHandler
+- (void)pluginInitialize {
+    [super pluginInitialize];
+}
+@end
+
+@implementation CCTestCordovaController
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
 @end

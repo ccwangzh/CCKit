@@ -21,6 +21,8 @@
 		361B91811E7159560079274E /* CCTableViewTestCordovaCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 361B91801E7159560079274E /* CCTableViewTestCordovaCellModel.m */; };
 		361B91831E715C630079274E /* CCTableViewTestCordovaCellModel.xml in Resources */ = {isa = PBXBuildFile; fileRef = 361B91821E715C630079274E /* CCTableViewTestCordovaCellModel.xml */; };
 		362FD0761E729107003F71C8 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 362FD0751E729107003F71C8 /* www */; };
+		362FD07A1E76463F003F71C8 /* CCCordovaViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 362FD0781E76463F003F71C8 /* CCCordovaViewController.h */; };
+		362FD07B1E76463F003F71C8 /* CCCordovaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 362FD0791E76463F003F71C8 /* CCCordovaViewController.m */; };
 		3662D84F1E20749400F0CF2C /* NSString+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 3662D84D1E20749400F0CF2C /* NSString+CCAddition.h */; };
 		3662D8501E20749400F0CF2C /* NSString+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3662D84E1E20749400F0CF2C /* NSString+CCAddition.m */; };
 		3662D8531E20871B00F0CF2C /* CCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36ADC7431E1BB2FD0098B59D /* CCKit.framework */; };
@@ -127,6 +129,8 @@
 		361B91801E7159560079274E /* CCTableViewTestCordovaCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewTestCordovaCellModel.m; sourceTree = "<group>"; };
 		361B91821E715C630079274E /* CCTableViewTestCordovaCellModel.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CCTableViewTestCordovaCellModel.xml; sourceTree = "<group>"; };
 		362FD0751E729107003F71C8 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
+		362FD0781E76463F003F71C8 /* CCCordovaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCordovaViewController.h; sourceTree = "<group>"; };
+		362FD0791E76463F003F71C8 /* CCCordovaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCordovaViewController.m; sourceTree = "<group>"; };
 		3662D84D1E20749400F0CF2C /* NSString+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CCAddition.h"; sourceTree = "<group>"; };
 		3662D84E1E20749400F0CF2C /* NSString+CCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CCAddition.m"; sourceTree = "<group>"; };
 		3662D8541E2088F000F0CF2C /* UIDevice+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+CCAddition.h"; sourceTree = "<group>"; };
@@ -310,6 +314,8 @@
 				3611A0111E2E1E1C004D2BFC /* CCTableViewController.m */,
 				3611A0141E2E1ED3004D2BFC /* CCTableViewDataSource.h */,
 				3611A0151E2E1ED3004D2BFC /* CCTableViewDataSource.m */,
+				362FD0781E76463F003F71C8 /* CCCordovaViewController.h */,
+				362FD0791E76463F003F71C8 /* CCCordovaViewController.m */,
 				36ADC7471E1BB2FD0098B59D /* Info.plist */,
 			);
 			path = CCKit;
@@ -405,6 +411,7 @@
 			files = (
 				36B3CF581E52E2EF00910072 /* UIControl+CCAddition.h in Headers */,
 				3662D84F1E20749400F0CF2C /* NSString+CCAddition.h in Headers */,
+				362FD07A1E76463F003F71C8 /* CCCordovaViewController.h in Headers */,
 				36B3CF511E529E5D00910072 /* CCNetworkInfo.h in Headers */,
 				36FE0B271E4C7424002A4379 /* CCCipher.h in Headers */,
 				3611A0161E2E1ED3004D2BFC /* CCTableViewDataSource.h in Headers */,
@@ -712,6 +719,7 @@
 				3662D8571E2088F000F0CF2C /* UIDevice+CCAddition.m in Sources */,
 				3611A01B1E30627E004D2BFC /* CCWebViewController.m in Sources */,
 				36DEE3341E1CF7D90087C209 /* UIAlertView+CCAddition.m in Sources */,
+				362FD07B1E76463F003F71C8 /* CCCordovaViewController.m in Sources */,
 				36B3CF6B1E5445C300910072 /* CCKVStore.m in Sources */,
 				36DEE3301E1CC66F0087C209 /* UIScreen+CCAddition.m in Sources */,
 				36119EA81E1F6DE8004D2BFC /* NSURL+CCAddition.m in Sources */,

@@ -11,3 +11,9 @@
 @interface CCViewController : UIViewController
 
 @end
+
+@interface UIViewController (CCViewControllerCustomize)
+@property (nonatomic, readonly) NSMutableDictionary *customizeInfo;
+@property (nonatomic, readonly) UIBarButtonItem *customizeBackButton;
+- (void)customizeBackAction:(id)sender;
+@end
