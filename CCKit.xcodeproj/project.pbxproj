@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3608D7741E79318B00696EFF /* CCURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 3608D7721E79318B00696EFF /* CCURLProtocol.h */; };
+		3608D7751E79318B00696EFF /* CCURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 3608D7731E79318B00696EFF /* CCURLProtocol.m */; };
 		36119EA71E1F6DE8004D2BFC /* NSURL+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36119EA51E1F6DE8004D2BFC /* NSURL+CCAddition.h */; };
 		36119EA81E1F6DE8004D2BFC /* NSURL+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36119EA61E1F6DE8004D2BFC /* NSURL+CCAddition.m */; };
 		3611A00E1E2E1DFF004D2BFC /* CCViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3611A00C1E2E1DFF004D2BFC /* CCViewController.h */; };
@@ -113,6 +115,8 @@
 
 /* Begin PBXFileReference section */
 		2F860BA6C6613352B7DAB262 /* Pods-CCKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCKit/Pods-CCKit.debug.xcconfig"; sourceTree = "<group>"; };
+		3608D7721E79318B00696EFF /* CCURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCURLProtocol.h; sourceTree = "<group>"; };
+		3608D7731E79318B00696EFF /* CCURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCURLProtocol.m; sourceTree = "<group>"; };
 		36119EA51E1F6DE8004D2BFC /* NSURL+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+CCAddition.h"; sourceTree = "<group>"; };
 		36119EA61E1F6DE8004D2BFC /* NSURL+CCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+CCAddition.m"; sourceTree = "<group>"; };
 		3611A00C1E2E1DFF004D2BFC /* CCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewController.h; sourceTree = "<group>"; };
@@ -306,6 +310,8 @@
 				36FE0B0F1E4B0C85002A4379 /* CCNetworking.m */,
 				36B3CF4F1E529E5D00910072 /* CCNetworkInfo.h */,
 				36B3CF501E529E5D00910072 /* CCNetworkInfo.m */,
+				3608D7721E79318B00696EFF /* CCURLProtocol.h */,
+				3608D7731E79318B00696EFF /* CCURLProtocol.m */,
 				3611A00C1E2E1DFF004D2BFC /* CCViewController.h */,
 				3611A00D1E2E1DFF004D2BFC /* CCViewController.m */,
 				3611A0181E30627E004D2BFC /* CCWebViewController.h */,
@@ -422,6 +428,7 @@
 				36B3CF6A1E5445C300910072 /* CCKVStore.h in Headers */,
 				36FE0B141E4B182B002A4379 /* NSObject+CCModel.h in Headers */,
 				3611A01A1E30627E004D2BFC /* CCWebViewController.h in Headers */,
+				3608D7741E79318B00696EFF /* CCURLProtocol.h in Headers */,
 				36DEE32F1E1CC66F0087C209 /* UIScreen+CCAddition.h in Headers */,
 				36FE0B2B1E4D6551002A4379 /* CCKeychain.h in Headers */,
 				3611A00E1E2E1DFF004D2BFC /* CCViewController.h in Headers */,
@@ -715,6 +722,7 @@
 				36DEE3281E1C9ED50087C209 /* UIColor+CCAddition.m in Sources */,
 				36B3CF5D1E52FFF400910072 /* CCRouter.m in Sources */,
 				36B3CF721E56A9FA00910072 /* CCMemCache.m in Sources */,
+				3608D7751E79318B00696EFF /* CCURLProtocol.m in Sources */,
 				36FE0B2C1E4D6551002A4379 /* CCKeychain.m in Sources */,
 				3662D8571E2088F000F0CF2C /* UIDevice+CCAddition.m in Sources */,
 				3611A01B1E30627E004D2BFC /* CCWebViewController.m in Sources */,

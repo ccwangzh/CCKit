@@ -8,12 +8,30 @@
 
 #import "CCTableViewTestCordovaCellModel.h"
 
-#import "CCCordovaViewController.h"
+#import "CCURLProtocol.h"
+#import <Cordova/CDVViewController.h>
 
-@interface CCWebLoginHandler : CDVPlugin
+@interface CCTestCordovaController : CDVViewController
 @end
 
-@interface CCTestCordovaController : CCCordovaViewController
+@protocol CCCordovaLoginDelegate <NSObject>
+- (void)cordovaWillLoginWithURL:(NSURL *)url;
+@end
+
+@interface CCCordovaLoginHandler: CDVPlugin
+@property (nonatomic, weak) UIViewController<CCCordovaLoginDelegate>* viewController;
+@end
+
+@protocol CCCordovaShareDelegate <NSObject>
+- (void)cordovaWillShareWithURL:(NSURL *)url;
+@end
+
+@interface CCCordovaShareHandler : CDVPlugin
+@property (nonatomic, weak) UIViewController<CCCordovaShareDelegate>* viewController;
+@end
+
+@interface CCCordovaRequestHandler : CDVPlugin
+@property (nonatomic) NSURLRequest *previousRequest;
 @end
 
 @interface CCTableViewTestCordovaCellModel ()
@@ -26,6 +44,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.title = @"测试：Cordova";
+        [NSURLProtocol registerClass:[CCURLProtocol class]];
     }
     return self;
 }
@@ -38,15 +57,46 @@
     
     CCTestCordovaController *testController = [CCTestCordovaController new];
     testController.configFile = @"CCTableViewTestCordovaCellModel.xml";
-    testController.startPage = @"https://mlc.vip.com/pages/finance/home.html";
+    testController.startPage = @"https://mlc.vip.com/pages/json/entrychunks.html?t=1489570779104";
     testController.hidesBottomBarWhenPushed = YES;
     [navController pushViewController:testController animated:YES];
 }
 @end
 
-@implementation CCWebLoginHandler
-- (void)pluginInitialize {
-    [super pluginInitialize];
+@implementation CCCordovaLoginHandler
+@dynamic viewController;
+- (BOOL)shouldOverrideLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
+    NSURL *url = [request URL]; NSString *scheme = [url scheme]; NSString *host = [url host];
+    if (([scheme hasPrefix:@"vip"] && [host isEqualToString:@"login"])
+        || ([scheme hasPrefix:@"http"] && [host isEqualToString:@"m.login.vip.com"])) {
+        UIViewController *viewController = self.viewController;
+        if ([viewController respondsToSelector:@selector(cordovaWillLoginWithURL:)]) {
+            [(id<CCCordovaLoginDelegate>)viewController cordovaWillLoginWithURL:url];
+            return NO;
+        }
+    }
+    return YES;
+}
+@end
+
+@implementation CCCordovaShareHandler
+@dynamic viewController;
+- (BOOL)shouldOverrideLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
+    NSURL *url = [request URL]; NSString *scheme = [url scheme]; NSString *host = [url host];
+    if ([scheme hasPrefix:@"vip"] && [host hasPrefix:@"share"]) {
+        UIViewController *viewController = self.viewController;
+        if ([viewController respondsToSelector:@selector(cordovaWillShareWithURL:)]) {
+            [(id<CCCordovaShareDelegate>)viewController cordovaWillShareWithURL:url];
+            return NO;
+        }
+    }
+    return YES;
+}
+@end
+
+@implementation CCCordovaRequestHandler
+- (BOOL)shouldOverrideLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
+    return YES;
 }
 @end
 

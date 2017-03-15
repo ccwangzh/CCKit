@@ -3,13 +3,21 @@
     <name>CCKitDemo</name>
     <description>A sample CCKit application</description>
     <author email="ccwangzh@sina.com" href="http://cordova.io">ccwangzh</author>
-    
-    <content src="index.html"></content>
-    
+
     <feature name="IntentAndNavigationFilter">
         <param name="ios-package" value="CDVIntentAndNavigationFilter" />
         <param name="onload" value="true" />
     </feature>
-    <allow-navigation href="*" />
     
+    <feature name="cordovaLoginHandler">
+        <param name="ios-package" value="CCCordovaLoginHandler" />
+        <param name="onload" value="true" />
+    </feature>
+
+    <feature name="cordovaShareHandler">
+        <param name="ios-package" value="CCCordovaShareHandler" />
+        <param name="onload" value="true" />
+    </feature>
+
+    <allow-navigation href="*" />
 </widget>
