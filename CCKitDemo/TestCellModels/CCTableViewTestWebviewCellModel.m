@@ -8,6 +8,8 @@
 
 #import "CCTableViewTestWebviewCellModel.h"
 
+#import "CCURLProtocol.h"
+#import "CCWebViewEngine.h"
 #import "CCWebViewController.h"
 
 @interface CCTestWebViewController : CCWebViewController
@@ -25,8 +27,11 @@
     [self.view addSubview:webview];
     
     webview.backgroundColor = [UIColor redColor];
-    NSURL *url = [NSURL URLWithString:@"http://baidu.com"];
-    [self.webEngine loadRequest:[NSURLRequest requestWithURL:url]];
+    NSURL *url = [NSURL URLWithString:@"http://127.0.0.1:8000/polls/"];
+    NSMutableURLRequest *mutableRequest = [NSMutableURLRequest requestWithURL:url
+                                                                  cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                              timeoutInterval:5.0f];
+    [self.webEngine loadRequest:mutableRequest];
 }
 @end
 
@@ -40,6 +45,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.title = @"测试：Webview";
+        [NSURLProtocol registerClass:[CCURLProtocol class]];
     }
     return self;
 }

@@ -57,7 +57,7 @@
     
     CCTestCordovaController *testController = [CCTestCordovaController new];
     testController.configFile = @"CCTableViewTestCordovaCellModel.xml";
-    testController.startPage = @"https://mlc.vip.com/pages/json/entrychunks.html?t=1489570779104";
+//    testController.startPage = @"http://cdn.bootcss.com/angular.js/2.0.0-beta.17/angular2.js";
     testController.hidesBottomBarWhenPushed = YES;
     [navController pushViewController:testController animated:YES];
 }

@@ -18,17 +18,13 @@
 
 @implementation CCURLProtocol
 + (BOOL)canInitWithRequest:(NSURLRequest *)request {
-    id a = [NSURLProtocol propertyForKey:kCCPropertyKey inRequest:request];
-    NSLog(@"canInitWithRequest:%@,%@", request, a);
-    if (a) {
+    if ([NSURLProtocol propertyForKey:kCCPropertyKey inRequest:request]) {
         return NO;
     }
     return YES;
 }
 
 + (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request {
-    NSLog(@"canonicalRequestForRequest:%@", request);
-
     NSMutableURLRequest *mutableRequest = nil;
     if ([request isKindOfClass:[NSMutableURLRequest class]]) {
         mutableRequest  = (NSMutableURLRequest *)request;
@@ -40,8 +36,6 @@
 }
 
 - (void)startLoading {
-    NSLog(@"startLoading:%@", self.request);
-    
     NSURLSessionConfiguration *sc = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sc delegate:self delegateQueue:[NSOperationQueue currentQueue]];
     self.dataTask = [session dataTaskWithRequest:self.request];
@@ -55,6 +49,7 @@
 
 #pragma mark - NSURLSessionTaskDelegate
 
+#if defined(DEBUG)
 - (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
  completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * __nullable credential))completionHandler {
     if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
@@ -62,11 +57,17 @@
         completionHandler(NSURLSessionAuthChallengeUseCredential, credential);
     }
 }
+#endif
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task willPerformHTTPRedirection:(NSHTTPURLResponse *)response newRequest:(NSURLRequest *)request completionHandler:(void (^)(NSURLRequest * _Nullable))completionHandler {
+    [[self client] URLProtocol:self wasRedirectedToRequest:request redirectResponse:response];
+    completionHandler(request);
+}
 
 #pragma mark - NSURLSessionDataDelegate
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler {
-    [[self client] URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageAllowed];
+    [[self client] URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageAllowedInMemoryOnly];
     completionHandler(NSURLSessionResponseAllow);
 }
 

@@ -19,6 +19,8 @@
 		3611A0171E2E1ED3004D2BFC /* CCTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3611A0151E2E1ED3004D2BFC /* CCTableViewDataSource.m */; };
 		3611A01A1E30627E004D2BFC /* CCWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3611A0181E30627E004D2BFC /* CCWebViewController.h */; };
 		3611A01B1E30627E004D2BFC /* CCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3611A0191E30627E004D2BFC /* CCWebViewController.m */; };
+		3617D33A1E7BBB1B0050936F /* CCWebViewEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 3617D3381E7BBB1B0050936F /* CCWebViewEngine.h */; };
+		3617D33B1E7BBB1B0050936F /* CCWebViewEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 3617D3391E7BBB1B0050936F /* CCWebViewEngine.m */; };
 		361B917D1E700BCB0079274E /* CCTableViewTestWebviewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 361B917C1E700BCB0079274E /* CCTableViewTestWebviewCellModel.m */; };
 		361B91811E7159560079274E /* CCTableViewTestCordovaCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 361B91801E7159560079274E /* CCTableViewTestCordovaCellModel.m */; };
 		361B91831E715C630079274E /* CCTableViewTestCordovaCellModel.xml in Resources */ = {isa = PBXBuildFile; fileRef = 361B91821E715C630079274E /* CCTableViewTestCordovaCellModel.xml */; };
@@ -127,6 +129,8 @@
 		3611A0151E2E1ED3004D2BFC /* CCTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewDataSource.m; sourceTree = "<group>"; };
 		3611A0181E30627E004D2BFC /* CCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWebViewController.h; sourceTree = "<group>"; };
 		3611A0191E30627E004D2BFC /* CCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWebViewController.m; sourceTree = "<group>"; };
+		3617D3381E7BBB1B0050936F /* CCWebViewEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWebViewEngine.h; sourceTree = "<group>"; };
+		3617D3391E7BBB1B0050936F /* CCWebViewEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWebViewEngine.m; sourceTree = "<group>"; };
 		361B917B1E700BCB0079274E /* CCTableViewTestWebviewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableViewTestWebviewCellModel.h; sourceTree = "<group>"; };
 		361B917C1E700BCB0079274E /* CCTableViewTestWebviewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewTestWebviewCellModel.m; sourceTree = "<group>"; };
 		361B917F1E7159560079274E /* CCTableViewTestCordovaCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableViewTestCordovaCellModel.h; sourceTree = "<group>"; };
@@ -314,6 +318,8 @@
 				3608D7731E79318B00696EFF /* CCURLProtocol.m */,
 				3611A00C1E2E1DFF004D2BFC /* CCViewController.h */,
 				3611A00D1E2E1DFF004D2BFC /* CCViewController.m */,
+				3617D3381E7BBB1B0050936F /* CCWebViewEngine.h */,
+				3617D3391E7BBB1B0050936F /* CCWebViewEngine.m */,
 				3611A0181E30627E004D2BFC /* CCWebViewController.h */,
 				3611A0191E30627E004D2BFC /* CCWebViewController.m */,
 				3611A0101E2E1E1C004D2BFC /* CCTableViewController.h */,
@@ -415,6 +421,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3617D33A1E7BBB1B0050936F /* CCWebViewEngine.h in Headers */,
 				36B3CF581E52E2EF00910072 /* UIControl+CCAddition.h in Headers */,
 				3662D84F1E20749400F0CF2C /* NSString+CCAddition.h in Headers */,
 				362FD07A1E76463F003F71C8 /* CCCordovaViewController.h in Headers */,
@@ -728,6 +735,7 @@
 				3611A01B1E30627E004D2BFC /* CCWebViewController.m in Sources */,
 				36DEE3341E1CF7D90087C209 /* UIAlertView+CCAddition.m in Sources */,
 				362FD07B1E76463F003F71C8 /* CCCordovaViewController.m in Sources */,
+				3617D33B1E7BBB1B0050936F /* CCWebViewEngine.m in Sources */,
 				36B3CF6B1E5445C300910072 /* CCKVStore.m in Sources */,
 				36DEE3301E1CC66F0087C209 /* UIScreen+CCAddition.m in Sources */,
 				36119EA81E1F6DE8004D2BFC /* NSURL+CCAddition.m in Sources */,
