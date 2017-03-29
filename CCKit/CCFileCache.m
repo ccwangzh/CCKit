@@ -61,7 +61,7 @@
     [data writeToFile:filePath options:NSDataWritingAtomic error:NULL];
 }
 
-- (id<NSCopying>)objectForKey:(NSString *)key {
+- (id<NSCoding>)objectForKey:(NSString *)key {
     id object = nil;
     NSData *data = [self dataForKey:key];
     if (data && data.length > 0) {
@@ -72,7 +72,7 @@
     return object;
 }
 
-- (void)setObject:(id<NSCopying>)object forKey:(NSString *)key {
+- (void)setObject:(id<NSCoding>)object forKey:(NSString *)key {
     if (object == nil || key == nil) return;
     NSData *data = nil;
     @try {

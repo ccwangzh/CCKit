@@ -15,8 +15,8 @@
 - (NSData *)dataForKey:(NSString *)key ;
 - (void)setData:(NSData *)data forKey:(NSString *)key;
 
-- (id<NSCopying>)objectForKey:(NSString *)key;
-- (void)setObject:(id<NSCopying>)object forKey:(NSString *)key;
+- (id<NSCoding>)objectForKey:(NSString *)key;
+- (void)setObject:(id<NSCoding>)object forKey:(NSString *)key;
 
 - (void)removeObjectForKey:(NSString *)key;
 - (BOOL)containsObjectForKey:(NSString *)key;
