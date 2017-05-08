@@ -24,6 +24,7 @@
 		361B917D1E700BCB0079274E /* CCTableViewTestWebviewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 361B917C1E700BCB0079274E /* CCTableViewTestWebviewCellModel.m */; };
 		361B91811E7159560079274E /* CCTableViewTestCordovaCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 361B91801E7159560079274E /* CCTableViewTestCordovaCellModel.m */; };
 		361B91831E715C630079274E /* CCTableViewTestCordovaCellModel.xml in Resources */ = {isa = PBXBuildFile; fileRef = 361B91821E715C630079274E /* CCTableViewTestCordovaCellModel.xml */; };
+		362498F61EC0A76000B4E3FD /* CCTableViewTestOperationCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 362498F51EC0A76000B4E3FD /* CCTableViewTestOperationCellModel.m */; };
 		362FD0761E729107003F71C8 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 362FD0751E729107003F71C8 /* www */; };
 		362FD07A1E76463F003F71C8 /* CCCDVViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 362FD0781E76463F003F71C8 /* CCCDVViewController.h */; };
 		362FD07B1E76463F003F71C8 /* CCCDVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 362FD0791E76463F003F71C8 /* CCCDVViewController.m */; };
@@ -139,6 +140,8 @@
 		361B917F1E7159560079274E /* CCTableViewTestCordovaCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableViewTestCordovaCellModel.h; sourceTree = "<group>"; };
 		361B91801E7159560079274E /* CCTableViewTestCordovaCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewTestCordovaCellModel.m; sourceTree = "<group>"; };
 		361B91821E715C630079274E /* CCTableViewTestCordovaCellModel.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CCTableViewTestCordovaCellModel.xml; sourceTree = "<group>"; };
+		362498F41EC0A76000B4E3FD /* CCTableViewTestOperationCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableViewTestOperationCellModel.h; sourceTree = "<group>"; };
+		362498F51EC0A76000B4E3FD /* CCTableViewTestOperationCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewTestOperationCellModel.m; sourceTree = "<group>"; };
 		362FD0751E729107003F71C8 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		362FD0781E76463F003F71C8 /* CCCDVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCDVViewController.h; sourceTree = "<group>"; };
 		362FD0791E76463F003F71C8 /* CCCDVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCDVViewController.m; sourceTree = "<group>"; };
@@ -395,6 +398,8 @@
 				361B917F1E7159560079274E /* CCTableViewTestCordovaCellModel.h */,
 				361B91801E7159560079274E /* CCTableViewTestCordovaCellModel.m */,
 				361B91821E715C630079274E /* CCTableViewTestCordovaCellModel.xml */,
+				362498F41EC0A76000B4E3FD /* CCTableViewTestOperationCellModel.h */,
+				362498F51EC0A76000B4E3FD /* CCTableViewTestOperationCellModel.m */,
 			);
 			path = TestCellModels;
 			sourceTree = "<group>";
@@ -773,6 +778,7 @@
 				36B3CF551E52B28A00910072 /* CCTableViewTestAdditionCellModel.m in Sources */,
 				36ADC76B1E1BB44C0098B59D /* ViewController.m in Sources */,
 				36FE0B211E4C60D4002A4379 /* CCTableViewTestNetworkingCellModel.m in Sources */,
+				362498F61EC0A76000B4E3FD /* CCTableViewTestOperationCellModel.m in Sources */,
 				36FE0B2F1E4D8DCC002A4379 /* CCTableViewTestKeychainCellModel.m in Sources */,
 				36ADC7681E1BB44C0098B59D /* AppDelegate.m in Sources */,
 				36ADC7651E1BB44C0098B59D /* main.m in Sources */,
