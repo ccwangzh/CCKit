@@ -13,6 +13,8 @@
 #import "CCViewController.h"
 #import "CCNetworking.h"
 
+#import "CCOperation.h"
+
 @protocol CCTaskProtocol <NSObject>
 @property (readonly, getter=isCancelled) BOOL cancelled;
 @property (readonly, getter=isExecuting) BOOL executing;
@@ -50,6 +52,7 @@
     if (self = [super init]) {
         self.title = @"测试：Services";
         self.queue = [NSOperationQueue new];
+        self.queue.maxConcurrentOperationCount = 1;
     }
     return self;
 }
@@ -63,10 +66,25 @@
 - (void)doTest {
     NSLog(@"doTest");
 
+    CCOperation *op = [CCOperation new];
+    [self.queue addOperation:op];
+    NSLog(@"addOperation:%@", op);
+    
+    op = [CCOperation new];
+    op.queuePriority = NSOperationQueuePriorityHigh;
+    [self.queue addOperation:op];
+    NSLog(@"addOperation:%@", op);
+    
+    op = [CCOperation new];
+    op.queuePriority = NSOperationQueuePriorityVeryHigh;
+    [self.queue addOperation:op];
+    NSLog(@"addOperation:%@", op);
+    
     [self.queue addOperationWithBlock:^{
-        NSLog(@"test1");
+        NSLog(@"aaa");
     }];
     
+    NSLog(@"addOperationWithBlock");
     
     UIApplication *application = [UIApplication sharedApplication];
     UIViewController *rootController = [application keyWindow].rootViewController;
@@ -75,7 +93,7 @@
     
     CCTestServicesViewController *testController = [CCTestServicesViewController new];
     testController.hidesBottomBarWhenPushed = YES;
-    [navController pushViewController:testController animated:YES];
+    //[navController pushViewController:testController animated:YES];
 }
 
 @end

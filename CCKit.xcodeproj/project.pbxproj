@@ -19,6 +19,8 @@
 		3611A0171E2E1ED3004D2BFC /* CCTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3611A0151E2E1ED3004D2BFC /* CCTableViewDataSource.m */; };
 		3611A01A1E30627E004D2BFC /* CCWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3611A0181E30627E004D2BFC /* CCWebViewController.h */; };
 		3611A01B1E30627E004D2BFC /* CCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3611A0191E30627E004D2BFC /* CCWebViewController.m */; };
+		361505CC1EC5B18400CE0068 /* CCOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 361505CA1EC5B18400CE0068 /* CCOperation.h */; };
+		361505CD1EC5B18400CE0068 /* CCOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 361505CB1EC5B18400CE0068 /* CCOperation.m */; };
 		3617D33A1E7BBB1B0050936F /* CCWebViewEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 3617D3381E7BBB1B0050936F /* CCWebViewEngine.h */; };
 		3617D33B1E7BBB1B0050936F /* CCWebViewEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 3617D3391E7BBB1B0050936F /* CCWebViewEngine.m */; };
 		361B917D1E700BCB0079274E /* CCTableViewTestWebviewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 361B917C1E700BCB0079274E /* CCTableViewTestWebviewCellModel.m */; };
@@ -134,6 +136,8 @@
 		3611A0151E2E1ED3004D2BFC /* CCTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewDataSource.m; sourceTree = "<group>"; };
 		3611A0181E30627E004D2BFC /* CCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWebViewController.h; sourceTree = "<group>"; };
 		3611A0191E30627E004D2BFC /* CCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWebViewController.m; sourceTree = "<group>"; };
+		361505CA1EC5B18400CE0068 /* CCOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCOperation.h; sourceTree = "<group>"; };
+		361505CB1EC5B18400CE0068 /* CCOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCOperation.m; sourceTree = "<group>"; };
 		3617D3381E7BBB1B0050936F /* CCWebViewEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWebViewEngine.h; sourceTree = "<group>"; };
 		3617D3391E7BBB1B0050936F /* CCWebViewEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWebViewEngine.m; sourceTree = "<group>"; };
 		361B917B1E700BCB0079274E /* CCTableViewTestWebviewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableViewTestWebviewCellModel.h; sourceTree = "<group>"; };
@@ -343,6 +347,8 @@
 				369117421E9E110B00F948CA /* CCWebViewEngineProtocol.h */,
 				362FD0781E76463F003F71C8 /* CCCDVViewController.h */,
 				362FD0791E76463F003F71C8 /* CCCDVViewController.m */,
+				361505CA1EC5B18400CE0068 /* CCOperation.h */,
+				361505CB1EC5B18400CE0068 /* CCOperation.m */,
 				36ADC7471E1BB2FD0098B59D /* Info.plist */,
 			);
 			path = CCKit;
@@ -442,6 +448,7 @@
 			files = (
 				3617D33A1E7BBB1B0050936F /* CCWebViewEngine.h in Headers */,
 				36B3CF581E52E2EF00910072 /* UIControl+CCAddition.h in Headers */,
+				361505CC1EC5B18400CE0068 /* CCOperation.h in Headers */,
 				3662D84F1E20749400F0CF2C /* NSString+CCAddition.h in Headers */,
 				362FD07A1E76463F003F71C8 /* CCCDVViewController.h in Headers */,
 				36B3CF511E529E5D00910072 /* CCNetworkInfo.h in Headers */,
@@ -763,6 +770,7 @@
 				36119EA81E1F6DE8004D2BFC /* NSURL+CCAddition.m in Sources */,
 				36DEE32C1E1CC3A40087C209 /* UIImage+CCAddition.m in Sources */,
 				36B3CF521E529E5D00910072 /* CCNetworkInfo.m in Sources */,
+				361505CD1EC5B18400CE0068 /* CCOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
