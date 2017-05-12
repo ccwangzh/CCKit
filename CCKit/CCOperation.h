@@ -15,5 +15,6 @@
     BOOL _finished;
 }
 - (void)setCancelled:(BOOL)isCancelled;
+- (void)setExecuting:(BOOL)isExecuting;
 - (void)setFinished:(BOOL)isFinished;
 @end

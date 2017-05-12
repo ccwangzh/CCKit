@@ -51,7 +51,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.title = @"测试：Services";
-        self.queue = [NSOperationQueue new];
+        self.queue = [NSOperationQueue mainQueue];
         self.queue.maxConcurrentOperationCount = 1;
     }
     return self;
@@ -74,7 +74,9 @@
     op.queuePriority = NSOperationQueuePriorityHigh;
     [self.queue addOperation:op];
     NSLog(@"addOperation:%@", op);
-    
+
+    [op cancel];
+
     op = [CCOperation new];
     op.queuePriority = NSOperationQueuePriorityVeryHigh;
     [self.queue addOperation:op];
@@ -84,8 +86,14 @@
         NSLog(@"aaa");
     }];
     
-    NSLog(@"addOperationWithBlock");
+    op = [CCOperation new];
+    op.queuePriority = NSOperationQueuePriorityVeryLow;
+    [self.queue addOperation:op];
+    NSLog(@"addOperation:%@", op);
     
+    NSLog(@"addOperationWithBlock");
+
+#if 0
     UIApplication *application = [UIApplication sharedApplication];
     UIViewController *rootController = [application keyWindow].rootViewController;
     UITabBarController *tabController = (UITabBarController *)rootController;
@@ -93,7 +101,8 @@
     
     CCTestServicesViewController *testController = [CCTestServicesViewController new];
     testController.hidesBottomBarWhenPushed = YES;
-    //[navController pushViewController:testController animated:YES];
+    [navController pushViewController:testController animated:YES];
+#endif
 }
 
 @end
