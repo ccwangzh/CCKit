@@ -27,7 +27,7 @@
     [self.view addSubview:webview];
     
     webview.backgroundColor = [UIColor redColor];
-    NSURL *url = [NSURL URLWithString:@"http://127.0.0.1:8000/polls/"];
+    NSURL *url = [NSURL URLWithString:@"http://www.useragentstring.com/"];
     NSMutableURLRequest *mutableRequest = [NSMutableURLRequest requestWithURL:url
                                                                   cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                               timeoutInterval:5.0f];

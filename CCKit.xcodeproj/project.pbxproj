@@ -72,6 +72,7 @@
 		36DEE3341E1CF7D90087C209 /* UIAlertView+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DEE3321E1CF7D90087C209 /* UIAlertView+CCAddition.m */; };
 		36DEE3371E1CF8170087C209 /* NSObject+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36DEE3351E1CF8170087C209 /* NSObject+CCAddition.h */; };
 		36DEE3381E1CF8170087C209 /* NSObject+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DEE3361E1CF8170087C209 /* NSObject+CCAddition.m */; };
+		36FC18E01EC4305F00FC9E42 /* CCTableViewTestServicesCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC18DF1EC4305F00FC9E42 /* CCTableViewTestServicesCellModel.m */; };
 		36FE0B101E4B0C85002A4379 /* CCNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FE0B0E1E4B0C85002A4379 /* CCNetworking.h */; };
 		36FE0B111E4B0C85002A4379 /* CCNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FE0B0F1E4B0C85002A4379 /* CCNetworking.m */; };
 		36FE0B141E4B182B002A4379 /* NSObject+CCModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FE0B121E4B182B002A4379 /* NSObject+CCModel.h */; };
@@ -196,6 +197,8 @@
 		36DEE3321E1CF7D90087C209 /* UIAlertView+CCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+CCAddition.m"; sourceTree = "<group>"; };
 		36DEE3351E1CF8170087C209 /* NSObject+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CCAddition.h"; sourceTree = "<group>"; };
 		36DEE3361E1CF8170087C209 /* NSObject+CCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CCAddition.m"; sourceTree = "<group>"; };
+		36FC18DE1EC4305F00FC9E42 /* CCTableViewTestServicesCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableViewTestServicesCellModel.h; sourceTree = "<group>"; };
+		36FC18DF1EC4305F00FC9E42 /* CCTableViewTestServicesCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewTestServicesCellModel.m; sourceTree = "<group>"; };
 		36FE0B0E1E4B0C85002A4379 /* CCNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNetworking.h; sourceTree = "<group>"; };
 		36FE0B0F1E4B0C85002A4379 /* CCNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNetworking.m; sourceTree = "<group>"; };
 		36FE0B121E4B182B002A4379 /* NSObject+CCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CCModel.h"; sourceTree = "<group>"; };
@@ -400,6 +403,8 @@
 				361B91821E715C630079274E /* CCTableViewTestCordovaCellModel.xml */,
 				362498F41EC0A76000B4E3FD /* CCTableViewTestOperationCellModel.h */,
 				362498F51EC0A76000B4E3FD /* CCTableViewTestOperationCellModel.m */,
+				36FC18DE1EC4305F00FC9E42 /* CCTableViewTestServicesCellModel.h */,
+				36FC18DF1EC4305F00FC9E42 /* CCTableViewTestServicesCellModel.m */,
 			);
 			path = TestCellModels;
 			sourceTree = "<group>";
@@ -784,6 +789,7 @@
 				36ADC7651E1BB44C0098B59D /* main.m in Sources */,
 				361B91811E7159560079274E /* CCTableViewTestCordovaCellModel.m in Sources */,
 				361B917D1E700BCB0079274E /* CCTableViewTestWebviewCellModel.m in Sources */,
+				36FC18E01EC4305F00FC9E42 /* CCTableViewTestServicesCellModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

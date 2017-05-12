@@ -15,6 +15,7 @@
 #import "CCTableViewTestWebviewCellModel.h"
 #import "CCTableViewTestCordovaCellModel.h"
 #import "CCTableViewTestOperationCellModel.h"
+#import "CCTableViewTestServicesCellModel.h"
 
 @implementation ViewController
 
@@ -40,6 +41,8 @@
     [section addObject:[CCTableViewTestCordovaCellModel new]];
     
     [section addObject:[CCTableViewTestOperationCellModel new]];
+    
+    [section addObject:[CCTableViewTestServicesCellModel new]];
 }
 
 - (void)didReceiveMemoryWarning {

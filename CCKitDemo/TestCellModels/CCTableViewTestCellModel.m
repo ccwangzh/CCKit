@@ -10,6 +10,17 @@
 
 @implementation CCTableViewTestCellModel
 
+- (instancetype)init {
+    if (self = [super init]) {
+        [self setUp];
+    }
+    return self;
+}
+
+- (void)dealloc {
+    [self tearDown];
+}
+
 - (NSString *)cellId {
     return @"CCTableViewTestCell";
 }

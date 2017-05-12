@@ -9,29 +9,10 @@
 #import "CCTableViewTestCordovaCellModel.h"
 
 #import "CCURLProtocol.h"
+#import "CCCDVViewController.h"
 #import <Cordova/CDVViewController.h>
 
-@interface CCTestCordovaController : CDVViewController
-@end
-
-@protocol CCCordovaLoginDelegate <NSObject>
-- (void)cordovaWillLoginWithURL:(NSURL *)url;
-@end
-
-@interface CCCordovaLoginHandler: CDVPlugin
-@property (nonatomic, weak) UIViewController<CCCordovaLoginDelegate>* viewController;
-@end
-
-@protocol CCCordovaShareDelegate <NSObject>
-- (void)cordovaWillShareWithURL:(NSURL *)url;
-@end
-
-@interface CCCordovaShareHandler : CDVPlugin
-@property (nonatomic, weak) UIViewController<CCCordovaShareDelegate>* viewController;
-@end
-
-@interface CCCordovaRequestHandler : CDVPlugin
-@property (nonatomic) NSURLRequest *previousRequest;
+@interface CCTestCordovaController : CCCDVViewController
 @end
 
 @interface CCTableViewTestCordovaCellModel ()
@@ -57,52 +38,16 @@
     
     CCTestCordovaController *testController = [CCTestCordovaController new];
     testController.configFile = @"CCTableViewTestCordovaCellModel.xml";
-//    testController.startPage = @"http://cdn.bootcss.com/angular.js/2.0.0-beta.17/angular2.js";
+    testController.startPage = @"https://m.baidu.com/";
     testController.hidesBottomBarWhenPushed = YES;
     [navController pushViewController:testController animated:YES];
-}
-@end
-
-@implementation CCCordovaLoginHandler
-@dynamic viewController;
-- (BOOL)shouldOverrideLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
-    NSURL *url = [request URL]; NSString *scheme = [url scheme]; NSString *host = [url host];
-    if (([scheme hasPrefix:@"vip"] && [host isEqualToString:@"login"])
-        || ([scheme hasPrefix:@"http"] && [host isEqualToString:@"m.login.vip.com"])) {
-        UIViewController *viewController = self.viewController;
-        if ([viewController respondsToSelector:@selector(cordovaWillLoginWithURL:)]) {
-            [(id<CCCordovaLoginDelegate>)viewController cordovaWillLoginWithURL:url];
-            return NO;
-        }
-    }
-    return YES;
-}
-@end
-
-@implementation CCCordovaShareHandler
-@dynamic viewController;
-- (BOOL)shouldOverrideLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
-    NSURL *url = [request URL]; NSString *scheme = [url scheme]; NSString *host = [url host];
-    if ([scheme hasPrefix:@"vip"] && [host hasPrefix:@"share"]) {
-        UIViewController *viewController = self.viewController;
-        if ([viewController respondsToSelector:@selector(cordovaWillShareWithURL:)]) {
-            [(id<CCCordovaShareDelegate>)viewController cordovaWillShareWithURL:url];
-            return NO;
-        }
-    }
-    return YES;
-}
-@end
-
-@implementation CCCordovaRequestHandler
-- (BOOL)shouldOverrideLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
-    return YES;
 }
 @end
 
 @implementation CCTestCordovaController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

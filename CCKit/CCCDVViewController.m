@@ -14,7 +14,7 @@
 @end
 
 @implementation CCCDVViewController
-@synthesize webViewEngine;
+@dynamic webViewEngine;
 
 - (id<UIWebViewDelegate>)navigationDelegate {
     if (_navigationDelegate) {

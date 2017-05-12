@@ -62,10 +62,10 @@
     return @"ios";
 }
 - (NSString *)mid {
-    return @"419f11987313ee6afc33ea750f9686c554bae086";
+    return @"12345678901234567890123456789012";
 }
 - (NSString *)apiKey {
-    return @"0c22f9330fb14d93b64d827b4c92242d";
+    return [NSString stringWithFormat:@"b%lda%ldbe7a2%@5d5ea", 11731399L, 584063L, @"ddeffc"];
 }
 - (NSString *)app_version {
     return @"1.1.0";
@@ -75,7 +75,8 @@
 }
 - (id)requestHeaders {
     NSDictionary *parameters = [self requestParameters];
-    NSString *apiSign = VFApiSign(parameters, @"ec0aa8fa2f36499eb04ad0e7e49fb666" , nil);
+    NSString *p1 = [NSString stringWithFormat:@"6b3fbd%lde9b40c%ldb6c%ld0f6fe60", 498L, 6924L, 666L];
+    NSString *apiSign = VFApiSign(parameters,  p1, nil);
     apiSign = [@"OAuth sign=" stringByAppendingString:apiSign];
     return @{@"Authorization": apiSign};
 }
