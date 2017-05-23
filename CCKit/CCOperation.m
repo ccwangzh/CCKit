@@ -70,11 +70,6 @@
         return;
     }
     [self setExecuting:YES];
-    NSLog(@"queuePriority:%f", (float)self.queuePriority);
-    NSLog(@"time:%f", CFAbsoluteTimeGetCurrent());
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self setFinished:YES];
-    });
 }
 
 - (void)dealloc {
