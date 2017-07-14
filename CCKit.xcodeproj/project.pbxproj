@@ -70,6 +70,8 @@
 		36BBB85D1EEE740000A32AAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36BBB85B1EEE740000A32AAD /* Main.storyboard */; };
 		36BBB85F1EEE740000A32AAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36BBB85E1EEE740000A32AAD /* Assets.xcassets */; };
 		36BBB8621EEE740000A32AAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36BBB8601EEE740000A32AAD /* LaunchScreen.storyboard */; };
+		36D91F4C1F14A7F800B53D28 /* NSDate+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36D91F4A1F14A7F800B53D28 /* NSDate+CCAddition.h */; };
+		36D91F4D1F14A7F800B53D28 /* NSDate+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D91F4B1F14A7F800B53D28 /* NSDate+CCAddition.m */; };
 		36DEE3271E1C9ED50087C209 /* UIColor+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36DEE3251E1C9ED50087C209 /* UIColor+CCAddition.h */; };
 		36DEE3281E1C9ED50087C209 /* UIColor+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DEE3261E1C9ED50087C209 /* UIColor+CCAddition.m */; };
 		36DEE32B1E1CC3A40087C209 /* UIImage+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36DEE3291E1CC3A40087C209 /* UIImage+CCAddition.h */; };
@@ -209,6 +211,8 @@
 		36BBB85E1EEE740000A32AAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36BBB8611EEE740000A32AAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36BBB8631EEE740000A32AAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36D91F4A1F14A7F800B53D28 /* NSDate+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CCAddition.h"; sourceTree = "<group>"; };
+		36D91F4B1F14A7F800B53D28 /* NSDate+CCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CCAddition.m"; sourceTree = "<group>"; };
 		36DEE3251E1C9ED50087C209 /* UIColor+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CCAddition.h"; sourceTree = "<group>"; };
 		36DEE3261E1C9ED50087C209 /* UIColor+CCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CCAddition.m"; sourceTree = "<group>"; };
 		36DEE3291E1CC3A40087C209 /* UIImage+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CCAddition.h"; sourceTree = "<group>"; };
@@ -327,6 +331,8 @@
 				36ADC7781E1BB8020098B59D /* CCDefines.h */,
 				36119EA51E1F6DE8004D2BFC /* NSURL+CCAddition.h */,
 				36119EA61E1F6DE8004D2BFC /* NSURL+CCAddition.m */,
+				36D91F4A1F14A7F800B53D28 /* NSDate+CCAddition.h */,
+				36D91F4B1F14A7F800B53D28 /* NSDate+CCAddition.m */,
 				3662D84D1E20749400F0CF2C /* NSString+CCAddition.h */,
 				3662D84E1E20749400F0CF2C /* NSString+CCAddition.m */,
 				36DEE3351E1CF8170087C209 /* NSObject+CCAddition.h */,
@@ -520,6 +526,7 @@
 				36DEE32B1E1CC3A40087C209 /* UIImage+CCAddition.h in Headers */,
 				36B3CF6A1E5445C300910072 /* CCKVStore.h in Headers */,
 				369117401E9E10BB00F948CA /* CCUIWebViewEngine.h in Headers */,
+				36D91F4C1F14A7F800B53D28 /* NSDate+CCAddition.h in Headers */,
 				36FE0B141E4B182B002A4379 /* NSObject+CCModel.h in Headers */,
 				3611A01A1E30627E004D2BFC /* CCWebViewController.h in Headers */,
 				3608D7741E79318B00696EFF /* CCURLProtocol.h in Headers */,
@@ -639,7 +646,7 @@
 					};
 					36ADC7601E1BB44C0098B59D = {
 						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					36BBB84F1EEE740000A32AAD = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -837,6 +844,7 @@
 			files = (
 				3662D8501E20749400F0CF2C /* NSString+CCAddition.m in Sources */,
 				36FE0B281E4C7424002A4379 /* CCCipher.m in Sources */,
+				36D91F4D1F14A7F800B53D28 /* NSDate+CCAddition.m in Sources */,
 				36DEE3381E1CF8170087C209 /* NSObject+CCAddition.m in Sources */,
 				3611A00F1E2E1DFF004D2BFC /* CCViewController.m in Sources */,
 				36FE0B111E4B0C85002A4379 /* CCNetworking.m in Sources */,
@@ -1122,11 +1130,15 @@
 			baseConfigurationReference = 8337C7F28FB455C5F439C836 /* Pods-CCKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = CCKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.womob.CCKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1135,11 +1147,15 @@
 			baseConfigurationReference = C11789D5366857FB80F92579 /* Pods-CCKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = CCKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.womob.CCKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

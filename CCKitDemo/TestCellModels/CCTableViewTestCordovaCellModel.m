@@ -38,7 +38,7 @@
     
     CCTestCordovaController *testController = [CCTestCordovaController new];
     testController.configFile = @"CCTableViewTestCordovaCellModel.xml";
-    testController.startPage = @"https://m.baidu.com/";
+    testController.startPage = @"http://abs.dtcj.com/test";
     testController.hidesBottomBarWhenPushed = YES;
     [navController pushViewController:testController animated:YES];
 }
@@ -48,6 +48,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.webViewEngine evaluateJavaScript:@"document.URL" completionHandler:^(id result, NSError *error) {
+            NSLog(@"%@", result);
+        }];
+    });
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

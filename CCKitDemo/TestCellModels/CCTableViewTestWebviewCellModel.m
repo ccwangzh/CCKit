@@ -12,8 +12,25 @@
 #import "CCWebViewEngine.h"
 #import "CCWebViewController.h"
 
+#import <JavaScriptCore/JavaScriptCore.h>
+
+@protocol OTOSaaSJavaScriptDelegate <JSExport>
+- (void)setBackUrl:(NSString *)url;
+@end
+
+@interface OTOSaaSJavaScriptModel : NSObject
+<OTOSaaSJavaScriptDelegate>
+@end
+
+@implementation OTOSaaSJavaScriptModel
+- (void)setBackUrl:(NSString *)url {
+    
+}
+@end
+
 @interface CCTestWebViewController : CCWebViewController
-@property (nonatomic) CCWebViewEngine *webEngine;
+<UIWebViewDelegate>
+@property (nonatomic) UIWebView *webView;
 @end
 
 @implementation CCTestWebViewController
@@ -21,18 +38,33 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.webEngine = [[CCWebViewEngine alloc] init];
-    UIView *webview = self.webEngine.webView;
-    webview.frame = self.view.bounds;
-    [self.view addSubview:webview];
+    self.webView = [[UIWebView alloc] init];
+    self.webView.frame = self.view.bounds;
+    self.webView.delegate = self;
+    [self.view addSubview:self.webView];
     
-    webview.backgroundColor = [UIColor redColor];
-    NSURL *url = [NSURL URLWithString:@"http://www.useragentstring.com/"];
+    self.webView.backgroundColor = [UIColor redColor];
+    
+    
+    NSURL *url = [NSURL URLWithString:@"https://m.baidu.com/"];
     NSMutableURLRequest *mutableRequest = [NSMutableURLRequest requestWithURL:url
                                                                   cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                               timeoutInterval:5.0f];
-    [self.webEngine loadRequest:mutableRequest];
+    [self.webView loadRequest:mutableRequest];
 }
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSString *path = @"documentView.webView.mainFrame.javaScriptContext";
+    JSContext *jsContext = [webView valueForKeyPath:path];
+    OTOSaaSJavaScriptModel *model = [OTOSaaSJavaScriptModel new];
+    [jsContext setObject:model forKeyedSubscript:@"otosaas"];
+    [jsContext setExceptionHandler:^(JSContext *jsContext, JSValue *jsValue) {
+        NSLog(@"exception:%@", jsValue);
+    }];
+    
+    NSLog(@"%@", jsContext);
+}
+
 @end
 
 @interface CCTableViewTestWebviewCellModel ()
