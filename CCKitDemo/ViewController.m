@@ -18,6 +18,7 @@
 #import "CCTableViewTestServicesCellModel.h"
 #import "CCTableViewTestCollectionsCellModel.h"
 #import "CCTableViewTestExamplesCellModel.h"
+#import "CCTableViewTestHoneycombCellModel.h"
 
 @implementation ViewController
 
@@ -49,6 +50,8 @@
     [section addObject:[CCTableViewTestCollectionsCellModel new]];
     
     [section addObject:[CCTableViewTestExamplesCellModel new]];
+    
+    [section addObject:[CCTableViewTestHoneycombCellModel new]];
 }
 
 - (void)didReceiveMemoryWarning {

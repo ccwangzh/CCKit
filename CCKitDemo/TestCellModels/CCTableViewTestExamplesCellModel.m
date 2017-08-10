@@ -10,6 +10,7 @@
 
 #import "NSString+CCAddition.h"
 #import "NSDate+CCAddition.h"
+#import "UIImage+CCAddition.h"
 #import "CCTableViewTestExamplesCellModel.h"
 
 NSString *VFWapLifeUrl(NSString *userId, NSString *channel);
@@ -17,6 +18,7 @@ NSString *VFWapLifeUrl(NSString *userId, NSString *channel);
 @interface CCTableViewTestExamplesViewController : UIViewController
 @property (nonatomic) UIScrollView *contentView;
 @property (nonatomic) UITextField *textField;
+@property (nonatomic) UIImageView *imageView;
 @end
 
 @interface CCTableViewTestExamplesCellModel () <CLLocationManagerDelegate>
@@ -33,7 +35,7 @@ NSString *VFWapLifeUrl(NSString *userId, NSString *channel);
     return self;
 }
 
-- (void)doTest {
+- (void)doTest4 {
     NSString *url = VFWapLifeUrl(@"669F7A66A7A554AF1A8929AA44B93A8A", @"chongzhi");
     
     NSLog(@"%@", url);
@@ -71,7 +73,7 @@ NSString *VFWapLifeUrl(NSString *userId, NSString *channel);
     });
 }
 
-- (void)doTest1 {
+- (void)doTest {
     NSLog(@"doTest");
     UIApplication *application = [UIApplication sharedApplication];
     UIViewController *rootController = [application keyWindow].rootViewController;
@@ -159,6 +161,20 @@ NSString *VFWapLifeUrl(NSString *userId, NSString *channel) {
     _textField.placeholder = @"请输入";
     _textField.borderStyle = UITextBorderStyleLine;
     [contentView addSubview:_textField];
+    y = y + _textField.frame.size.height;
+    
+    if (!_imageView) {
+        _imageView = [UIImageView new];
+    }
+    UIImage *image = [UIImage imageWithColor:[UIColor redColor] size:CGSizeMake(200, 200)];
+    _imageView.image = image;
+    _imageView.frame = CGRectMake(0, y, width, 100);
+    _imageView.contentMode = UIViewContentModeTop;
+    _imageView.clipsToBounds = NO;
+    _imageView.layer.borderColor = [UIColor blueColor].CGColor;
+    _imageView.layer.borderWidth = 1.0f;
+    [contentView addSubview:_imageView];
+    y = y + _imageView.frame.size.height;
     
     self.view.backgroundColor = [UIColor whiteColor];
 }

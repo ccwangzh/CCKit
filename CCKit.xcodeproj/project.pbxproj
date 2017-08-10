@@ -30,6 +30,7 @@
 		362FD0761E729107003F71C8 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 362FD0751E729107003F71C8 /* www */; };
 		362FD07A1E76463F003F71C8 /* CCCDVViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 362FD0781E76463F003F71C8 /* CCCDVViewController.h */; };
 		362FD07B1E76463F003F71C8 /* CCCDVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 362FD0791E76463F003F71C8 /* CCCDVViewController.m */; };
+		366250FD1F3C03C200782144 /* CCTableViewTestHoneycombCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 366250FC1F3C03C200782144 /* CCTableViewTestHoneycombCellModel.m */; };
 		3662D84F1E20749400F0CF2C /* NSString+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 3662D84D1E20749400F0CF2C /* NSString+CCAddition.h */; };
 		3662D8501E20749400F0CF2C /* NSString+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3662D84E1E20749400F0CF2C /* NSString+CCAddition.m */; };
 		3662D8531E20871B00F0CF2C /* CCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36ADC7431E1BB2FD0098B59D /* CCKit.framework */; };
@@ -160,6 +161,8 @@
 		362FD0751E729107003F71C8 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		362FD0781E76463F003F71C8 /* CCCDVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCDVViewController.h; sourceTree = "<group>"; };
 		362FD0791E76463F003F71C8 /* CCCDVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCDVViewController.m; sourceTree = "<group>"; };
+		366250FB1F3C03C200782144 /* CCTableViewTestHoneycombCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableViewTestHoneycombCellModel.h; sourceTree = "<group>"; };
+		366250FC1F3C03C200782144 /* CCTableViewTestHoneycombCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewTestHoneycombCellModel.m; sourceTree = "<group>"; };
 		3662D84D1E20749400F0CF2C /* NSString+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CCAddition.h"; sourceTree = "<group>"; };
 		3662D84E1E20749400F0CF2C /* NSString+CCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CCAddition.m"; sourceTree = "<group>"; };
 		3662D8541E2088F000F0CF2C /* UIDevice+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+CCAddition.h"; sourceTree = "<group>"; };
@@ -476,6 +479,8 @@
 				36E218C81EC67D15000F5488 /* CCTableViewTestCollectionsCellModel.m */,
 				36EA612D1F00BAAC005DA40C /* CCTableViewTestExamplesCellModel.h */,
 				36EA612E1F00BAAC005DA40C /* CCTableViewTestExamplesCellModel.m */,
+				366250FB1F3C03C200782144 /* CCTableViewTestHoneycombCellModel.h */,
+				366250FC1F3C03C200782144 /* CCTableViewTestHoneycombCellModel.m */,
 			);
 			path = TestCellModels;
 			sourceTree = "<group>";
@@ -885,6 +890,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366250FD1F3C03C200782144 /* CCTableViewTestHoneycombCellModel.m in Sources */,
 				36EA612F1F00BAAC005DA40C /* CCTableViewTestExamplesCellModel.m in Sources */,
 				36B3CF641E5402AD00910072 /* CCTableViewTestCacheCellModel.m in Sources */,
 				36E218C91EC67D15000F5488 /* CCTableViewTestCollectionsCellModel.m in Sources */,
