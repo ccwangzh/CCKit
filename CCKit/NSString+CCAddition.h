@@ -16,4 +16,5 @@
 
 - (NSString *)md5Value;
 - (NSString *)sha1Value;
+- (NSString *)sha256Value;
 @end

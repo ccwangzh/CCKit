@@ -42,4 +42,9 @@
  *  @return UIColor instance
  */
 + (UIColor *)colorWithR:(NSUInteger)r g:(NSUInteger)g b:(NSUInteger)b a:(NSUInteger)a;
+
+/**
+ *  返回随机颜色
+ */
++ (UIColor *)randomColor;
 @end

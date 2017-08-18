@@ -34,11 +34,12 @@
     return self;
 }
 
-- (BOOL)init:(NSData *)key
+- (BOOL)init:(NSData *)key iv:(NSData *)iv
 {
     CCCryptorRef cryptorRef = NULL;
     CCCryptorStatus status = kCCSuccess;
-    status = CCCryptorCreate(_operation, _algorithm, _options, [key bytes], [key length], NULL, &cryptorRef);
+    const void *iv_p = iv && iv.length ? [iv bytes] : NULL;
+    status = CCCryptorCreate(_operation, _algorithm, _options, [key bytes], [key length], iv_p, &cryptorRef);
     if (status != kCCSuccess || cryptorRef == NULL) {
         return NO;
     }

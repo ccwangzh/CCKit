@@ -11,7 +11,7 @@
 
 @interface CCCipher : NSObject
 + (instancetype)cipherWithAlgorithm:(CCAlgorithm)alg operation:(CCOperation)op options:(CCOptions)ops;
-- (BOOL)init:(NSData *)key;
+- (BOOL)init:(NSData *)key iv:(NSData *)iv;
 - (BOOL)update:(NSData *)data;
 - (NSData *)final;
 @end

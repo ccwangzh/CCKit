@@ -28,7 +28,7 @@
 
 @implementation CCPriorityObject
 - (NSString *)description {
-    return [NSString stringWithFormat:@"CCPriorityObject:%p,%ld", self, _priority];
+    return [NSString stringWithFormat:@"CCPriorityObject:%p,%ld", self, (long)_priority];
 }
 @end
 
@@ -133,8 +133,6 @@
     
     [_queue popObject];
     NSLog(@"%@", _queue);
-    
-    
 }
 
 @end
