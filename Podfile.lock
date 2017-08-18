@@ -15,18 +15,30 @@ PODS:
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
   - Cordova (4.3.0)
+  - OpenSSL (1.0.211)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking (= 3.0.4)
   - Cordova (= 4.3.0)
+  - OpenSSL (from `git@github.com:ccwangzh/OpenSSL.git`)
   - YYModel (= 1.0.4)
+
+EXTERNAL SOURCES:
+  OpenSSL:
+    :git: git@github.com:ccwangzh/OpenSSL.git
+
+CHECKOUT OPTIONS:
+  OpenSSL:
+    :commit: 07d128d26eb45ac91a223592700ca7e538151c98
+    :git: git@github.com:ccwangzh/OpenSSL.git
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   Cordova: 9dda9e4a521d8f0af561cba93e59f142ed7b306f
+  OpenSSL: 59511f20d9f84ee100fd8b27b776d833f0bf1679
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: dbc28f5e93c42d4162fa6ad7f10eff5426be34b7
+PODFILE CHECKSUM: 8ff9487421228c5368a148af70f52c728f6e7211
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1

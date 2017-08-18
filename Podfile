@@ -5,12 +5,14 @@ target 'CCKit' do
   pod 'AFNetworking',   '= 3.0.4'
   pod 'YYModel',        '= 1.0.4'
   pod 'Cordova',        '= 4.3.0'
+  pod 'OpenSSL', :git => 'git@github.com:ccwangzh/OpenSSL.git'
 end
 
 abstract_target 'Dummy' do
   pod 'AFNetworking',   '= 3.0.4'
   pod 'YYModel',        '= 1.0.4'
   pod 'Cordova',        '= 4.3.0'
+  pod 'OpenSSL', :git => 'git@github.com:ccwangzh/OpenSSL.git'
   target 'CCKitDemo' do
     inherit! :search_paths
   end
