@@ -14,6 +14,9 @@
 
 #import <CommonCrypto/CommonCrypto.h>
 
+#import <OpenSSL/sha.h>
+#import <OpenSSL/aes.h>
+
 @interface CCControl : UIControl
 
 @end
@@ -51,7 +54,72 @@
     }
     return self;
 }
+
 - (void)doTest {
+    NSLog(@"doTest");
+    
+    char *token = "S2f4q1Ga4qsWg7q9JbfanjpAynYFJAK2HKkt";
+    size_t token_length = strlen(token);
+    
+    char *seed = "qfLilkuKh1eVgSU9fDOhaWrYM3TqExtTLWW448fPxW1mkVs5Et5kQBWpWcaH";
+    size_t seed_token = strlen(seed);
+    
+    size_t concat_length = token_length + seed_token;
+    unsigned char *concat = malloc(concat_length + 1);
+    memcpy(concat, token, token_length);
+    memcpy(concat + token_length, seed, seed_token);
+    memset(concat + concat_length, '\0', 1);
+    
+    printf("%s\n", concat);
+    
+    unsigned char sha256[33] = {0};
+    
+    SHA256(concat, concat_length, sha256);
+    
+    printf("%s\n", sha256);
+    
+    char encrypt_string[4096] = { 0 };
+    
+    AES_KEY aes;
+    
+    char key[17] = {0};
+    char iv[17] = {0};
+    
+    memcpy(key, sha256, 16);
+    memcpy(iv, sha256 + 16, 16);
+    
+    
+    char *input_string = "6201343487230914324";
+    size_t nLen = strlen(input_string);
+    
+    
+    size_t nBei = nLen / AES_BLOCK_SIZE + 1;
+    size_t nTotal = nBei * AES_BLOCK_SIZE;
+    char *enc_s = (char*)malloc(nTotal);
+    size_t nNumber;
+    if (nLen % 16 > 0)
+        nNumber = nTotal - nLen;
+    else
+        nNumber = 16;
+    memset(enc_s, nNumber, nTotal);
+    memcpy(enc_s, input_string, nLen);
+    
+    NSLog(@"%@", [NSData dataWithBytes:enc_s length:nTotal]);
+    
+    if (AES_set_encrypt_key((unsigned char*)key, 128, &aes) < 0) {
+        fprintf(stderr, "Unable to set encryption key in AES\n");
+        exit(-1);
+    }
+    
+    AES_cbc_encrypt((unsigned char *)enc_s, (unsigned char*)encrypt_string, nBei * 16, &aes, (unsigned char*)iv, AES_ENCRYPT);
+    
+    NSData *data = [NSData dataWithBytes:encrypt_string length:nBei * 16];
+    
+    NSLog(@"data:%@,%@", data, [data base64EncodedStringWithOptions:0]);
+
+}
+
+- (void)doTest1 {
     NSLog(@"doTest");
     
     // APP 访问 token
@@ -113,7 +181,10 @@
     [ciper update:[plain dataUsingEncoding:NSUTF8StringEncoding]];
     NSData *data = [ciper final];
     
-    NSLog(@"%@", [data base64EncodedStringWithOptions:0]);
+    NSString *string_ok = @"AOSqt0I4hLEWLOdhbmvzyTvkuzoRDsDQWBx1fUSxdAY";
+    NSString *string_base64 = [data base64EncodedStringWithOptions:0];
+    
+    NSLog(@"ok:%d, %@", [string_base64 isEqualToString:string_ok],string_base64);
     
 }
 @end
