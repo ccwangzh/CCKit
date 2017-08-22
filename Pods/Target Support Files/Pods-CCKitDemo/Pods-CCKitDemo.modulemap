@@ -1,0 +1,6 @@
+framework module Pods_CCKitDemo {
+  umbrella header "Pods-CCKitDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

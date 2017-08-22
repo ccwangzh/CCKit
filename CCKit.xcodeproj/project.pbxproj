@@ -97,9 +97,9 @@
 		36FE0B2B1E4D6551002A4379 /* CCKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FE0B291E4D6551002A4379 /* CCKeychain.h */; };
 		36FE0B2C1E4D6551002A4379 /* CCKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FE0B2A1E4D6551002A4379 /* CCKeychain.m */; };
 		36FE0B2F1E4D8DCC002A4379 /* CCTableViewTestKeychainCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FE0B2E1E4D8DCC002A4379 /* CCTableViewTestKeychainCellModel.m */; };
-		8574C3CD4AFBD666B3AC7B72 /* libPods-CCKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA13267F3377EA73EE87F4F8 /* libPods-CCKitTests.a */; };
-		A445014ED8637AC77F4CAAE5 /* libPods-CCKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AFD84A34018EED3E3A3FFBC /* libPods-CCKitDemo.a */; };
-		B97F56191518587A1314ABBB /* libPods-CCKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE749053F07A522193DF8164 /* libPods-CCKit.a */; };
+		7E009D68C152DD3C20923584 /* Pods_CCKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57A24FC6F30A4C9F31045FC /* Pods_CCKitTests.framework */; };
+		E50E3391B4FAAB5357D3C895 /* Pods_CCKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897EE3AB3DD92B96D0288D68 /* Pods_CCKitDemo.framework */; };
+		EDC0B82FD7C5FEFC6D949AE1 /* Pods_CCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDE959787334EB473B49BF8 /* Pods_CCKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +134,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0EDE959787334EB473B49BF8 /* Pods_CCKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F860BA6C6613352B7DAB262 /* Pods-CCKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCKit/Pods-CCKit.debug.xcconfig"; sourceTree = "<group>"; };
 		3608D7721E79318B00696EFF /* CCURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCURLProtocol.h; sourceTree = "<group>"; };
 		3608D7731E79318B00696EFF /* CCURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCURLProtocol.m; sourceTree = "<group>"; };
@@ -248,12 +249,11 @@
 		36FE0B2E1E4D8DCC002A4379 /* CCTableViewTestKeychainCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewTestKeychainCellModel.m; sourceTree = "<group>"; };
 		3A6E24BBC76DBB778465092F /* Pods-CCKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitTests/Pods-CCKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8337C7F28FB455C5F439C836 /* Pods-CCKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitDemo/Pods-CCKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		9AFD84A34018EED3E3A3FFBC /* libPods-CCKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA13267F3377EA73EE87F4F8 /* libPods-CCKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		897EE3AB3DD92B96D0288D68 /* Pods_CCKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C11789D5366857FB80F92579 /* Pods-CCKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitDemo/Pods-CCKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		CE9EBE489249AFE738C42CCA /* Pods-CCKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitTests/Pods-CCKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		F219A63D85C197A967172DC2 /* Pods-CCKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCKit/Pods-CCKit.release.xcconfig"; sourceTree = "<group>"; };
-		FE749053F07A522193DF8164 /* libPods-CCKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F57A24FC6F30A4C9F31045FC /* Pods_CCKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,7 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36B3CF6E1E5559CC00910072 /* libsqlite3.tbd in Frameworks */,
-				B97F56191518587A1314ABBB /* libPods-CCKit.a in Frameworks */,
+				EDC0B82FD7C5FEFC6D949AE1 /* Pods_CCKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36ADC74D1E1BB2FD0098B59D /* CCKit.framework in Frameworks */,
-				8574C3CD4AFBD666B3AC7B72 /* libPods-CCKitTests.a in Frameworks */,
+				7E009D68C152DD3C20923584 /* Pods_CCKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +281,7 @@
 			files = (
 				36B3CF6D1E55597000910072 /* libsqlite3.tbd in Frameworks */,
 				3662D8531E20871B00F0CF2C /* CCKit.framework in Frameworks */,
-				A445014ED8637AC77F4CAAE5 /* libPods-CCKitDemo.a in Frameworks */,
+				E50E3391B4FAAB5357D3C895 /* Pods_CCKitDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,9 +489,9 @@
 			isa = PBXGroup;
 			children = (
 				36B3CF6C1E55597000910072 /* libsqlite3.tbd */,
-				FE749053F07A522193DF8164 /* libPods-CCKit.a */,
-				9AFD84A34018EED3E3A3FFBC /* libPods-CCKitDemo.a */,
-				AA13267F3377EA73EE87F4F8 /* libPods-CCKitTests.a */,
+				0EDE959787334EB473B49BF8 /* Pods_CCKit.framework */,
+				897EE3AB3DD92B96D0288D68 /* Pods_CCKitDemo.framework */,
+				F57A24FC6F30A4C9F31045FC /* Pods_CCKitTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
