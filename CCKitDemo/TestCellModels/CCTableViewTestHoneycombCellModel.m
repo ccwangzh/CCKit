@@ -89,6 +89,10 @@
 
 @end
 
+@interface CCTableViewModule8Cell : CCTableViewModuleCell
+
+@end
+
 @implementation CCTableViewTestHoneycombCellModel
 - (instancetype)init {
     if (self = [super init]) {
@@ -226,6 +230,17 @@
         [section addObject:model];
     }
 
+    {
+        CCTableViewModuleCellModel *model = nil;
+        NSDictionary *module =
+        @{
+          @"cellId": @"CCTableViewModule8Cell",
+          @"cellHeight": @([UIScreen mainScreen].bounds.size.width * (150) / 375),
+          @"cellClass": [CCTableViewModule8Cell class],
+          };
+        model = [[CCTableViewModuleCellModel alloc] initWithModule:module];
+        [section insertObject:model atIndex:0];
+    }
     
     self.tableList = tableList;
 }
@@ -1129,4 +1144,192 @@
     
     _extendLabel.frame = CGRectMake(0, boundsSize.height - 44, boundsSize.width, 44);
 }
+@end
+
+@interface CCTableViewModule8Cell () <UIScrollViewDelegate>
+@property (nonatomic) UIScrollView *scrollView;
+@property (nonatomic) UIPageControl *pageControl;
+@property (nonatomic) NSMutableArray *images;
+@property (nonatomic) BOOL isScheduled;
+@property (nonatomic) BOOL isCancelled;
+@end
+
+@implementation CCTableViewModule8Cell
+- (void)setup {
+    [super setup];
+    
+    if (!_scrollView) {
+        _scrollView = [[UIScrollView alloc] init];
+        _scrollView.delegate = self;
+        _scrollView.scrollsToTop = NO;
+        _scrollView.pagingEnabled = YES;
+        _scrollView.showsVerticalScrollIndicator = NO;
+        _scrollView.showsHorizontalScrollIndicator = NO;
+        _scrollView.backgroundColor = [UIColor whiteColor];
+        [self.contentView addSubview:_scrollView];
+    }
+    
+    CGFloat image_witdh = 375.0f; CGFloat image_height = 150.0f;
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat width = image_witdh * screenWidth / 375;
+    CGFloat height = width * image_height / image_witdh;
+    
+    _scrollView.frame = CGRectMake(0, 0, width, height);
+
+    if (!_images) {
+        _images = [NSMutableArray new];
+    }
+    [_images makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [_images removeAllObjects];
+
+    if (!_pageControl) {
+        _pageControl = [UIPageControl new];
+        _pageControl.numberOfPages = 0;
+        _pageControl.currentPage = 0;
+        _pageControl.backgroundColor = [UIColor redColor];
+        CGSize size = [_pageControl sizeForNumberOfPages:_pageControl.numberOfPages];
+        _pageControl.center = CGPointMake( self.contentView.center.x, height - size.height/2);
+        [self.contentView addSubview:_pageControl];
+    }
+    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+}
+
+- (void)setModel:(CCTableViewModuleCellModel *)model {
+    [super setModel:model];
+
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    CGFloat height = width * 150.0f / 375.0f;
+    
+    [_images removeAllObjects];
+    [_images makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [[_scrollView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+
+    NSArray *colors = @[[UIColor redColor],[UIColor blueColor]];
+    
+    CGFloat offset_x = 0;
+    UIImageView *image = nil;
+    NSInteger count = [colors count];
+    for (NSInteger i = 0; i < count; i ++) {
+        if (i == 0) {
+            image = [[UIImageView alloc] init];
+            image.backgroundColor = colors[count - 1 - i];
+            image.layer.borderWidth = 1.0f;
+            image.layer.borderColor = [UIColor blackColor].CGColor;
+            image.frame = CGRectMake(offset_x, 0, width, height);
+            offset_x = offset_x + width;
+            [_scrollView addSubview:image];
+        }
+        
+        image = [[UIImageView alloc] init];
+        image.backgroundColor = colors[i];
+        image.layer.borderWidth = 1.0f;
+        image.layer.borderColor = [UIColor blackColor].CGColor;
+        image.frame = CGRectMake(offset_x, 0, width, height);
+        offset_x = offset_x + width;
+        [_scrollView addSubview:image];
+        [_images addObject:image];
+        
+        if (i == count - 1) {
+            image = [[UIImageView alloc] init];
+            image.backgroundColor = colors[count - 1 - i];
+            image.layer.borderWidth = 1.0f;
+            image.layer.borderColor = [UIColor blackColor].CGColor;
+            image.frame = CGRectMake(offset_x, 0, width, height);
+            offset_x = offset_x + width;
+            [_scrollView addSubview:image];
+        }
+    }
+
+    _scrollView.contentSize = CGSizeMake(offset_x, height);
+    _scrollView.contentOffset = CGPointMake(width, 0);
+    
+    _pageControl.numberOfPages = count;
+    CGPoint point = _pageControl.center;
+    _pageControl.center = CGPointMake(self.contentView.center.x, point.y);
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSInteger width = [UIScreen mainScreen].bounds.size.width;
+    NSInteger x = scrollView.contentOffset.x;
+    if ( x % width == 0) {
+        NSInteger count = _images.count;
+        NSInteger pages = x / width + count;
+        _pageControl.currentPage = (pages - 1) % count;
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSInteger count = [_images count];
+    CGPoint point = scrollView.contentOffset;
+    CGFloat width = scrollView.frame.size.width;
+    if (point.x < width) {
+        CGRect rect = CGRectMake(width * count + point.x, 0, width, 1);
+        [scrollView scrollRectToVisible:rect animated:NO];
+    } else if (point.x > width * count) {
+        CGRect rect = CGRectMake(width, 0, width, 1);
+        [scrollView scrollRectToVisible:rect animated:NO];
+    }
+    [self start];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self stop];
+}
+
+- (void)willMoveToWindow:(UIWindow *)newWindow{
+    [super willMoveToWindow:newWindow];
+    if (newWindow) {
+        [self start];
+    } else {
+        [self stop];
+    }
+}
+
+- (void)removeFromSuperview{
+    [self stop];
+    [super removeFromSuperview];
+}
+
+- (void)start{
+    [self stop];
+    if (_images.count > 1) {
+        _isScheduled = true;
+        [self performSelector:@selector(gotoNext) withObject:nil afterDelay:4.0];
+    }
+}
+
+- (void)stop{
+    if (_isScheduled) {
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(gotoNext) object:nil];
+    }
+    _isScheduled = false;
+}
+
+- (void)gotoNext {
+    _isScheduled = false;
+    NSInteger count = _images.count;
+    if (count > 1) {
+        CGFloat width = [UIScreen mainScreen].bounds.size.width;
+        CGPoint point = _scrollView.contentOffset;
+        if (point.x >= width * count + width) {
+            _scrollView.contentOffset = CGPointMake(width, 0);
+            CGRect rect = CGRectMake(width * 2, 0, width, 1);
+            [_scrollView scrollRectToVisible:rect animated:YES];
+        } else if (point.x >= width * count) {
+            _scrollView.contentOffset = CGPointMake(0, 0);
+            CGRect rect = CGRectMake(width, 0, width, 1);
+            [_scrollView scrollRectToVisible:rect animated:YES];
+        } else {
+            CGRect rect = CGRectMake(point.x + width, 0, width, 1);
+            [_scrollView scrollRectToVisible:rect animated:YES];
+        }
+        [self start];
+    }
+}
+
 @end
