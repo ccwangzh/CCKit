@@ -1161,6 +1161,7 @@
     if (!_scrollView) {
         _scrollView = [[UIScrollView alloc] init];
         _scrollView.delegate = self;
+        _scrollView.bounces = NO;
         _scrollView.scrollsToTop = NO;
         _scrollView.pagingEnabled = YES;
         _scrollView.showsVerticalScrollIndicator = NO;
@@ -1205,22 +1206,14 @@
     [_images makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [[_scrollView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
 
-    NSArray *colors = @[[UIColor redColor],[UIColor blueColor]];
+    NSArray *colors = @[[UIColor redColor],[UIColor greenColor],[UIColor blueColor]];
     
+    NSInteger offset = 1;
     CGFloat offset_x = 0;
     UIImageView *image = nil;
     NSInteger count = [colors count];
-    for (NSInteger i = 0; i < count; i ++) {
-        if (i == 0) {
-            image = [[UIImageView alloc] init];
-            image.backgroundColor = colors[count - 1 - i];
-            image.layer.borderWidth = 1.0f;
-            image.layer.borderColor = [UIColor blackColor].CGColor;
-            image.frame = CGRectMake(offset_x, 0, width, height);
-            offset_x = offset_x + width;
-            [_scrollView addSubview:image];
-        }
-        
+    
+    for (NSInteger i = count - offset; i < count; i ++) {
         image = [[UIImageView alloc] init];
         image.backgroundColor = colors[i];
         image.layer.borderWidth = 1.0f;
@@ -1228,21 +1221,33 @@
         image.frame = CGRectMake(offset_x, 0, width, height);
         offset_x = offset_x + width;
         [_scrollView addSubview:image];
-        [_images addObject:image];
+    }
+    
+    
+    for (NSInteger i = 0; i < count; i ++) {
+        image = [[UIImageView alloc] init];
+        image.backgroundColor = colors[i];
+        image.layer.borderWidth = 1.0f;
+        image.layer.borderColor = [UIColor blackColor].CGColor;
+        image.frame = CGRectMake(offset_x, 0, width, height);
+        offset_x = offset_x + width;
+        [_scrollView addSubview:image];
         
-        if (i == count - 1) {
-            image = [[UIImageView alloc] init];
-            image.backgroundColor = colors[count - 1 - i];
-            image.layer.borderWidth = 1.0f;
-            image.layer.borderColor = [UIColor blackColor].CGColor;
-            image.frame = CGRectMake(offset_x, 0, width, height);
-            offset_x = offset_x + width;
-            [_scrollView addSubview:image];
-        }
+        [_images addObject:image];
     }
 
+    for (NSInteger i = 0; i < offset; i ++) {
+        image = [[UIImageView alloc] init];
+        image.backgroundColor = colors[i];
+        image.layer.borderWidth = 1.0f;
+        image.layer.borderColor = [UIColor blackColor].CGColor;
+        image.frame = CGRectMake(offset_x, 0, width, height);
+        offset_x = offset_x + width;
+        [_scrollView addSubview:image];
+    }
+    
     _scrollView.contentSize = CGSizeMake(offset_x, height);
-    _scrollView.contentOffset = CGPointMake(width, 0);
+    _scrollView.contentOffset = CGPointMake(width * offset, 0);
     
     _pageControl.numberOfPages = count;
     CGPoint point = _pageControl.center;
@@ -1257,27 +1262,38 @@
     NSInteger width = [UIScreen mainScreen].bounds.size.width;
     NSInteger x = scrollView.contentOffset.x;
     if ( x % width == 0) {
+        NSInteger offset = 1;
         NSInteger count = _images.count;
         NSInteger pages = x / width + count;
-        _pageControl.currentPage = (pages - 1) % count;
+        _pageControl.currentPage = (pages - offset) % count;
     }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSInteger offset = 1;
     NSInteger count = [_images count];
     CGPoint point = scrollView.contentOffset;
     CGFloat width = scrollView.frame.size.width;
-    if (point.x < width) {
-        CGRect rect = CGRectMake(width * count + point.x, 0, width, 1);
-        [scrollView scrollRectToVisible:rect animated:NO];
-    } else if (point.x > width * count) {
-        CGRect rect = CGRectMake(width, 0, width, 1);
-        [scrollView scrollRectToVisible:rect animated:NO];
+    if (point.x < width * offset) {
+        scrollView.contentOffset = CGPointMake(width * count + point.x, 0);
+    } else if (point.x >= width * count + offset * width) {
+        scrollView.contentOffset = CGPointMake(point.x - width * count, 0);
     }
+
     [self start];
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    NSInteger offset = 1;
+    NSInteger count = [_images count];
+    CGPoint point = scrollView.contentOffset;
+    CGFloat width = scrollView.frame.size.width;
+    if (point.x < width * offset) {
+        scrollView.contentOffset = CGPointMake(width * count + point.x, 0);
+    } else if (point.x >= width * count + offset * width) {
+        scrollView.contentOffset = CGPointMake(point.x - width * count, 0);
+    }
+    
     [self stop];
 }
 
@@ -1314,22 +1330,17 @@
     _isScheduled = false;
     NSInteger count = _images.count;
     if (count > 1) {
-        CGFloat width = [UIScreen mainScreen].bounds.size.width;
+        NSInteger offset = 1;
         CGPoint point = _scrollView.contentOffset;
-        if (point.x >= width * count + width) {
-            _scrollView.contentOffset = CGPointMake(width, 0);
-            CGRect rect = CGRectMake(width * 2, 0, width, 1);
-            [_scrollView scrollRectToVisible:rect animated:YES];
-        } else if (point.x >= width * count) {
-            _scrollView.contentOffset = CGPointMake(0, 0);
-            CGRect rect = CGRectMake(width, 0, width, 1);
-            [_scrollView scrollRectToVisible:rect animated:YES];
-        } else {
-            CGRect rect = CGRectMake(point.x + width, 0, width, 1);
-            [_scrollView scrollRectToVisible:rect animated:YES];
+        CGFloat width = [UIScreen mainScreen].bounds.size.width;
+        if (point.x + width >= width * count + width * offset) {
+            CGFloat x = point.x - width * count;
+            _scrollView.contentOffset = CGPointMake(x, 0);
+            point = _scrollView.contentOffset;
         }
+        CGRect rect = CGRectMake(point.x + width, 0, width, 1);
+        [_scrollView scrollRectToVisible:rect animated:YES];
         [self start];
     }
 }
-
 @end
