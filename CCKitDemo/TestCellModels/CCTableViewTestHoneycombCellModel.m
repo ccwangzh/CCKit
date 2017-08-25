@@ -1062,9 +1062,29 @@
                                          NSFontAttributeName: [UIFont systemFontOfSize:11.0f],
                                          NSForegroundColorAttributeName: [UIColor colorWithRGB:0x98989f],
                                          };
+            NSAttributedString *as = [[NSAttributedString alloc] initWithString:@" " attributes:attributes];
+            [mutableAs appendAttributedString:as];
+        }
+        {
+            NSDictionary *attributes = @{
+                                         NSFontAttributeName: [UIFont systemFontOfSize:11.0f],
+                                         NSForegroundColorAttributeName: [UIColor colorWithRGB:0x98989f],
+                                         NSStrikethroughColorAttributeName: [UIColor blackColor],
+                                         NSStrikethroughStyleAttributeName: @(NSUnderlineStyleSingle|NSUnderlinePatternSolid),
+                                         };
+            NSAttributedString *as = [[NSAttributedString alloc] initWithString:@"￥999" attributes:attributes];
+            [mutableAs appendAttributedString:as];
+        }
+/*
+        {
+            NSDictionary *attributes = @{
+                                         NSFontAttributeName: [UIFont systemFontOfSize:11.0f],
+                                         NSForegroundColorAttributeName: [UIColor colorWithRGB:0x98989f],
+                                         };
             NSAttributedString *as = [[NSAttributedString alloc] initWithString:@" 起x12期" attributes:attributes];
             [mutableAs appendAttributedString:as];
         }
+ */
         price1.attributedText = mutableAs;
         
         price2 = [[UILabel alloc] init];

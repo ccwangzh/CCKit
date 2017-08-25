@@ -19,6 +19,7 @@ NSString *VFWapLifeUrl(NSString *userId, NSString *channel);
 @property (nonatomic) UIScrollView *contentView;
 @property (nonatomic) UITextField *textField;
 @property (nonatomic) UIImageView *imageView;
+@property (nonatomic) UIButton *hoverButton;
 @end
 
 @interface CCTableViewTestExamplesCellModel () <CLLocationManagerDelegate>
@@ -161,7 +162,7 @@ NSString *VFWapLifeUrl(NSString *userId, NSString *channel) {
     _textField.placeholder = @"请输入";
     _textField.borderStyle = UITextBorderStyleLine;
     [contentView addSubview:_textField];
-    y = y + _textField.frame.size.height;
+    y = y + _textField.frame.size.height + 12;
     
     if (!_imageView) {
         _imageView = [UIImageView new];
@@ -169,12 +170,30 @@ NSString *VFWapLifeUrl(NSString *userId, NSString *channel) {
     UIImage *image = [UIImage imageWithColor:[UIColor redColor] size:CGSizeMake(200, 200)];
     _imageView.image = image;
     _imageView.frame = CGRectMake(0, y, width, 100);
-    _imageView.contentMode = UIViewContentModeTop;
-    _imageView.clipsToBounds = NO;
+    _imageView.clipsToBounds = YES;
     _imageView.layer.borderColor = [UIColor blueColor].CGColor;
     _imageView.layer.borderWidth = 1.0f;
     [contentView addSubview:_imageView];
-    y = y + _imageView.frame.size.height;
+    y = y + _imageView.frame.size.height + 12;
+    
+    if (!_hoverButton) {
+        _hoverButton = [UIButton new];
+    }
+    _hoverButton.frame = CGRectMake(100, y, 40, 40);
+    image = [UIImage imageWithColor:[UIColor redColor] size:CGSizeMake(16, 8)];
+    [_hoverButton setImage:image forState:UIControlStateNormal];
+    [_hoverButton setImage:image forState:UIControlStateHighlighted];
+    [_hoverButton setImageEdgeInsets:UIEdgeInsetsMake(8, 12, 23.5, 12)];
+    [_hoverButton setTitle:@"顶部" forState:UIControlStateNormal];
+    [_hoverButton setTitle:@"顶部" forState:UIControlStateHighlighted];
+    _hoverButton.titleLabel.font = [UIFont systemFontOfSize:12.0f];
+    _hoverButton.titleLabel.backgroundColor = [UIColor blueColor];
+    [_hoverButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -16, -10, 0)];
+    _hoverButton.backgroundColor = [UIColor colorWithWhite:1 alpha:0.96];
+    _hoverButton.layer.borderColor = [UIColor blueColor].CGColor;
+    _hoverButton.layer.borderWidth = 1.0f;
+    [contentView addSubview:_hoverButton];
+    y = y + _hoverButton.frame.size.height + 12;
     
     self.view.backgroundColor = [UIColor whiteColor];
 }
