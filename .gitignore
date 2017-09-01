@@ -53,3 +53,7 @@ Carthage/Build
 
 fastlane/report.xml
 fastlane/screenshots
+
+# react-native
+CCKitReact/node_modules/*
+!CCKitReact/node_modules/react-native/

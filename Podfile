@@ -19,6 +19,12 @@ abstract_target 'Dummy' do
   target 'CCKitDemo' do
     inherit! :search_paths
   end
+  target 'CCKitReact' do
+    pod 'Yoga', :path => 'CCKitReact/node_modules/react-native/ReactCommon/yoga'
+    pod 'React', :path => 'CCKitReact/node_modules/react-native',
+                    :subspecs => ['Core', 'BatchedBridge', 'DevSupport', 'RCTWebSocket', 'RCTText', 'RCTImage',]
+    inherit! :search_paths
+  end
   target 'CCKitTests' do
     inherit! :search_paths
   end
