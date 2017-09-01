@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-export default class CCKit extends Component {
+export default class RootView extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('CCKit', () => CCKit);
+AppRegistry.registerComponent('RootView', () => RootView);
