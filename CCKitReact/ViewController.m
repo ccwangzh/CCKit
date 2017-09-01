@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 
+#import <React/RCTBundleURLProvider.h>
+#import <React/RCTRootView.h>
+
 @interface ViewController ()
 
 @end
@@ -17,6 +20,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSURL *jsCodeLocation;
+    
+    jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+    
+    RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
+                                                        moduleName:@"CCKit"
+                                                 initialProperties:nil
+                                                     launchOptions:nil];
+    rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
+    rootView.frame = self.view.bounds;
+    [self.view addSubview:rootView];
 }
 
 
