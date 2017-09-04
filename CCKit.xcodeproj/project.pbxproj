@@ -33,6 +33,7 @@
 		362EFF7F1F59549C005A2A2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 362EFF7D1F59549C005A2A2F /* Main.storyboard */; };
 		362EFF811F59549C005A2A2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 362EFF801F59549C005A2A2F /* Assets.xcassets */; };
 		362EFF841F59549C005A2A2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 362EFF821F59549C005A2A2F /* LaunchScreen.storyboard */; };
+		362EFF9D1F5D3AD4005A2A2F /* RCTSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 362EFF9C1F5D3AD4005A2A2F /* RCTSample.m */; };
 		362FD0761E729107003F71C8 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 362FD0751E729107003F71C8 /* www */; };
 		362FD07A1E76463F003F71C8 /* CCCDVViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 362FD0781E76463F003F71C8 /* CCCDVViewController.h */; };
 		362FD07B1E76463F003F71C8 /* CCCDVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 362FD0791E76463F003F71C8 /* CCCDVViewController.m */; };
@@ -181,6 +182,8 @@
 		362EFF941F5964F4005A2A2F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		362EFF961F59651F005A2A2F /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
 		362EFF981F5965D6005A2A2F /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		362EFF9B1F5D3AD4005A2A2F /* RCTSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTSample.h; sourceTree = "<group>"; };
+		362EFF9C1F5D3AD4005A2A2F /* RCTSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTSample.m; sourceTree = "<group>"; };
 		362FD0751E729107003F71C8 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		362FD0781E76463F003F71C8 /* CCCDVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCDVViewController.h; sourceTree = "<group>"; };
 		362FD0791E76463F003F71C8 /* CCCDVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCDVViewController.m; sourceTree = "<group>"; };
@@ -332,6 +335,7 @@
 		362EFF731F59549C005A2A2F /* CCKitReact */ = {
 			isa = PBXGroup;
 			children = (
+				362EFF9A1F5D3A43005A2A2F /* ReactModules */,
 				362EFF771F59549C005A2A2F /* AppDelegate.h */,
 				362EFF781F59549C005A2A2F /* AppDelegate.m */,
 				362EFF7A1F59549C005A2A2F /* ViewController.h */,
@@ -351,6 +355,15 @@
 				362EFF751F59549C005A2A2F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		362EFF9A1F5D3A43005A2A2F /* ReactModules */ = {
+			isa = PBXGroup;
+			children = (
+				362EFF9B1F5D3AD4005A2A2F /* RCTSample.h */,
+				362EFF9C1F5D3AD4005A2A2F /* RCTSample.m */,
+			);
+			path = ReactModules;
 			sourceTree = "<group>";
 		};
 		362FD0741E7290CC003F71C8 /* TestResources */ = {
@@ -996,6 +1009,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				362EFF7C1F59549C005A2A2F /* ViewController.m in Sources */,
+				362EFF9D1F5D3AD4005A2A2F /* RCTSample.m in Sources */,
 				362EFF791F59549C005A2A2F /* AppDelegate.m in Sources */,
 				362EFF761F59549C005A2A2F /* main.m in Sources */,
 			);
