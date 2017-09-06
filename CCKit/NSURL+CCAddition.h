@@ -9,10 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface NSURL (CCAddition)
-- (NSURL *)URLByAppendingQueryString:(NSString *)queryString;
 - (NSURL *)URLByAppendingQueryDictionary:(NSDictionary *)queryDictionary;
 - (NSURL *)URLByReplacingQueryDictionary:(NSDictionary *)queryDictionary;
 @property (nonatomic, readonly) NSDictionary *queryDictionary;
-- (BOOL)hasQueryDictionary:(NSDictionary *)queryDictionary;
-- (BOOL)hasQueryName:(NSString *)queryName;
+- (NSURL *)URLByRemovingAllQueryItems;
 @end

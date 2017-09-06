@@ -9,6 +9,7 @@
 #import "CCTableViewTestAdditionCellModel.h"
 
 #import "CCCipher.h"
+#import "NSURL+CCAddition.h"
 #import "NSString+CCAddition.h"
 #import "UIControl+CCAddition.h"
 
@@ -17,131 +18,9 @@
 #import <OpenSSL/sha.h>
 #import <OpenSSL/aes.h>
 
-NSString *VPAESEncrypt(NSString *token, NSString *seed, NSData *data) {
-    if (!token || !seed || !data) return nil;
-    
-    NSMutableData *stringData = [NSMutableData new];
-    [stringData appendData:[token dataUsingEncoding:NSUTF8StringEncoding]];
-    [stringData appendData:[seed dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    const unsigned char *string_ptr = [stringData bytes];
-    size_t string_len = [stringData length];
-    
-    unsigned char md_ptr[33] = {0};
-    SHA256(string_ptr, string_len, md_ptr);
-    
-    unsigned char key[17] = {0};
-    unsigned char iv[17] = {0};
-    memcpy(key, md_ptr, 16);
-    memcpy(iv, md_ptr + 16, 16);
-
-    const unsigned char *data_ptr = [data bytes];
-    size_t data_len = [data length];
-    
-    size_t block_cnt = data_len / AES_BLOCK_SIZE + 1;
-    size_t block_size = block_cnt * AES_BLOCK_SIZE;
-    
-    unsigned char *block_ptr = malloc(block_size);
-    size_t padding = data_len % 16 ? block_size - data_len : 16;
-    memset(block_ptr, padding, block_size);
-    memcpy(block_ptr, data_ptr, data_len);
-    
-    AES_KEY aes_key;
-    if (AES_set_encrypt_key(key, 128, &aes_key) < 0) {
-        if (block_ptr) free(block_ptr);
-        return nil;
-    }
-    
-    unsigned char *encrypt_ptr = malloc(block_size);
-    AES_cbc_encrypt(block_ptr, encrypt_ptr, block_size, &aes_key, iv, AES_ENCRYPT);
-    
-    NSData *encryptData = [NSData dataWithBytes:encrypt_ptr length:block_size];
-    if (encrypt_ptr) free(encrypt_ptr);
-    if (block_ptr) free(block_ptr);
-    
-    return [encryptData base64EncodedStringWithOptions:0];
-}
-
-NSData *VPAESDecrypt(NSString *token, NSString *seed, NSString *base64) {
-    if (!token || !seed || !base64) return nil;
-    
-    NSMutableData *stringData = [NSMutableData new];
-    [stringData appendData:[token dataUsingEncoding:NSUTF8StringEncoding]];
-    [stringData appendData:[seed dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    const unsigned char *string_ptr = [stringData bytes];
-    size_t string_len = [stringData length];
-    
-    unsigned char md_ptr[33] = {0};
-    SHA256(string_ptr, string_len, md_ptr);
-    
-    unsigned char key[17] = {0};
-    unsigned char iv[17] = {0};
-    memcpy(key, md_ptr, 16);
-    memcpy(iv, md_ptr + 16, 16);
-    
-    NSDataBase64DecodingOptions opts = NSDataBase64DecodingIgnoreUnknownCharacters;
-    NSData *data = [[NSData alloc] initWithBase64EncodedString:base64 options:opts];
-    const unsigned char *data_ptr = [data bytes];
-    size_t data_len = [data length];
-    
-    AES_KEY aes_key;
-    if (AES_set_decrypt_key(key, 128, &aes_key) < 0) {
-        return nil;
-    }
-
-    unsigned char *decrypt_ptr = malloc(data_len);
-    AES_cbc_encrypt(data_ptr, decrypt_ptr, data_len, &aes_key, iv, AES_DECRYPT);
-
-    unsigned char padding = decrypt_ptr[data_len - 1];
-    
-    NSData *decryptData = [NSData dataWithBytes:decrypt_ptr length:data_len - padding];
-    if (decrypt_ptr) free(decrypt_ptr);
-
-    return decryptData;
-}
-
-NSString *VPSHA256Sign(NSString *e, NSString *pt, NSString *ptid, NSString *cv, NSString *ts, NSString *seed) {
-    NSMutableString *string = [NSMutableString new];
-    if (e && e.length) {
-        [string appendString:e];
-    }
-    
-    if (pt && pt.length) {
-        [string appendString:@"$"];
-        [string appendString:pt];
-    }
-    
-    if (ptid && ptid.length) {
-        [string appendString:@"$"];
-        [string appendString:ptid];
-    }
-
-    if (cv && cv.length) {
-        [string appendString:@"$"];
-        [string appendString:cv];
-    }
-
-    if (ts && ts.length) {
-        [string appendString:@"$"];
-        [string appendString:ts];
-    }
-    
-    if (seed && seed.length) {
-        [string appendString:@"$"];
-        [string appendString:seed];
-    }
-    NSData *stringData = [string dataUsingEncoding:NSUTF8StringEncoding];
-    const unsigned char *string_ptr = [stringData bytes];
-    size_t string_len = [stringData length];
-    
-    unsigned char md_ptr[33] = {0};
-    SHA256(string_ptr, string_len, md_ptr);
-    
-    NSData *data = [NSData dataWithBytes:md_ptr length:32];
-    
-    return [data base64EncodedStringWithOptions:0];
-}
+NSString *VPAESEncrypt(NSString *token, NSString *seed, NSData *data);
+NSData *VPAESDecrypt(NSString *token, NSString *seed, NSString *base64);
+NSString *VPSHA256Sign(NSString *,NSString *,NSString *,NSString *,NSString *,NSString *);
 
 @interface CCControl : UIControl
 
@@ -182,6 +61,17 @@ NSString *VPSHA256Sign(NSString *e, NSString *pt, NSString *ptid, NSString *cv, 
 }
 
 - (void)doTest {
+    NSLog(@"doTest");
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.baidu.com:8080/a/?k=v"];
+    NSLog(@"%@", [url queryDictionary]);
+    NSLog(@"%@", [url URLByReplacingQueryDictionary:@{@"k1":@"v1.", @"k3":@"v3"}]);
+    NSLog(@"%@", [url URLByAppendingQueryDictionary:@{@"k1":@"v1.", @"k3":@"v3"}]);
+    
+    NSLog(@"%@", [url URLByRemovingAllQueryItems]);
+}
+
+- (void)doTest3 {
     NSLog(@"doTest");
     
     NSString *token = @"S2f4q1Ga4qsWg7q9JbfanjpAynYFJAK2HKkt";
@@ -343,3 +233,129 @@ NSString *VPSHA256Sign(NSString *e, NSString *pt, NSString *ptid, NSString *cv, 
     
 }
 @end
+
+NSString *VPAESEncrypt(NSString *token, NSString *seed, NSData *data) {
+    if (!token || !seed || !data) return nil;
+    
+    NSMutableData *stringData = [NSMutableData new];
+    [stringData appendData:[token dataUsingEncoding:NSUTF8StringEncoding]];
+    [stringData appendData:[seed dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    const unsigned char *string_ptr = [stringData bytes];
+    size_t string_len = [stringData length];
+    
+    unsigned char md_ptr[33] = {0};
+    SHA256(string_ptr, string_len, md_ptr);
+    
+    unsigned char key[17] = {0};
+    unsigned char iv[17] = {0};
+    memcpy(key, md_ptr, 16);
+    memcpy(iv, md_ptr + 16, 16);
+    
+    const unsigned char *data_ptr = [data bytes];
+    size_t data_len = [data length];
+    
+    size_t block_cnt = data_len / AES_BLOCK_SIZE + 1;
+    size_t block_size = block_cnt * AES_BLOCK_SIZE;
+    
+    unsigned char *block_ptr = malloc(block_size);
+    size_t padding = data_len % 16 ? block_size - data_len : 16;
+    memset(block_ptr, padding, block_size);
+    memcpy(block_ptr, data_ptr, data_len);
+    
+    AES_KEY aes_key;
+    if (AES_set_encrypt_key(key, 128, &aes_key) < 0) {
+        if (block_ptr) free(block_ptr);
+        return nil;
+    }
+    
+    unsigned char *encrypt_ptr = malloc(block_size);
+    AES_cbc_encrypt(block_ptr, encrypt_ptr, block_size, &aes_key, iv, AES_ENCRYPT);
+    
+    NSData *encryptData = [NSData dataWithBytes:encrypt_ptr length:block_size];
+    if (encrypt_ptr) free(encrypt_ptr);
+    if (block_ptr) free(block_ptr);
+    
+    return [encryptData base64EncodedStringWithOptions:0];
+}
+
+NSData *VPAESDecrypt(NSString *token, NSString *seed, NSString *base64) {
+    if (!token || !seed || !base64) return nil;
+    
+    NSMutableData *stringData = [NSMutableData new];
+    [stringData appendData:[token dataUsingEncoding:NSUTF8StringEncoding]];
+    [stringData appendData:[seed dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    const unsigned char *string_ptr = [stringData bytes];
+    size_t string_len = [stringData length];
+    
+    unsigned char md_ptr[33] = {0};
+    SHA256(string_ptr, string_len, md_ptr);
+    
+    unsigned char key[17] = {0};
+    unsigned char iv[17] = {0};
+    memcpy(key, md_ptr, 16);
+    memcpy(iv, md_ptr + 16, 16);
+    
+    NSDataBase64DecodingOptions opts = NSDataBase64DecodingIgnoreUnknownCharacters;
+    NSData *data = [[NSData alloc] initWithBase64EncodedString:base64 options:opts];
+    const unsigned char *data_ptr = [data bytes];
+    size_t data_len = [data length];
+    
+    AES_KEY aes_key;
+    if (AES_set_decrypt_key(key, 128, &aes_key) < 0) {
+        return nil;
+    }
+    
+    unsigned char *decrypt_ptr = malloc(data_len);
+    AES_cbc_encrypt(data_ptr, decrypt_ptr, data_len, &aes_key, iv, AES_DECRYPT);
+    
+    unsigned char padding = decrypt_ptr[data_len - 1];
+    
+    NSData *decryptData = [NSData dataWithBytes:decrypt_ptr length:data_len - padding];
+    if (decrypt_ptr) free(decrypt_ptr);
+    
+    return decryptData;
+}
+
+NSString *VPSHA256Sign(NSString *e, NSString *pt, NSString *ptid, NSString *cv, NSString *ts, NSString *seed) {
+    NSMutableString *string = [NSMutableString new];
+    if (e && e.length) {
+        [string appendString:e];
+    }
+    
+    if (pt && pt.length) {
+        [string appendString:@"$"];
+        [string appendString:pt];
+    }
+    
+    if (ptid && ptid.length) {
+        [string appendString:@"$"];
+        [string appendString:ptid];
+    }
+    
+    if (cv && cv.length) {
+        [string appendString:@"$"];
+        [string appendString:cv];
+    }
+    
+    if (ts && ts.length) {
+        [string appendString:@"$"];
+        [string appendString:ts];
+    }
+    
+    if (seed && seed.length) {
+        [string appendString:@"$"];
+        [string appendString:seed];
+    }
+    NSData *stringData = [string dataUsingEncoding:NSUTF8StringEncoding];
+    const unsigned char *string_ptr = [stringData bytes];
+    size_t string_len = [stringData length];
+    
+    unsigned char md_ptr[33] = {0};
+    SHA256(string_ptr, string_len, md_ptr);
+    
+    NSData *data = [NSData dataWithBytes:md_ptr length:32];
+    
+    return [data base64EncodedStringWithOptions:0];
+}

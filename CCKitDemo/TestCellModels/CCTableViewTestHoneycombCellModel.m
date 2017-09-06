@@ -1010,6 +1010,13 @@
         _headImage.layer.borderWidth = 1.0f;
         _headImage.layer.borderColor = [UIColor blackColor].CGColor;
         [self.contentView addSubview:_headImage];
+        
+        UIImageView *iconView = [UIImageView new];
+        iconView.image = [UIImage imageWithColor:[UIColor redColor] size:CGSizeMake(32, 15)];
+        iconView.autoresizingMask |= UIViewAutoresizingFlexibleLeftMargin;
+        iconView.autoresizingMask |= UIViewAutoresizingFlexibleRightMargin;
+        iconView.autoresizingMask |= UIViewAutoresizingFlexibleBottomMargin;
+        [_headImage addSubview:iconView];
     }
     
     if (!_images) {
