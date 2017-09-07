@@ -1,5 +1,5 @@
 //
-//  CCWebViewEngineProtocol.h
+//  CCCDVWebViewEngineProtocol.h
 //  CCKit
 //
 //  Created by can on 17/4/12.
@@ -8,7 +8,7 @@
 
 #import <Cordova/CDVWebViewEngineProtocol.h>
 
-@protocol CCWebViewEngineProtocol <CDVWebViewEngineProtocol>
+@protocol CCCDVWebViewEngineProtocol <CDVWebViewEngineProtocol>
 - (void)reload;
 - (void)stopLoading;
 

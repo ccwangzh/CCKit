@@ -7,8 +7,8 @@
 //
 
 #import <Cordova/CDVUIWebViewEngine.h>
-#import "CCWebViewEngineProtocol.h"
+#import "CCCDVWebViewEngineProtocol.h"
 
-@interface CCUIWebViewEngine : CDVUIWebViewEngine <CCWebViewEngineProtocol>
+@interface CCUIWebViewEngine : CDVUIWebViewEngine <CCCDVWebViewEngineProtocol>
 
 @end

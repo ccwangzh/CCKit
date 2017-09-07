@@ -7,9 +7,9 @@
 //
 
 #import <Cordova/CDVViewController.h>
-#import "CCWebViewEngineProtocol.h"
+#import "CCCDVWebViewEngineProtocol.h"
 
 @interface CCCDVViewController : CDVViewController <UIWebViewDelegate>
-@property (nonatomic, readonly, strong) id <CCWebViewEngineProtocol> webViewEngine;
+@property (nonatomic, readonly, strong) id <CCCDVWebViewEngineProtocol> webViewEngine;
 @property (nonatomic, readwrite, strong) id <UIWebViewDelegate> navigationDelegate;
 @end
