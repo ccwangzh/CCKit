@@ -89,11 +89,15 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/GCDWebServer/GCDWebServer.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/XLForm/XLForm.framework"
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Cordova/Cordova.framework"
   install_framework "$BUILT_PRODUCTS_DIR/YYModel/YYModel.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/GCDWebServer/GCDWebServer.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/XLForm/XLForm.framework"
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Cordova/Cordova.framework"
   install_framework "$BUILT_PRODUCTS_DIR/YYModel/YYModel.framework"

@@ -15,6 +15,9 @@ PODS:
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
   - Cordova (4.3.0)
+  - GCDWebServer (3.4.1):
+    - GCDWebServer/Core (= 3.4.1)
+  - GCDWebServer/Core (3.4.1)
   - OpenSSL (1.0.211)
   - React/BatchedBridge (0.47.2):
     - React/Core
@@ -36,12 +39,14 @@ PODS:
     - React/Core
   - React/RCTWebSocket (0.47.2):
     - React/Core
+  - XLForm (3.3.0)
   - Yoga (0.47.2.React)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking (= 3.0.4)
   - Cordova (= 4.3.0)
+  - GCDWebServer (= 3.4.1)
   - OpenSSL (from `git@github.com:ccwangzh/OpenSSL.git`)
   - React/BatchedBridge (from `CCKitReact/node_modules/react-native`)
   - React/Core (from `CCKitReact/node_modules/react-native`)
@@ -49,6 +54,7 @@ DEPENDENCIES:
   - React/RCTImage (from `CCKitReact/node_modules/react-native`)
   - React/RCTText (from `CCKitReact/node_modules/react-native`)
   - React/RCTWebSocket (from `CCKitReact/node_modules/react-native`)
+  - XLForm (= 3.3.0)
   - Yoga (from `CCKitReact/node_modules/react-native/ReactCommon/yoga`)
   - YYModel (= 1.0.4)
 
@@ -68,11 +74,13 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   Cordova: 9dda9e4a521d8f0af561cba93e59f142ed7b306f
+  GCDWebServer: 1db60034fe0e78a4a8524bd6c7cd97cd3c589870
   OpenSSL: 59511f20d9f84ee100fd8b27b776d833f0bf1679
   React: fbe1a006550fb55871cb377ba7741f5d1cfff733
+  XLForm: d5c391dfc62865927b5bcab0a5a0dbfb3e02b0ec
   Yoga: ff8531e8cf9f7ec92a75dd44286a68c4a084c507
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: cd5e0686ddf30cd4039ee113e20026f3a972cd18
+PODFILE CHECKSUM: 76e95fc9efffea9623541049f0f9ca78dd4b1849
 
 COCOAPODS: 1.2.1

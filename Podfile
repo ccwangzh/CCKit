@@ -17,6 +17,8 @@ abstract_target 'Dummy' do
   pod 'Cordova',        '= 4.3.0'
   pod 'OpenSSL', :git => 'git@github.com:ccwangzh/OpenSSL.git'
   target 'CCKitDemo' do
+    pod 'GCDWebServer', '= 3.4.1'
+    pod 'XLForm',       '= 3.3.0'
     inherit! :search_paths
   end
   target 'CCKitReact' do
