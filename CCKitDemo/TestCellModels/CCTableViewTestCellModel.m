@@ -37,6 +37,8 @@
 - (void)tearDown {}
 - (void)doTest {}
 
+
+
 @end
 
 @implementation CCTableViewTestCell
@@ -52,3 +54,15 @@
 }
 
 @end
+
+static NSMutableArray *_models = nil;
+void CCTableViewTestCellModelRegister(Class modelClass) {
+    if (!_models) {
+        _models = [NSMutableArray new];
+    }
+    [_models addObject:[[modelClass alloc] init]];
+}
+
+NSArray *CCTableViewTestCellModelGetAllModels(void) {
+    return _models;
+}

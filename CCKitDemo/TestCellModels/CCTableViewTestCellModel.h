@@ -10,6 +10,9 @@
 
 #import "CCTableViewController.h"
 
+void CCTableViewTestCellModelRegister(Class modelClass);
+NSArray *CCTableViewTestCellModelGetAllModels(void);
+
 @interface CCTableViewTestCellModel : CCTableViewCellModel
 @property (nonatomic, strong) NSString *title;
 - (void)setUp;

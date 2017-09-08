@@ -88,6 +88,9 @@
 @end
 
 @implementation CCTableViewTestOperationCellModel
++ (void)load {
+    CCTableViewTestCellModelRegister(self);
+}
 
 - (instancetype)init {
     if (self = [super init]) {

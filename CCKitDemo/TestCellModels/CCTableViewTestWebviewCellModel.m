@@ -99,6 +99,10 @@
 @end
 
 @implementation CCTableViewTestWebviewCellModel
++ (void)load {
+    CCTableViewTestCellModelRegister(self);
+}
+
 - (instancetype)init {
     if (self = [super init]) {
         self.title = @"测试：Webview";

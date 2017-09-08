@@ -18,6 +18,10 @@
 @end
 
 @implementation CCTableViewTestNetworkingCellModel
++ (void)load {
+    CCTableViewTestCellModelRegister(self);
+}
+
 - (instancetype)init {
     if (self = [super init]) {
         self.title = @"测试：网络";

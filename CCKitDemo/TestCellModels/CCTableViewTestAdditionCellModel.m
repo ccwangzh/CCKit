@@ -53,6 +53,10 @@ NSString *VPSHA256Sign(NSString *,NSString *,NSString *,NSString *,NSString *,NS
 @end
 
 @implementation CCTableViewTestAdditionCellModel
++ (void)load {
+    CCTableViewTestCellModelRegister(self);
+}
+
 - (instancetype)init {
     if (self = [super init]) {
         self.title = @"测试：扩展";

@@ -8,18 +8,7 @@
 
 #import "ViewController.h"
 
-#import "CCTableViewTestCacheCellModel.h"
-#import "CCTableViewTestAdditionCellModel.h"
-#import "CCTableViewTestKeychainCellModel.h"
-#import "CCTableViewTestNetworkingCellModel.h"
-#import "CCTableViewTestWebviewCellModel.h"
-#import "CCTableViewTestCordovaCellModel.h"
-#import "CCTableViewTestOperationCellModel.h"
-#import "CCTableViewTestServicesCellModel.h"
-#import "CCTableViewTestCollectionsCellModel.h"
-#import "CCTableViewTestExamplesCellModel.h"
-#import "CCTableViewTestHoneycombCellModel.h"
-#import "CCTableViewTestLayoutsCellModel.h"
+#import "CCTableViewTestCellModel.h"
 
 @implementation ViewController
 
@@ -32,29 +21,10 @@
     CCTableViewSection *section = [CCTableViewSection new];
     [dataSource addObject:section];
     
-    [section addObject:[CCTableViewTestCacheCellModel new]];
-
-    [section addObject:[CCTableViewTestAdditionCellModel new]];
-    
-    [section addObject:[CCTableViewTestKeychainCellModel new]];
-    
-    [section addObject:[CCTableViewTestNetworkingCellModel new]];
-    
-    [section addObject:[CCTableViewTestWebviewCellModel new]];
-    
-    [section addObject:[CCTableViewTestCordovaCellModel new]];
-    
-    [section addObject:[CCTableViewTestOperationCellModel new]];
-    
-    [section addObject:[CCTableViewTestServicesCellModel new]];
-    
-    [section addObject:[CCTableViewTestCollectionsCellModel new]];
-    
-    [section addObject:[CCTableViewTestExamplesCellModel new]];
-    
-    [section addObject:[CCTableViewTestHoneycombCellModel new]];
-    
-    [section addObject:[CCTableViewTestLayoutsCellModel new]];
+    NSArray *models = CCTableViewTestCellModelGetAllModels();
+    for (CCTableViewTestCellModel *model in models) {
+        [section addObject:model];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
