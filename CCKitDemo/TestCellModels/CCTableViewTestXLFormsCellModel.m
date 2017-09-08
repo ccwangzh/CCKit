@@ -12,8 +12,10 @@
 
 @interface CCTableViewFormsViewController : CCTableViewController
 @end
-
+@class CCTableViewTaskModel;
 @interface CCTableViewEditViewController : XLFormViewController
+- (instancetype)initWithModel:(CCTableViewTaskModel *)model;
+@property (nonatomic) CCTableViewTaskModel *model;
 @end
 
 @interface CCTableViewTaskModel : NSObject
@@ -22,6 +24,9 @@
 @property (nonatomic) NSInteger interval;
 @end
 @interface CCTableViewTaskManager : NSObject
+@property (nonatomic) NSMutableArray *tasks;
+@property (nonatomic) NSString *directory;
+@property (nonatomic) NSString *path;
 @end
 
 @interface CCTableViewFormCellModel : CCTableViewCellModel
@@ -43,6 +48,11 @@
         self.title = @"测试：XLForms";
     }
     return self;
+}
+
+- (void)doTest1 {
+    NSLog(@"doTest");
+
 }
 
 - (void)doTest {
@@ -81,14 +91,17 @@
 
 - (void)rightButtonDidClicked:(id)sender {
     CCTableViewEditViewController *controller = nil;
-    controller = [[CCTableViewEditViewController alloc] init];
+    CCTableViewTaskModel *model = [CCTableViewTaskModel new];
+    model.url = @"https://m.baidu.com/";
+    model.interval = 60;
+    controller = [[CCTableViewEditViewController alloc] initWithModel:model];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end
 
 @implementation CCTableViewEditViewController
-- (instancetype)init {
+- (instancetype)initWithModel:(CCTableViewTaskModel *)model {
     XLFormDescriptor *form = nil;
     XLFormSectionDescriptor *section = nil;
     XLFormRowDescriptor *row = nil;
@@ -100,6 +113,7 @@
     // Title
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"URL" rowType:XLFormRowDescriptorTypeTextView];
     [row.cellConfigAtConfigure setObject:@"URL" forKey:@"textView.placeholder"];
+    row.value = model.url;
     row.required = YES;
     [section addFormRow:row];
     
@@ -107,16 +121,16 @@
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"repeat" rowType:XLFormRowDescriptorTypeSelectorPush title:@"Repeat"];
     row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"Never"];
     row.selectorTitle = @"Repeat";
-    row.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"Never"],
-                            [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Every Day"],
-                            [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Every Week"],
-                            [XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Every 2 Weeks"],
-                            [XLFormOptionsObject formOptionsObjectWithValue:@(4) displayText:@"Every Month"],
-                            [XLFormOptionsObject formOptionsObjectWithValue:@(5) displayText:@"Every Year"],
+    row.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(10) displayText:@"10分钟"],
+                            [XLFormOptionsObject formOptionsObjectWithValue:@(60) displayText:@"60分钟"],
                             ];
+    row.value = @(model.interval);
     [section addFormRow:row];
     
-    return [super initWithForm:form style:UITableViewStylePlain];
+    if (self = [super initWithForm:form style:UITableViewStylePlain]) {
+        self.model = model;
+    }
+    return self;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -148,6 +162,79 @@ static CCTableViewTaskManager *_manager;
     });
     return _manager;
 }
+
+- (instancetype)init {
+    if (self = [super init]) {
+        _tasks = [NSMutableArray new];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *path = [[paths firstObject] stringByAppendingPathComponent:@"task"];
+        if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
+            [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+        }
+        self.directory = path;
+        NSLog(@"%@", path);
+        
+        path = [path stringByAppendingPathComponent:@"tasks.plist"];
+        NSArray *tasks = [NSArray arrayWithContentsOfFile:path];
+        [_tasks addObjectsFromArray:tasks];
+        self.path = path;
+        NSLog(@"%@", path);
+    }
+    return self;
+}
+
+- (void)save:(CCTableViewTaskModel *)model {
+    if (model == nil) return;
+    NSDictionary *task = nil;
+    NSMutableArray *tasks = _tasks;
+    if (model.index == 0) {
+        if (tasks.count == 0) {
+            model.index = 1;
+        } else {
+            task = [tasks lastObject];
+            model.index = [task[@"index"] integerValue] + 1;
+        }
+        [tasks addObject:[model yy_modelToJSONObject]];
+    } else {
+        for (NSInteger i = 0; i < tasks.count; i ++) {
+            NSDictionary *task = tasks[i];
+            if ([task[@"index"] integerValue] == model.index) {
+                task = [model yy_modelToJSONObject];
+                [tasks replaceObjectAtIndex:i withObject:task];
+                break;
+            }
+        }
+    }
+}
+
+- (CCTableViewTaskModel *)queryWithIndex:(NSInteger)index {
+    NSMutableArray *tasks = _tasks;
+    CCTableViewTaskModel *model = nil;
+    for (NSInteger i = 0; i < tasks.count; i ++) {
+        NSDictionary *task = tasks[i];
+        if ([task[@"index"] integerValue] == index) {
+            model = [CCTableViewTaskModel yy_modelWithDictionary:task];
+            break;
+        }
+    }
+    return model;
+}
+
+- (NSArray *)queryAll {
+    NSMutableArray *tasks = _tasks;
+    CCTableViewTaskModel *model = nil;
+    NSMutableArray *list = [NSMutableArray new];
+    for (NSInteger i = 0; i < tasks.count; i ++) {
+        model = [CCTableViewTaskModel yy_modelWithDictionary:tasks[i]];
+        [list addObject:model];
+    }
+    return list;
+}
+
+- (void)synchronize {
+    [_tasks writeToFile:self.path atomically:YES];
+}
+
 @end
 
 @implementation CCTableViewFormCellModel
