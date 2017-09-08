@@ -34,6 +34,7 @@
 		362EFF811F59549C005A2A2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 362EFF801F59549C005A2A2F /* Assets.xcassets */; };
 		362EFF841F59549C005A2A2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 362EFF821F59549C005A2A2F /* LaunchScreen.storyboard */; };
 		362EFF9D1F5D3AD4005A2A2F /* RCTSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 362EFF9C1F5D3AD4005A2A2F /* RCTSample.m */; };
+		362EFFA01F624D39005A2A2F /* CCTableViewTestXLFormsCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 362EFF9F1F624D39005A2A2F /* CCTableViewTestXLFormsCellModel.m */; };
 		362FD0761E729107003F71C8 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 362FD0751E729107003F71C8 /* www */; };
 		362FD07A1E76463F003F71C8 /* CCCDVViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 362FD0781E76463F003F71C8 /* CCCDVViewController.h */; };
 		362FD07B1E76463F003F71C8 /* CCCDVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 362FD0791E76463F003F71C8 /* CCCDVViewController.m */; };
@@ -184,6 +185,8 @@
 		362EFF981F5965D6005A2A2F /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		362EFF9B1F5D3AD4005A2A2F /* RCTSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTSample.h; sourceTree = "<group>"; };
 		362EFF9C1F5D3AD4005A2A2F /* RCTSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTSample.m; sourceTree = "<group>"; };
+		362EFF9E1F624D39005A2A2F /* CCTableViewTestXLFormsCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableViewTestXLFormsCellModel.h; sourceTree = "<group>"; };
+		362EFF9F1F624D39005A2A2F /* CCTableViewTestXLFormsCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableViewTestXLFormsCellModel.m; sourceTree = "<group>"; };
 		362FD0751E729107003F71C8 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		362FD0781E76463F003F71C8 /* CCCDVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCDVViewController.h; sourceTree = "<group>"; };
 		362FD0791E76463F003F71C8 /* CCCDVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCDVViewController.m; sourceTree = "<group>"; };
@@ -556,6 +559,8 @@
 				366250FC1F3C03C200782144 /* CCTableViewTestHoneycombCellModel.m */,
 				36CC90181F4D56E0007BB14D /* CCTableViewTestLayoutsCellModel.h */,
 				36CC90191F4D56E0007BB14D /* CCTableViewTestLayoutsCellModel.m */,
+				362EFF9E1F624D39005A2A2F /* CCTableViewTestXLFormsCellModel.h */,
+				362EFF9F1F624D39005A2A2F /* CCTableViewTestXLFormsCellModel.m */,
 			);
 			path = TestCellModels;
 			sourceTree = "<group>";
@@ -1071,6 +1076,7 @@
 				36B3CF551E52B28A00910072 /* CCTableViewTestAdditionCellModel.m in Sources */,
 				36ADC76B1E1BB44C0098B59D /* ViewController.m in Sources */,
 				36FE0B211E4C60D4002A4379 /* CCTableViewTestNetworkingCellModel.m in Sources */,
+				362EFFA01F624D39005A2A2F /* CCTableViewTestXLFormsCellModel.m in Sources */,
 				362498F61EC0A76000B4E3FD /* CCTableViewTestOperationCellModel.m in Sources */,
 				36FE0B2F1E4D8DCC002A4379 /* CCTableViewTestKeychainCellModel.m in Sources */,
 				36ADC7681E1BB44C0098B59D /* AppDelegate.m in Sources */,
