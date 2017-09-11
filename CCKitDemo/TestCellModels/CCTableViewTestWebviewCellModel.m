@@ -54,6 +54,8 @@
 
 @protocol CCWebViewEngineProtocol <NSObject>
 - (id)loadRequest:(NSURLRequest *)request;
+- (id)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL;
+- (id)loadData:(NSData *)data MIMEType:(NSString *)MIMEType textEncodingName:(NSString *)textEncodingName baseURL:(NSURL *)baseURL;
 @property (nonatomic, readonly, strong) NSURLRequest *request;
 
 - (void)reload;
@@ -165,6 +167,14 @@
     [_webView loadRequest:request];
     return nil;
 }
+- (id)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL {
+    [_webView loadHTMLString:string baseURL:baseURL];
+    return nil;
+}
+- (id)loadData:(NSData *)data MIMEType:(NSString *)MIMEType textEncodingName:(NSString *)textEncodingName baseURL:(NSURL *)baseURL {
+    [_webView loadData:data MIMEType:MIMEType textEncodingName:textEncodingName baseURL:baseURL];
+    return nil;
+}
 - (NSURLRequest *)request {
     return _webView.request;
 }
@@ -236,6 +246,12 @@ static WKProcessPool *processPool = nil;
 }
 - (id)loadRequest:(NSURLRequest *)request {
     return [_webView loadRequest:request];
+}
+- (id)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL {
+    return [_webView loadHTMLString:string baseURL:baseURL];
+}
+- (id)loadData:(NSData *)data MIMEType:(NSString *)MIMEType textEncodingName:(NSString *)textEncodingName baseURL:(NSURL *)baseURL {
+    return [_webView loadData:data MIMEType:MIMEType characterEncodingName:textEncodingName baseURL:baseURL];
 }
 - (NSURLRequest *)request {
     return nil;
