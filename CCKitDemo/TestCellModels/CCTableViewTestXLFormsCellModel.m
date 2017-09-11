@@ -27,10 +27,14 @@
 @property (nonatomic) NSMutableArray *tasks;
 @property (nonatomic) NSString *directory;
 @property (nonatomic) NSString *path;
++ (instancetype)sharedManager;
+- (void)save:(CCTableViewTaskModel *)model;
+- (NSArray *)queryAll;
 @end
 
 @interface CCTableViewFormCellModel : CCTableViewCellModel
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) id userInfo;
 - (void)setUp;
 @end
 
@@ -77,16 +81,35 @@
                              initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                              target:self action:@selector(rightButtonDidClicked:)];
     self.navigationItem.rightBarButtonItem = item;
-    CCTableViewDataSource *dataSource = [CCTableViewDataSource new];
+    
+    CCTableViewDataSource *dataSource = nil;
+    dataSource = [CCTableViewDataSource new];
     self.dataSource = dataSource;
     
-    CCTableViewSection *section = [CCTableViewSection new];
+    CCTableViewSection *section = nil;
+    section = [CCTableViewSection new];
     [dataSource addObject:section];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    CCTableViewSection *section = nil;
+    section = [self.dataSource objectAtIndex:0];
+    [section removeAllObjects];
     
+    CCTableViewTaskManager *manager = nil;
+    manager = [CCTableViewTaskManager sharedManager];
+    NSArray *list = [manager queryAll];
     CCTableViewFormCellModel *model = nil;
-    model = [CCTableViewFormCellModel new];
-    model.title = @"aaa";
-    [section addObject:model];
+    
+    for (CCTableViewTaskModel *task in list) {
+        model = [CCTableViewFormCellModel new];
+        model.title = task.url;
+        model.userInfo = task;
+        [section addObject:model];
+    }
+    
+    [self.tableView reloadData];
 }
 
 - (void)rightButtonDidClicked:(id)sender {
@@ -95,6 +118,16 @@
     model.url = @"https://m.baidu.com/";
     model.interval = 60;
     controller = [[CCTableViewEditViewController alloc] initWithModel:model];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    CCTableViewSection *section = [self.dataSource objectAtIndex:0];
+    CCTableViewFormCellModel *model = [section objectAtIndex:indexPath.row];
+    CCTableViewTaskModel *task = model.userInfo;
+    CCTableViewEditViewController *controller = nil;
+    controller = [[CCTableViewEditViewController alloc] initWithModel:task];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
@@ -111,8 +144,8 @@
     [form addFormSection:section];
     
     // Title
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"URL" rowType:XLFormRowDescriptorTypeTextView];
-    [row.cellConfigAtConfigure setObject:@"URL" forKey:@"textView.placeholder"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"url" rowType:XLFormRowDescriptorTypeTextView];
+    [row.cellConfigAtConfigure setObject:@"url" forKey:@"textView.placeholder"];
     row.value = model.url;
     row.required = YES;
     [section addFormRow:row];
@@ -146,6 +179,14 @@
         return;
     }
     [self.tableView endEditing:YES];
+    
+    NSDictionary *values = self.formValues;
+    CCTableViewTaskModel *model = self.model;
+    model.url = values[@"url"];
+    model.interval = [values[@"repeat"] integerValue];
+    [[CCTableViewTaskManager sharedManager] save:model];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
 
@@ -176,7 +217,12 @@ static CCTableViewTaskManager *_manager;
         
         path = [path stringByAppendingPathComponent:@"tasks.plist"];
         NSArray *tasks = [NSArray arrayWithContentsOfFile:path];
-        [_tasks addObjectsFromArray:tasks];
+        CCTableViewTaskModel *model = nil;
+        for (NSInteger i = 0; i < tasks.count; i ++) {
+            NSDictionary *task = [tasks objectAtIndex:i];
+            model = [CCTableViewTaskModel yy_modelWithDictionary:task];
+            [_tasks addObject:model];
+        }
         self.path = path;
         NSLog(@"%@", path);
     }
@@ -185,35 +231,35 @@ static CCTableViewTaskManager *_manager;
 
 - (void)save:(CCTableViewTaskModel *)model {
     if (model == nil) return;
-    NSDictionary *task = nil;
+    CCTableViewTaskModel *task = nil;
     NSMutableArray *tasks = _tasks;
     if (model.index == 0) {
         if (tasks.count == 0) {
             model.index = 1;
         } else {
             task = [tasks lastObject];
-            model.index = [task[@"index"] integerValue] + 1;
+            model.index = task.index + 1;
         }
-        [tasks addObject:[model yy_modelToJSONObject]];
+        [tasks addObject:model];
     } else {
         for (NSInteger i = 0; i < tasks.count; i ++) {
-            NSDictionary *task = tasks[i];
-            if ([task[@"index"] integerValue] == model.index) {
-                task = [model yy_modelToJSONObject];
-                [tasks replaceObjectAtIndex:i withObject:task];
+            task = [tasks objectAtIndex:i];
+            if (task.index == model.index) {
+                [tasks replaceObjectAtIndex:i withObject:model];
                 break;
             }
         }
     }
+    [self synchronize];
 }
 
 - (CCTableViewTaskModel *)queryWithIndex:(NSInteger)index {
     NSMutableArray *tasks = _tasks;
     CCTableViewTaskModel *model = nil;
     for (NSInteger i = 0; i < tasks.count; i ++) {
-        NSDictionary *task = tasks[i];
-        if ([task[@"index"] integerValue] == index) {
-            model = [CCTableViewTaskModel yy_modelWithDictionary:task];
+        CCTableViewTaskModel *task = tasks[i];
+        if (task.index == index) {
+            model = task;
             break;
         }
     }
@@ -222,17 +268,18 @@ static CCTableViewTaskManager *_manager;
 
 - (NSArray *)queryAll {
     NSMutableArray *tasks = _tasks;
-    CCTableViewTaskModel *model = nil;
-    NSMutableArray *list = [NSMutableArray new];
-    for (NSInteger i = 0; i < tasks.count; i ++) {
-        model = [CCTableViewTaskModel yy_modelWithDictionary:tasks[i]];
-        [list addObject:model];
-    }
-    return list;
+    return [tasks copy];
 }
 
 - (void)synchronize {
-    [_tasks writeToFile:self.path atomically:YES];
+    NSMutableArray *list = [NSMutableArray new];
+    CCTableViewTaskModel *model = nil;
+    NSMutableArray *tasks = _tasks;
+    for (NSInteger i = 0; i < tasks.count; i ++) {
+        model = [tasks objectAtIndex:i];
+        [list addObject:[model yy_modelToJSONObject]];
+    }
+    [list writeToFile:self.path atomically:YES];
 }
 
 @end

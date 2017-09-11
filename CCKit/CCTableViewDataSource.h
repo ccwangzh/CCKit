@@ -12,12 +12,14 @@
 @property (readonly) NSUInteger count;
 - (id)objectAtIndex:(NSUInteger)index;
 - (void)addObject:(id)anObject;
+- (void)removeAllObjects;
 @end
 
 @protocol CCTableViewSection <NSObject>
 @property (readonly) NSUInteger count;
 - (id)objectAtIndex:(NSUInteger)index;
 - (void)addObject:(id)anObject;
+- (void)removeAllObjects;
 @end
 
 @protocol CCTableViewCellModel <NSObject>

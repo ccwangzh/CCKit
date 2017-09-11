@@ -40,6 +40,10 @@
     [self.sections addObject:anObject];
 }
 
+- (void)removeAllObjects {
+    [self.sections removeAllObjects];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return [self count];
 }
@@ -103,6 +107,9 @@
     [self.cells addObject:anObject];
 }
 
+- (void)removeAllObjects {
+    [self.cells removeAllObjects];
+}
 @end
 
 @implementation CCTableViewCellModel
