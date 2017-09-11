@@ -194,6 +194,54 @@
 
 @end
 
+@interface CCTableViewTaskEngine : UIWebView <UIWebViewDelegate>
+@property (nonatomic) void(^completionHandler)(void);
+- (void)runWithModel:(CCTableViewTaskModel *)model completionHandler:(void(^)(void))completionHandler;
+@end
+@implementation CCTableViewTaskEngine
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        self.delegate = self;
+    }
+    return self;
+}
+- (void)runWithModel:(CCTableViewTaskModel *)model completionHandler:(void(^)(void))completionHandler {
+    NSURL *url = [NSURL URLWithString:model.url];
+    if (url) {
+        self.completionHandler = completionHandler;
+        [self loadRequest:[NSURLRequest requestWithURL:url]];
+    } else {
+        if (completionHandler) {
+            completionHandler();
+        }
+    }
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.completionHandler) {
+            self.completionHandler();
+        }
+    });
+}
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.completionHandler) {
+            self.completionHandler();
+        }
+    });
+}
+- (NSString *)readNum3 {
+   return [self stringByEvaluatingJavaScriptFromString:@"document.getElementById('readNum3').innerHTML"];
+}
+- (NSString *)likeNum3 {
+    return [self stringByEvaluatingJavaScriptFromString:@"document.getElementById('likeNum3').innerHTML"];
+}
+@end
+@interface CCTableViewTaskManager ()
+@property (nonatomic, assign) BOOL running;
+@property (nonatomic) NSMutableArray *runnings;
+@property (nonatomic) CCTableViewTaskEngine *engine;
+@end
 static CCTableViewTaskManager *_manager;
 @implementation CCTableViewTaskManager
 + (instancetype)sharedManager {
@@ -225,8 +273,50 @@ static CCTableViewTaskManager *_manager;
         }
         self.path = path;
         NSLog(@"%@", path);
+        
+        self.runnings = [NSMutableArray new];
+        self.engine = [CCTableViewTaskEngine new];
+        [self schedule];
     }
     return self;
+}
+
+- (void)schedule {
+//    [self performSelector:@selector(schedule)
+//               withObject:nil afterDelay:10.0];
+    
+    if (self.running) return;
+    self.running = YES;
+    
+    CCTableViewTaskModel *model = nil;
+    model = [self nextObject];
+    if (model) {
+        __weak typeof(self) weakRef = self;
+        [self.engine runWithModel:model completionHandler:^{
+            __strong typeof(weakRef) strongRef = weakRef;
+            NSString *readNum3 = [strongRef.engine readNum3];
+            NSString *likeNum3 = [strongRef.engine likeNum3];
+            NSLog(@"num:%@,%@", readNum3, likeNum3);
+        }];
+    } else {
+        self.running = NO;
+    }
+}
+
+- (CCTableViewTaskModel *)nextObject {
+    CCTableViewTaskModel *model = nil;
+    NSMutableArray *runnings = self.runnings;
+    if (runnings.count > 0) {
+        model = [runnings firstObject];
+        [runnings removeObjectAtIndex:0];
+        return model;
+    }
+    [runnings addObjectsFromArray:_tasks];
+    if (runnings.count > 0) {
+        model = [runnings firstObject];
+        [runnings removeObjectAtIndex:0];
+    }
+    return model;
 }
 
 - (void)save:(CCTableViewTaskModel *)model {
