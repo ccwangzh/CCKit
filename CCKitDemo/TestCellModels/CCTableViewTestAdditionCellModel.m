@@ -52,6 +52,43 @@ NSString *VPSHA256Sign(NSString *,NSString *,NSString *,NSString *,NSString *,NS
 }
 @end
 
+@interface Urls : NSObject
+@property (nonatomic) NSString *url;
+@end
+
+@implementation Urls
+@synthesize url = _url;
+- (void)setUrl:(NSString *)url {
+    if (__status == 0) {
+        __url = url;
+        return;
+    }
+    if ([url hasPrefix:@"http"]) {
+        if (__status == 1) {
+            __url = url;
+        }
+    } else {
+        if (__status == 2) {
+            __url = url;
+        }
+    }
+}
+static char __status;
+static NSString *__url;
+- (NSString *)url {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if ([__url hasPrefix:@"http"]) {
+            __status = 1;
+        } else {
+            __status = 2;
+        }
+    });
+    return __url;
+}
+
+@end
+
 @implementation CCTableViewTestAdditionCellModel
 + (void)load {
     CCTableViewTestCellModelRegister(self);
@@ -66,6 +103,19 @@ NSString *VPSHA256Sign(NSString *,NSString *,NSString *,NSString *,NSString *,NS
 
 - (void)doTest {
     NSLog(@"doTest");
+    
+    Urls *urls = [Urls new];
+    urls.url = @"http://www.baidu.com/1";
+    NSLog(@"url:%@", urls.url);
+    
+    urls = [Urls new];
+    urls.url = @"vipjr://login";
+    NSLog(@"url:%@", urls.url);
+    
+    urls = [Urls new];
+    urls.url = @"http://www.baidu.com/2";
+    NSLog(@"url:%@", urls.url);
+    
     
     NSURL *url = [NSURL URLWithString:@"http://www.baidu.com:8080/a/?k=v"];
     NSLog(@"%@", [url queryDictionary]);
