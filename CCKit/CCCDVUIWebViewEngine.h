@@ -1,5 +1,5 @@
 //
-//  CCUIWebViewEngine.h
+//  CCCDVUIWebViewEngine.h
 //  CCKit
 //
 //  Created by can on 17/4/12.
@@ -9,6 +9,6 @@
 #import <Cordova/CDVUIWebViewEngine.h>
 #import "CCCDVWebViewEngineProtocol.h"
 
-@interface CCUIWebViewEngine : CDVUIWebViewEngine <CCCDVWebViewEngineProtocol>
+@interface CCCDVUIWebViewEngine : CDVUIWebViewEngine <CCCDVWebViewEngineProtocol>
 
 @end

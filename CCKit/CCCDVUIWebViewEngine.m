@@ -6,7 +6,7 @@
 //  Copyright © 2017年 womob.com. All rights reserved.
 //
 
-#import "CCUIWebViewEngine.h"
+#import "CCCDVUIWebViewEngine.h"
 
 @protocol CCUIWebViewFrameInfo <NSObject>
 - (BOOL)isMainFrame;
@@ -37,11 +37,11 @@
 
 @end
 
-@interface CCUIWebViewEngine () <CCUIWebViewExtension>
+@interface CCCDVUIWebViewEngine () <CCUIWebViewExtension>
 
 @end
 
-@implementation CCUIWebViewEngine
+@implementation CCCDVUIWebViewEngine
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super init]) {
         CCUIWebView *engineWebView = [[CCUIWebView alloc] initWithFrame:frame];
