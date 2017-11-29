@@ -27,6 +27,10 @@ abstract_target 'Dummy' do
                     :subspecs => ['Core', 'BatchedBridge', 'DevSupport', 'RCTWebSocket', 'RCTText', 'RCTImage',]
     inherit! :search_paths
   end
+  target 'CCKitMoney' do
+    pod 'WCDB',         '= 1.0.5'
+    inherit! :search_paths
+  end
   target 'CCKitTests' do
     inherit! :search_paths
   end
