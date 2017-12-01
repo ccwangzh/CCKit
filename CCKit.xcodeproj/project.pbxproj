@@ -84,8 +84,6 @@
 		36D91F4C1F14A7F800B53D28 /* NSDate+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36D91F4A1F14A7F800B53D28 /* NSDate+CCAddition.h */; };
 		36D91F4D1F14A7F800B53D28 /* NSDate+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D91F4B1F14A7F800B53D28 /* NSDate+CCAddition.m */; };
 		36DC96621FCEC07D0000FEFD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DC96611FCEC07D0000FEFD /* AppDelegate.m */; };
-		36DC96651FCEC07D0000FEFD /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DC96641FCEC07D0000FEFD /* FirstViewController.m */; };
-		36DC96681FCEC07D0000FEFD /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DC96671FCEC07D0000FEFD /* SecondViewController.m */; };
 		36DC966B1FCEC07D0000FEFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DC96691FCEC07D0000FEFD /* Main.storyboard */; };
 		36DC966D1FCEC07D0000FEFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DC966C1FCEC07D0000FEFD /* Assets.xcassets */; };
 		36DC96701FCEC07D0000FEFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DC966E1FCEC07D0000FEFD /* LaunchScreen.storyboard */; };
@@ -96,6 +94,10 @@
 		36DC96871FCEC08F0000FEFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DC96861FCEC08F0000FEFD /* Assets.xcassets */; };
 		36DC968A1FCEC08F0000FEFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DC96881FCEC08F0000FEFD /* LaunchScreen.storyboard */; };
 		36DC968D1FCEC08F0000FEFD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DC968C1FCEC08F0000FEFD /* main.m */; };
+		36DC96941FCFF9D50000FEFD /* CMMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DC96931FCFF9D50000FEFD /* CMMoney.m */; };
+		36DC96971FD000CE0000FEFD /* CMMoney+WCTTableCoding.mm in Sources */ = {isa = PBXBuildFile; fileRef = 36DC96961FD000CE0000FEFD /* CMMoney+WCTTableCoding.mm */; };
+		36DC969A1FD003610000FEFD /* CMMoney+Manager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 36DC96991FD003610000FEFD /* CMMoney+Manager.mm */; };
+		36DC969D1FD15D830000FEFD /* CMDbHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 36DC969C1FD15D830000FEFD /* CMDbHelper.mm */; };
 		36DEE3271E1C9ED50087C209 /* UIColor+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36DEE3251E1C9ED50087C209 /* UIColor+CCAddition.h */; };
 		36DEE3281E1C9ED50087C209 /* UIColor+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DEE3261E1C9ED50087C209 /* UIColor+CCAddition.m */; };
 		36DEE32B1E1CC3A40087C209 /* UIImage+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36DEE3291E1CC3A40087C209 /* UIImage+CCAddition.h */; };
@@ -266,10 +268,6 @@
 		36DC965E1FCEC07D0000FEFD /* CCKitMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCKitMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DC96601FCEC07D0000FEFD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		36DC96611FCEC07D0000FEFD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		36DC96631FCEC07D0000FEFD /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		36DC96641FCEC07D0000FEFD /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		36DC96661FCEC07D0000FEFD /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		36DC96671FCEC07D0000FEFD /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		36DC966A1FCEC07D0000FEFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		36DC966C1FCEC07D0000FEFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36DC966F1FCEC07D0000FEFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -285,6 +283,14 @@
 		36DC96891FCEC08F0000FEFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36DC968B1FCEC08F0000FEFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36DC968C1FCEC08F0000FEFD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		36DC96921FCFF9D50000FEFD /* CMMoney.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMMoney.h; sourceTree = "<group>"; };
+		36DC96931FCFF9D50000FEFD /* CMMoney.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMMoney.m; sourceTree = "<group>"; };
+		36DC96951FD000CE0000FEFD /* CMMoney+WCTTableCoding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CMMoney+WCTTableCoding.h"; sourceTree = "<group>"; };
+		36DC96961FD000CE0000FEFD /* CMMoney+WCTTableCoding.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "CMMoney+WCTTableCoding.mm"; sourceTree = "<group>"; };
+		36DC96981FD003610000FEFD /* CMMoney+Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CMMoney+Manager.h"; sourceTree = "<group>"; };
+		36DC96991FD003610000FEFD /* CMMoney+Manager.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "CMMoney+Manager.mm"; sourceTree = "<group>"; };
+		36DC969B1FD15D830000FEFD /* CMDbHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMDbHelper.h; sourceTree = "<group>"; };
+		36DC969C1FD15D830000FEFD /* CMDbHelper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CMDbHelper.mm; sourceTree = "<group>"; };
 		36DEE3251E1C9ED50087C209 /* UIColor+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CCAddition.h"; sourceTree = "<group>"; };
 		36DEE3261E1C9ED50087C209 /* UIColor+CCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CCAddition.m"; sourceTree = "<group>"; };
 		36DEE3291E1CC3A40087C209 /* UIImage+CCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CCAddition.h"; sourceTree = "<group>"; };
@@ -590,12 +596,9 @@
 		36DC965F1FCEC07D0000FEFD /* CCKitMoney */ = {
 			isa = PBXGroup;
 			children = (
+				36DC96911FCFF99F0000FEFD /* Sources */,
 				36DC96601FCEC07D0000FEFD /* AppDelegate.h */,
 				36DC96611FCEC07D0000FEFD /* AppDelegate.m */,
-				36DC96631FCEC07D0000FEFD /* FirstViewController.h */,
-				36DC96641FCEC07D0000FEFD /* FirstViewController.m */,
-				36DC96661FCEC07D0000FEFD /* SecondViewController.h */,
-				36DC96671FCEC07D0000FEFD /* SecondViewController.m */,
 				36DC96691FCEC07D0000FEFD /* Main.storyboard */,
 				36DC966C1FCEC07D0000FEFD /* Assets.xcassets */,
 				36DC966E1FCEC07D0000FEFD /* LaunchScreen.storyboard */,
@@ -619,6 +622,21 @@
 				36DC968C1FCEC08F0000FEFD /* main.m */,
 			);
 			path = CCKitNews;
+			sourceTree = "<group>";
+		};
+		36DC96911FCFF99F0000FEFD /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				36DC96921FCFF9D50000FEFD /* CMMoney.h */,
+				36DC96931FCFF9D50000FEFD /* CMMoney.m */,
+				36DC96981FD003610000FEFD /* CMMoney+Manager.h */,
+				36DC96991FD003610000FEFD /* CMMoney+Manager.mm */,
+				36DC96951FD000CE0000FEFD /* CMMoney+WCTTableCoding.h */,
+				36DC96961FD000CE0000FEFD /* CMMoney+WCTTableCoding.mm */,
+				36DC969B1FD15D830000FEFD /* CMDbHelper.h */,
+				36DC969C1FD15D830000FEFD /* CMDbHelper.mm */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		36FE0B1E1E4C60A2002A4379 /* TestCellModels */ = {
@@ -1349,10 +1367,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36DC96681FCEC07D0000FEFD /* SecondViewController.m in Sources */,
+				36DC969A1FD003610000FEFD /* CMMoney+Manager.mm in Sources */,
+				36DC96971FD000CE0000FEFD /* CMMoney+WCTTableCoding.mm in Sources */,
 				36DC96621FCEC07D0000FEFD /* AppDelegate.m in Sources */,
 				36DC96731FCEC07D0000FEFD /* main.m in Sources */,
-				36DC96651FCEC07D0000FEFD /* FirstViewController.m in Sources */,
+				36DC96941FCFF9D50000FEFD /* CMMoney.m in Sources */,
+				36DC969D1FD15D830000FEFD /* CMDbHelper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

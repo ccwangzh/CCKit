@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CMMoney+Manager.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    CMMoney *money = [[CMMoney alloc] init];
+    money.updatedTime = 32132;
+    [money save];
+    
+    CMMoney *newMoney = [CMMoney get];
+    
+    NSLog(@"%ld", newMoney.updatedTime);
+    
     return YES;
 }
 
