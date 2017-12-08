@@ -1,0 +1,6 @@
+framework module CCNetworking {
+  umbrella header "CCNetworking-umbrella.h"
+
+  export *
+  module * { export * }
+}

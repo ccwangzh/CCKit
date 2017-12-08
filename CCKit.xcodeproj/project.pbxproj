@@ -15,6 +15,8 @@
 		36B91E2D1FDA9DEC00C28141 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B91E2C1FDA9DEC00C28141 /* main.m */; };
 		36B91E341FDAA26800C28141 /* UIColor+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B91E321FDAA26800C28141 /* UIColor+CCAddition.h */; };
 		36B91E351FDAA26800C28141 /* UIColor+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B91E331FDAA26800C28141 /* UIColor+CCAddition.m */; };
+		36B91E391FDAA67100C28141 /* CCNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B91E371FDAA67100C28141 /* CCNetworking.h */; };
+		36B91E3A1FDAA67100C28141 /* CCNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B91E381FDAA67100C28141 /* CCNetworking.m */; };
 		4D58376372A1C8EC164B5D50 /* Pods_CCKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB757EF9D7D0B3C6DB573019 /* Pods_CCKitDemo.framework */; };
 		EC634C13CA711827E3C5FB90 /* Pods_CCNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B53495CC67D740A34E7E095 /* Pods_CCNetworking.framework */; };
 /* End PBXBuildFile section */
@@ -37,6 +39,8 @@
 		36B91E2C1FDA9DEC00C28141 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		36B91E321FDAA26800C28141 /* UIColor+CCAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+CCAddition.h"; sourceTree = "<group>"; };
 		36B91E331FDAA26800C28141 /* UIColor+CCAddition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CCAddition.m"; sourceTree = "<group>"; };
+		36B91E371FDAA67100C28141 /* CCNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCNetworking.h; sourceTree = "<group>"; };
+		36B91E381FDAA67100C28141 /* CCNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCNetworking.m; sourceTree = "<group>"; };
 		36BD1E191FDA991F00AE7B8F /* CCAdditions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CCAdditions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BD1E1D1FDA991F00AE7B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36BD1E271FDA992C00AE7B8F /* CCCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CCCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +105,7 @@
 		36B91E031FDA9A6C00C28141 /* CCNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				36B91E361FDAA62900C28141 /* Classes */,
 				36B91E051FDA9A6C00C28141 /* Info.plist */,
 			);
 			path = CCNetworking;
@@ -135,6 +140,15 @@
 			children = (
 				36B91E321FDAA26800C28141 /* UIColor+CCAddition.h */,
 				36B91E331FDAA26800C28141 /* UIColor+CCAddition.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		36B91E361FDAA62900C28141 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				36B91E371FDAA67100C28141 /* CCNetworking.h */,
+				36B91E381FDAA67100C28141 /* CCNetworking.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -200,6 +214,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B91E391FDAA67100C28141 /* CCNetworking.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,11 +486,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CCKitDemo/Pods-CCKitDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/CCAdditions/CCAdditions.framework",
+				"${BUILT_PRODUCTS_DIR}/CCNetworking/CCNetworking.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCAdditions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCNetworking.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -507,6 +526,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B91E3A1FDAA67100C28141 /* CCNetworking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

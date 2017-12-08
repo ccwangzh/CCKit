@@ -10,4 +10,5 @@ end
 
 target 'CCKitDemo' do
   pod 'CCAdditions', :path => '.'
+  pod 'CCNetworking', :path => '.'
 end

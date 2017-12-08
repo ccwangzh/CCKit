@@ -8,6 +8,7 @@
 #import "ViewController.h"
 
 #import <CCAdditions/UIColor+CCAddition.h>
+#import <CCNetworking/CCNetworking.h>
 
 @interface ViewController ()
 
