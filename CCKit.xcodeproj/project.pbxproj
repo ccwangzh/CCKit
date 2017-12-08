@@ -124,6 +124,7 @@
 		36FE0B2F1E4D8DCC002A4379 /* CCTableViewTestKeychainCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FE0B2E1E4D8DCC002A4379 /* CCTableViewTestKeychainCellModel.m */; };
 		7E009D68C152DD3C20923584 /* Pods_CCKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57A24FC6F30A4C9F31045FC /* Pods_CCKitTests.framework */; };
 		8FB89C99EA8EA716F7DBBCA3 /* Pods_CCKitReact.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7217D93ADAB09EDEAE244D /* Pods_CCKitReact.framework */; };
+		D306CBFE59B8D664DA772FEF /* Pods_CCKitNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1CC320B30FA77D82D2F939 /* Pods_CCKitNews.framework */; };
 		E50E3391B4FAAB5357D3C895 /* Pods_CCKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897EE3AB3DD92B96D0288D68 /* Pods_CCKitDemo.framework */; };
 		EDC0B82FD7C5FEFC6D949AE1 /* Pods_CCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDE959787334EB473B49BF8 /* Pods_CCKit.framework */; };
 /* End PBXBuildFile section */
@@ -163,6 +164,7 @@
 		017DC3DCB4D24CDE59E03F6D /* Pods-CCKitMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitMoney.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitMoney/Pods-CCKitMoney.release.xcconfig"; sourceTree = "<group>"; };
 		0C7217D93ADAB09EDEAE244D /* Pods_CCKitReact.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCKitReact.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EDE959787334EB473B49BF8 /* Pods_CCKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D4C0889292A1934D1CD73A9 /* Pods-CCKitNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitNews/Pods-CCKitNews.debug.xcconfig"; sourceTree = "<group>"; };
 		2F860BA6C6613352B7DAB262 /* Pods-CCKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCKit/Pods-CCKit.debug.xcconfig"; sourceTree = "<group>"; };
 		32AC5496D4180B7B61A7D513 /* Pods-CCKitMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitMoney.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitMoney/Pods-CCKitMoney.debug.xcconfig"; sourceTree = "<group>"; };
 		3608D7721E79318B00696EFF /* CCURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCURLProtocol.h; sourceTree = "<group>"; };
@@ -324,9 +326,11 @@
 		3A6E24BBC76DBB778465092F /* Pods-CCKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitTests/Pods-CCKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4837AD1D2B8E6B9A97483E66 /* Pods_CCKitMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCKitMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2A0B1951DFDF24079A5824 /* Pods-CCKitReact.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitReact.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitReact/Pods-CCKitReact.release.xcconfig"; sourceTree = "<group>"; };
+		7D1CC320B30FA77D82D2F939 /* Pods_CCKitNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCKitNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8337C7F28FB455C5F439C836 /* Pods-CCKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitDemo/Pods-CCKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		897EE3AB3DD92B96D0288D68 /* Pods_CCKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95586E39A6ABE2F73C91AEFE /* Pods-CCKitReact.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitReact.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitReact/Pods-CCKitReact.debug.xcconfig"; sourceTree = "<group>"; };
+		9F9E3D36AFAD7ED80556A4FF /* Pods-CCKitNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitNews/Pods-CCKitNews.release.xcconfig"; sourceTree = "<group>"; };
 		C11789D5366857FB80F92579 /* Pods-CCKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitDemo/Pods-CCKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		CE9EBE489249AFE738C42CCA /* Pods-CCKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitTests/Pods-CCKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		F219A63D85C197A967172DC2 /* Pods-CCKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCKit/Pods-CCKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -389,6 +393,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D306CBFE59B8D664DA772FEF /* Pods_CCKitNews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +692,7 @@
 				F57A24FC6F30A4C9F31045FC /* Pods_CCKitTests.framework */,
 				0C7217D93ADAB09EDEAE244D /* Pods_CCKitReact.framework */,
 				4837AD1D2B8E6B9A97483E66 /* Pods_CCKitMoney.framework */,
+				7D1CC320B30FA77D82D2F939 /* Pods_CCKitNews.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -704,6 +710,8 @@
 				5B2A0B1951DFDF24079A5824 /* Pods-CCKitReact.release.xcconfig */,
 				32AC5496D4180B7B61A7D513 /* Pods-CCKitMoney.debug.xcconfig */,
 				017DC3DCB4D24CDE59E03F6D /* Pods-CCKitMoney.release.xcconfig */,
+				2D4C0889292A1934D1CD73A9 /* Pods-CCKitNews.debug.xcconfig */,
+				9F9E3D36AFAD7ED80556A4FF /* Pods-CCKitNews.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -875,9 +883,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36DC968E1FCEC08F0000FEFD /* Build configuration list for PBXNativeTarget "CCKitNews" */;
 			buildPhases = (
+				0C9620B61E2CEF2125840B84 /* [CP] Check Pods Manifest.lock */,
 				36DC96771FCEC08F0000FEFD /* Sources */,
 				36DC96781FCEC08F0000FEFD /* Frameworks */,
 				36DC96791FCEC08F0000FEFD /* Resources */,
+				9E1E0BA9DF0C7F1526C42764 /* [CP] Embed Pods Frameworks */,
+				D64B670573F92E6B17564355 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1021,6 +1032,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0C9620B61E2CEF2125840B84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CCKitNews-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1369A06D863F428F4FFE7400 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1046,19 +1075,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CCKitDemo/Pods-CCKitDemo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework",
-				"${BUILT_PRODUCTS_DIR}/XLForm/XLForm.framework",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Cordova/Cordova.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework",
+				"${BUILT_PRODUCTS_DIR}/XLForm/XLForm.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCDWebServer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLForm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cordova.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCDWebServer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLForm.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1120,10 +1149,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CCKitMoney/Pods-CCKitMoney-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Cordova/Cordova.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDB/WCDB.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cordova.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDB.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1138,11 +1173,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CCKitReact/Pods-CCKitReact-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Cordova/Cordova.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/React/React.framework",
 				"${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cordova.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
 			);
@@ -1199,6 +1240,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9E1E0BA9DF0C7F1526C42764 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CCKitNews/Pods-CCKitNews-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Cordova/Cordova.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cordova.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCKitNews/Pods-CCKitNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A76CEBE31D45A76C359E1673 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1230,6 +1293,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D64B670573F92E6B17564355 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCKitNews/Pods-CCKitNews-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E6A459C1F1E5DF1A7B5D0E25 /* [CP] Embed Pods Frameworks */ = {
@@ -1785,6 +1863,7 @@
 		};
 		36DC968F1FCEC08F0000FEFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D4C0889292A1934D1CD73A9 /* Pods-CCKitNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1804,6 +1883,7 @@
 		};
 		36DC96901FCEC08F0000FEFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F9E3D36AFAD7ED80556A4FF /* Pods-CCKitNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;

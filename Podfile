@@ -11,27 +11,44 @@ target 'CCKit' do
   pod 'OpenSSL', :git => 'git@github.com:ccwangzh/OpenSSL.git'
 end
 
-abstract_target 'Dummy' do
-  pod 'AFNetworking',   '= 3.0.4'
-  pod 'YYModel',        '= 1.0.4'
-  pod 'Cordova',        '= 4.3.0'
-  pod 'OpenSSL', :git => 'git@github.com:ccwangzh/OpenSSL.git'
-  target 'CCKitDemo' do
+target 'CCKitDemo' do
+    pod 'AFNetworking',   '= 3.0.4'
+    pod 'YYModel',        '= 1.0.4'
+    pod 'Cordova',        '= 4.3.0'
+    pod 'OpenSSL', :git => 'git@github.com:ccwangzh/OpenSSL.git'
+    
     pod 'GCDWebServer', '= 3.4.1'
     pod 'XLForm',       '= 3.3.0'
-    inherit! :search_paths
-  end
-  target 'CCKitReact' do
+end
+target 'CCKitReact' do
+    pod 'AFNetworking',   '= 3.0.4'
+    pod 'YYModel',        '= 1.0.4'
+    pod 'Cordova',        '= 4.3.0'
+    pod 'OpenSSL', :git => 'git@github.com:ccwangzh/OpenSSL.git'
+    
     pod 'Yoga', :path => 'CCKitReact/node_modules/react-native/ReactCommon/yoga'
     pod 'React', :path => 'CCKitReact/node_modules/react-native',
-                    :subspecs => ['Core', 'BatchedBridge', 'DevSupport', 'RCTWebSocket', 'RCTText', 'RCTImage',]
-    inherit! :search_paths
-  end
-  target 'CCKitMoney' do
+    :subspecs => ['Core', 'BatchedBridge', 'DevSupport', 'RCTWebSocket', 'RCTText', 'RCTImage',]
+end
+target 'CCKitMoney' do
+    pod 'AFNetworking',   '= 3.0.4'
+    pod 'YYModel',        '= 1.0.4'
+    pod 'Cordova',        '= 4.3.0'
+    pod 'OpenSSL', :git => 'git@github.com:ccwangzh/OpenSSL.git'
+    
     pod 'WCDB',         '= 1.0.5'
-    inherit! :search_paths
-  end
-  target 'CCKitTests' do
-    inherit! :search_paths
-  end
+end
+
+target 'CCKitNews' do
+    pod 'AFNetworking',   '= 3.0.4'
+    pod 'YYModel',        '= 1.0.4'
+    pod 'Cordova',        '= 4.3.0'
+    pod 'OpenSSL', :git => 'git@github.com:ccwangzh/OpenSSL.git'
+end
+
+target 'CCKitTests' do
+    pod 'AFNetworking',   '= 3.0.4'
+    pod 'YYModel',        '= 1.0.4'
+    pod 'Cordova',        '= 4.3.0'
+    pod 'OpenSSL', :git => 'git@github.com:ccwangzh/OpenSSL.git'
 end
