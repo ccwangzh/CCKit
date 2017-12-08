@@ -1,0 +1,40 @@
+//
+//  UIColor+CCAddition.m
+//  CCAdditions
+//
+//  Created by ccwangzh on 2017/12/8.
+//
+
+#import "UIColor+CCAddition.h"
+
+@implementation UIColor (CCAddition)
++ (UIColor *)randomColor {
+    return [UIColor colorWithRed:arc4random()%256/255.0 green:arc4random()%256/255.0 blue:arc4random()%256/255.0 alpha:1.0];
+}
+
++ (UIColor *)colorWithRGB:(NSUInteger)rgb {
+    unsigned char r, g, b;
+    b = rgb & 0xFF;
+    g = (rgb >> 8) & 0xFF;
+    r = (rgb >> 16) & 0xFF;
+    return [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1.0f];
+}
+
++ (UIColor *)colorWithRGBA:(NSUInteger)rgba {
+    unsigned char r, g, b, a;
+    b = rgba & 0xFF;
+    g = (rgba >> 8) & 0xFF;
+    r = (rgba >> 16) & 0xFF;
+    a = (rgba >> 24) & 0xFF;
+    return [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a/255.0f];
+}
+
++ (UIColor *)colorWithR:(NSUInteger)r g:(NSUInteger)g b:(NSUInteger)b {
+    return [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1];
+}
+
++ (UIColor *)colorWithR:(NSUInteger)r g:(NSUInteger)g b:(NSUInteger)b a:(NSUInteger)a {
+    return [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a/255.0f];
+}
+
+@end

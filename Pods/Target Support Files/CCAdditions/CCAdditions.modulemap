@@ -1,0 +1,6 @@
+framework module CCAdditions {
+  umbrella header "CCAdditions-umbrella.h"
+
+  export *
+  module * { export * }
+}

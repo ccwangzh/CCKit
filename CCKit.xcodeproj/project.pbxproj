@@ -15,6 +15,8 @@
 		36B91E271FDA9DEC00C28141 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B91E261FDA9DEC00C28141 /* Assets.xcassets */; };
 		36B91E2A1FDA9DEC00C28141 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B91E281FDA9DEC00C28141 /* LaunchScreen.storyboard */; };
 		36B91E2D1FDA9DEC00C28141 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B91E2C1FDA9DEC00C28141 /* main.m */; };
+		36B91E341FDAA26800C28141 /* UIColor+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B91E321FDAA26800C28141 /* UIColor+CCAddition.h */; };
+		36B91E351FDAA26800C28141 /* UIColor+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B91E331FDAA26800C28141 /* UIColor+CCAddition.m */; };
 		36BD1E1E1FDA991F00AE7B8F /* CCAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 36BD1E1C1FDA991F00AE7B8F /* CCAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36BD1E2B1FDA992C00AE7B8F /* CCCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 36BD1E291FDA992C00AE7B8F /* CCCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4D58376372A1C8EC164B5D50 /* Pods_CCKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB757EF9D7D0B3C6DB573019 /* Pods_CCKitDemo.framework */; };
@@ -39,6 +41,8 @@
 		36B91E291FDA9DEC00C28141 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36B91E2B1FDA9DEC00C28141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36B91E2C1FDA9DEC00C28141 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		36B91E321FDAA26800C28141 /* UIColor+CCAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+CCAddition.h"; sourceTree = "<group>"; };
+		36B91E331FDAA26800C28141 /* UIColor+CCAddition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CCAddition.m"; sourceTree = "<group>"; };
 		36BD1E191FDA991F00AE7B8F /* CCAdditions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CCAdditions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BD1E1C1FDA991F00AE7B8F /* CCAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCAdditions.h; sourceTree = "<group>"; };
 		36BD1E1D1FDA991F00AE7B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 		36B91E311FDAA00F00C28141 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				36B91E321FDAA26800C28141 /* UIColor+CCAddition.h */,
+				36B91E331FDAA26800C28141 /* UIColor+CCAddition.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -222,6 +228,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B91E341FDAA26800C28141 /* UIColor+CCAddition.h in Headers */,
 				36BD1E1E1FDA991F00AE7B8F /* CCAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,9 +486,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CCKitDemo/Pods-CCKitDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CCAdditions/CCAdditions.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCAdditions.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -537,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B91E351FDAA26800C28141 /* UIColor+CCAddition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
