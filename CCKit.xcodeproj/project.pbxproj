@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		36B91E061FDA9A6C00C28141 /* CCNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B91E041FDA9A6C00C28141 /* CCNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		36B91E131FDA9A9800C28141 /* CCSecurity.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B91E111FDA9A9800C28141 /* CCSecurity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36B91E1F1FDA9DEC00C28141 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B91E1E1FDA9DEC00C28141 /* AppDelegate.m */; };
 		36B91E221FDA9DEC00C28141 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B91E211FDA9DEC00C28141 /* ViewController.m */; };
 		36B91E251FDA9DEC00C28141 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B91E231FDA9DEC00C28141 /* Main.storyboard */; };
@@ -17,8 +15,6 @@
 		36B91E2D1FDA9DEC00C28141 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B91E2C1FDA9DEC00C28141 /* main.m */; };
 		36B91E341FDAA26800C28141 /* UIColor+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B91E321FDAA26800C28141 /* UIColor+CCAddition.h */; };
 		36B91E351FDAA26800C28141 /* UIColor+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B91E331FDAA26800C28141 /* UIColor+CCAddition.m */; };
-		36BD1E1E1FDA991F00AE7B8F /* CCAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 36BD1E1C1FDA991F00AE7B8F /* CCAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		36BD1E2B1FDA992C00AE7B8F /* CCCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 36BD1E291FDA992C00AE7B8F /* CCCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4D58376372A1C8EC164B5D50 /* Pods_CCKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB757EF9D7D0B3C6DB573019 /* Pods_CCKitDemo.framework */; };
 		EC634C13CA711827E3C5FB90 /* Pods_CCNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B53495CC67D740A34E7E095 /* Pods_CCNetworking.framework */; };
 /* End PBXBuildFile section */
@@ -26,10 +22,8 @@
 /* Begin PBXFileReference section */
 		2FDEEFC6C1CC9D9AB58642C2 /* Pods-CCNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCNetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCNetworking/Pods-CCNetworking.debug.xcconfig"; sourceTree = "<group>"; };
 		36B91E021FDA9A6C00C28141 /* CCNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CCNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		36B91E041FDA9A6C00C28141 /* CCNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCNetworking.h; sourceTree = "<group>"; };
 		36B91E051FDA9A6C00C28141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36B91E0F1FDA9A9800C28141 /* CCSecurity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CCSecurity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		36B91E111FDA9A9800C28141 /* CCSecurity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCSecurity.h; sourceTree = "<group>"; };
 		36B91E121FDA9A9800C28141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36B91E1B1FDA9DEC00C28141 /* CCKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B91E1D1FDA9DEC00C28141 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -44,10 +38,8 @@
 		36B91E321FDAA26800C28141 /* UIColor+CCAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+CCAddition.h"; sourceTree = "<group>"; };
 		36B91E331FDAA26800C28141 /* UIColor+CCAddition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CCAddition.m"; sourceTree = "<group>"; };
 		36BD1E191FDA991F00AE7B8F /* CCAdditions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CCAdditions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		36BD1E1C1FDA991F00AE7B8F /* CCAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCAdditions.h; sourceTree = "<group>"; };
 		36BD1E1D1FDA991F00AE7B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36BD1E271FDA992C00AE7B8F /* CCCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CCCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		36BD1E291FDA992C00AE7B8F /* CCCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCCommon.h; sourceTree = "<group>"; };
 		36BD1E2A1FDA992C00AE7B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37E649244273FEEE9759722D /* Pods-CCKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitDemo/Pods-CCKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5B53495CC67D740A34E7E095 /* Pods_CCNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +101,6 @@
 		36B91E031FDA9A6C00C28141 /* CCNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				36B91E041FDA9A6C00C28141 /* CCNetworking.h */,
 				36B91E051FDA9A6C00C28141 /* Info.plist */,
 			);
 			path = CCNetworking;
@@ -118,7 +109,6 @@
 		36B91E101FDA9A9800C28141 /* CCSecurity */ = {
 			isa = PBXGroup;
 			children = (
-				36B91E111FDA9A9800C28141 /* CCSecurity.h */,
 				36B91E121FDA9A9800C28141 /* Info.plist */,
 			);
 			path = CCSecurity;
@@ -179,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				36B91E311FDAA00F00C28141 /* Classes */,
-				36BD1E1C1FDA991F00AE7B8F /* CCAdditions.h */,
 				36BD1E1D1FDA991F00AE7B8F /* Info.plist */,
 			);
 			path = CCAdditions;
@@ -188,7 +177,6 @@
 		36BD1E281FDA992C00AE7B8F /* CCCommon */ = {
 			isa = PBXGroup;
 			children = (
-				36BD1E291FDA992C00AE7B8F /* CCCommon.h */,
 				36BD1E2A1FDA992C00AE7B8F /* Info.plist */,
 			);
 			path = CCCommon;
@@ -212,7 +200,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36B91E061FDA9A6C00C28141 /* CCNetworking.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +207,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36B91E131FDA9A9800C28141 /* CCSecurity.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +215,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				36B91E341FDAA26800C28141 /* UIColor+CCAddition.h in Headers */,
-				36BD1E1E1FDA991F00AE7B8F /* CCAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +222,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36BD1E2B1FDA992C00AE7B8F /* CCCommon.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

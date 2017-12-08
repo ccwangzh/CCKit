@@ -18,5 +18,7 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "CCAdditions/Classes/**/*"
+  "source_files": "CCAdditions/Classes/**/*",
+  "public_header_files": "CCAdditions/Classes/**/*.h",
+  "frameworks": "UIKit"
 }
