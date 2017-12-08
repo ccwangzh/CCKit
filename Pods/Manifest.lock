@@ -14,13 +14,20 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - CCAdditions (0.1.0)
 
 DEPENDENCIES:
   - AFNetworking (= 3.1.0)
+  - CCAdditions (from `.`)
+
+EXTERNAL SOURCES:
+  CCAdditions:
+    :path: .
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  CCAdditions: cb4f3771d5fcbb9a2a98d9ecd0ab91b10492d271
 
-PODFILE CHECKSUM: fb3e9306752d4363695a6378339ec3f78758fa5e
+PODFILE CHECKSUM: e7de586c4e5b3787deefff8a1c28fe93dd0cd9b1
 
 COCOAPODS: 1.3.1

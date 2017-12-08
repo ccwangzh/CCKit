@@ -7,3 +7,7 @@ use_frameworks!
 target 'CCNetworking' do
   pod 'AFNetworking',   '= 3.1.0'
 end
+
+target 'CCKitDemo' do
+  pod 'CCAdditions', :path => '.'
+end

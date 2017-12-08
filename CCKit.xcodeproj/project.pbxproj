@@ -17,6 +17,7 @@
 		36B91E2D1FDA9DEC00C28141 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B91E2C1FDA9DEC00C28141 /* main.m */; };
 		36BD1E1E1FDA991F00AE7B8F /* CCAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 36BD1E1C1FDA991F00AE7B8F /* CCAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36BD1E2B1FDA992C00AE7B8F /* CCCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 36BD1E291FDA992C00AE7B8F /* CCCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D58376372A1C8EC164B5D50 /* Pods_CCKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB757EF9D7D0B3C6DB573019 /* Pods_CCKitDemo.framework */; };
 		EC634C13CA711827E3C5FB90 /* Pods_CCNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B53495CC67D740A34E7E095 /* Pods_CCNetworking.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +45,10 @@
 		36BD1E271FDA992C00AE7B8F /* CCCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CCCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BD1E291FDA992C00AE7B8F /* CCCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCCommon.h; sourceTree = "<group>"; };
 		36BD1E2A1FDA992C00AE7B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37E649244273FEEE9759722D /* Pods-CCKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitDemo/Pods-CCKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5B53495CC67D740A34E7E095 /* Pods_CCNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EC7762EF4433E6AE2CAB614 /* Pods-CCKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitDemo/Pods-CCKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		AB757EF9D7D0B3C6DB573019 /* Pods_CCKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45A1B328F932D2C6553985C /* Pods-CCNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCNetworking/Pods-CCNetworking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D58376372A1C8EC164B5D50 /* Pods_CCKitDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				5B53495CC67D740A34E7E095 /* Pods_CCNetworking.framework */,
+				AB757EF9D7D0B3C6DB573019 /* Pods_CCKitDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -130,6 +136,13 @@
 			path = CCKitDemo;
 			sourceTree = "<group>";
 		};
+		36B91E311FDAA00F00C28141 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		36BD1E0D1FDA98F100AE7B8F = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +172,7 @@
 		36BD1E1B1FDA991F00AE7B8F /* CCAdditions */ = {
 			isa = PBXGroup;
 			children = (
+				36B91E311FDAA00F00C28141 /* Classes */,
 				36BD1E1C1FDA991F00AE7B8F /* CCAdditions.h */,
 				36BD1E1D1FDA991F00AE7B8F /* Info.plist */,
 			);
@@ -179,6 +193,8 @@
 			children = (
 				2FDEEFC6C1CC9D9AB58642C2 /* Pods-CCNetworking.debug.xcconfig */,
 				E45A1B328F932D2C6553985C /* Pods-CCNetworking.release.xcconfig */,
+				8EC7762EF4433E6AE2CAB614 /* Pods-CCKitDemo.debug.xcconfig */,
+				37E649244273FEEE9759722D /* Pods-CCKitDemo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -263,9 +279,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36B91E301FDA9DEC00C28141 /* Build configuration list for PBXNativeTarget "CCKitDemo" */;
 			buildPhases = (
+				BE1A07C3C8B646A3C5D2FD9A /* [CP] Check Pods Manifest.lock */,
 				36B91E171FDA9DEC00C28141 /* Sources */,
 				36B91E181FDA9DEC00C28141 /* Frameworks */,
 				36B91E191FDA9DEC00C28141 /* Resources */,
+				EA732220A009781941E4BD0E /* [CP] Embed Pods Frameworks */,
+				17117B6F48C0E63F5BCB2AEA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -419,6 +438,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCNetworking/Pods-CCNetworking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		17117B6F48C0E63F5BCB2AEA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCKitDemo/Pods-CCKitDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE1A07C3C8B646A3C5D2FD9A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CCKitDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA732220A009781941E4BD0E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCKitDemo/Pods-CCKitDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F4EF28648D99A96FA98B99AA /* [CP] Check Pods Manifest.lock */ = {
@@ -774,6 +841,7 @@
 		};
 		36B91E2E1FDA9DEC00C28141 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EC7762EF4433E6AE2CAB614 /* Pods-CCKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -836,6 +904,7 @@
 		};
 		36B91E2F1FDA9DEC00C28141 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37E649244273FEEE9759722D /* Pods-CCKitDemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
