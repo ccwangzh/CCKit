@@ -1,0 +1,6 @@
+framework module CCCommon {
+  umbrella header "CCCommon-umbrella.h"
+
+  export *
+  module * { export * }
+}

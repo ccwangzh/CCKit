@@ -13,16 +13,22 @@
 		36B91E271FDA9DEC00C28141 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B91E261FDA9DEC00C28141 /* Assets.xcassets */; };
 		36B91E2A1FDA9DEC00C28141 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B91E281FDA9DEC00C28141 /* LaunchScreen.storyboard */; };
 		36B91E2D1FDA9DEC00C28141 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B91E2C1FDA9DEC00C28141 /* main.m */; };
-		36B91E341FDAA26800C28141 /* UIColor+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B91E321FDAA26800C28141 /* UIColor+CCAddition.h */; };
+		36B91E341FDAA26800C28141 /* UIColor+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B91E321FDAA26800C28141 /* UIColor+CCAddition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36B91E351FDAA26800C28141 /* UIColor+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B91E331FDAA26800C28141 /* UIColor+CCAddition.m */; };
-		36B91E391FDAA67100C28141 /* CCNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B91E371FDAA67100C28141 /* CCNetworking.h */; };
+		36B91E391FDAA67100C28141 /* CCNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B91E371FDAA67100C28141 /* CCNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36B91E3A1FDAA67100C28141 /* CCNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B91E381FDAA67100C28141 /* CCNetworking.m */; };
+		36E7BC281FDE721F00801636 /* NSObject+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36E7BC261FDE721F00801636 /* NSObject+CCAddition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36E7BC291FDE721F00801636 /* NSObject+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E7BC271FDE721F00801636 /* NSObject+CCAddition.m */; };
+		36E7BC2C1FDE72F200801636 /* NSString+CCAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 36E7BC2A1FDE72F200801636 /* NSString+CCAddition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36E7BC2D1FDE72F200801636 /* NSString+CCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E7BC2B1FDE72F200801636 /* NSString+CCAddition.m */; };
+		36E7BC311FDE758F00801636 /* CCURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 36E7BC2F1FDE758F00801636 /* CCURLProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36E7BC321FDE758F00801636 /* CCURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E7BC301FDE758F00801636 /* CCURLProtocol.m */; };
+		36E7BC361FDE7B5E00801636 /* CCCipher.h in Headers */ = {isa = PBXBuildFile; fileRef = 36E7BC341FDE7B5E00801636 /* CCCipher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36E7BC371FDE7B5E00801636 /* CCCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E7BC351FDE7B5E00801636 /* CCCipher.m */; };
 		4D58376372A1C8EC164B5D50 /* Pods_CCKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB757EF9D7D0B3C6DB573019 /* Pods_CCKitDemo.framework */; };
-		EC634C13CA711827E3C5FB90 /* Pods_CCNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B53495CC67D740A34E7E095 /* Pods_CCNetworking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2FDEEFC6C1CC9D9AB58642C2 /* Pods-CCNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCNetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCNetworking/Pods-CCNetworking.debug.xcconfig"; sourceTree = "<group>"; };
 		36B91E021FDA9A6C00C28141 /* CCNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CCNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B91E051FDA9A6C00C28141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36B91E0F1FDA9A9800C28141 /* CCSecurity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CCSecurity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,11 +51,18 @@
 		36BD1E1D1FDA991F00AE7B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36BD1E271FDA992C00AE7B8F /* CCCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CCCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BD1E2A1FDA992C00AE7B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36E7BC261FDE721F00801636 /* NSObject+CCAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+CCAddition.h"; sourceTree = "<group>"; };
+		36E7BC271FDE721F00801636 /* NSObject+CCAddition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CCAddition.m"; sourceTree = "<group>"; };
+		36E7BC2A1FDE72F200801636 /* NSString+CCAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CCAddition.h"; sourceTree = "<group>"; };
+		36E7BC2B1FDE72F200801636 /* NSString+CCAddition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CCAddition.m"; sourceTree = "<group>"; };
+		36E7BC2F1FDE758F00801636 /* CCURLProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCURLProtocol.h; sourceTree = "<group>"; };
+		36E7BC301FDE758F00801636 /* CCURLProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCURLProtocol.m; sourceTree = "<group>"; };
+		36E7BC341FDE7B5E00801636 /* CCCipher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCCipher.h; sourceTree = "<group>"; };
+		36E7BC351FDE7B5E00801636 /* CCCipher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCCipher.m; sourceTree = "<group>"; };
 		37E649244273FEEE9759722D /* Pods-CCKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitDemo/Pods-CCKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5B53495CC67D740A34E7E095 /* Pods_CCNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC7762EF4433E6AE2CAB614 /* Pods-CCKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCKitDemo/Pods-CCKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		AB757EF9D7D0B3C6DB573019 /* Pods_CCKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E45A1B328F932D2C6553985C /* Pods-CCNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCNetworking/Pods-CCNetworking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC634C13CA711827E3C5FB90 /* Pods_CCNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +126,7 @@
 		36B91E101FDA9A9800C28141 /* CCSecurity */ = {
 			isa = PBXGroup;
 			children = (
+				36E7BC331FDE7B3B00801636 /* Classes */,
 				36B91E121FDA9A9800C28141 /* Info.plist */,
 			);
 			path = CCSecurity;
@@ -140,6 +153,10 @@
 			children = (
 				36B91E321FDAA26800C28141 /* UIColor+CCAddition.h */,
 				36B91E331FDAA26800C28141 /* UIColor+CCAddition.m */,
+				36E7BC261FDE721F00801636 /* NSObject+CCAddition.h */,
+				36E7BC271FDE721F00801636 /* NSObject+CCAddition.m */,
+				36E7BC2A1FDE72F200801636 /* NSString+CCAddition.h */,
+				36E7BC2B1FDE72F200801636 /* NSString+CCAddition.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -191,16 +208,33 @@
 		36BD1E281FDA992C00AE7B8F /* CCCommon */ = {
 			isa = PBXGroup;
 			children = (
+				36E7BC2E1FDE757200801636 /* Classes */,
 				36BD1E2A1FDA992C00AE7B8F /* Info.plist */,
 			);
 			path = CCCommon;
 			sourceTree = "<group>";
 		};
+		36E7BC2E1FDE757200801636 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				36E7BC2F1FDE758F00801636 /* CCURLProtocol.h */,
+				36E7BC301FDE758F00801636 /* CCURLProtocol.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		36E7BC331FDE7B3B00801636 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				36E7BC341FDE7B5E00801636 /* CCCipher.h */,
+				36E7BC351FDE7B5E00801636 /* CCCipher.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		9EC9B7706DAA4325D6CA5FDD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2FDEEFC6C1CC9D9AB58642C2 /* Pods-CCNetworking.debug.xcconfig */,
-				E45A1B328F932D2C6553985C /* Pods-CCNetworking.release.xcconfig */,
 				8EC7762EF4433E6AE2CAB614 /* Pods-CCKitDemo.debug.xcconfig */,
 				37E649244273FEEE9759722D /* Pods-CCKitDemo.release.xcconfig */,
 			);
@@ -222,6 +256,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36E7BC361FDE7B5E00801636 /* CCCipher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +264,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36E7BC281FDE721F00801636 /* NSObject+CCAddition.h in Headers */,
 				36B91E341FDAA26800C28141 /* UIColor+CCAddition.h in Headers */,
+				36E7BC2C1FDE72F200801636 /* NSString+CCAddition.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +274,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36E7BC311FDE758F00801636 /* CCURLProtocol.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,12 +285,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36B91E091FDA9A6C00C28141 /* Build configuration list for PBXNativeTarget "CCNetworking" */;
 			buildPhases = (
-				F4EF28648D99A96FA98B99AA /* [CP] Check Pods Manifest.lock */,
 				36B91DFD1FDA9A6C00C28141 /* Sources */,
 				36B91DFE1FDA9A6C00C28141 /* Frameworks */,
 				36B91DFF1FDA9A6C00C28141 /* Headers */,
 				36B91E001FDA9A6C00C28141 /* Resources */,
-				161C03B71332C39A4F6C2B30 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -431,21 +467,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		161C03B71332C39A4F6C2B30 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCNetworking/Pods-CCNetworking-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		17117B6F48C0E63F5BCB2AEA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -488,35 +509,21 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-CCKitDemo/Pods-CCKitDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/CCAdditions/CCAdditions.framework",
+				"${BUILT_PRODUCTS_DIR}/CCCommon/CCCommon.framework",
 				"${BUILT_PRODUCTS_DIR}/CCNetworking/CCNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/CCSecurity/CCSecurity.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCAdditions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCCommon.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCSecurity.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCKitDemo/Pods-CCKitDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F4EF28648D99A96FA98B99AA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CCNetworking-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -534,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36E7BC371FDE7B5E00801636 /* CCCipher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +560,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				36B91E351FDAA26800C28141 /* UIColor+CCAddition.m in Sources */,
+				36E7BC291FDE721F00801636 /* NSObject+CCAddition.m in Sources */,
+				36E7BC2D1FDE72F200801636 /* NSString+CCAddition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +569,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36E7BC321FDE758F00801636 /* CCURLProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,9 +597,9 @@
 /* Begin XCBuildConfiguration section */
 		36B91E071FDA9A6C00C28141 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FDEEFC6C1CC9D9AB58642C2 /* Pods-CCNetworking.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -657,9 +668,9 @@
 		};
 		36B91E081FDA9A6C00C28141 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E45A1B328F932D2C6553985C /* Pods-CCNetworking.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -724,6 +735,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -794,6 +806,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -992,6 +1005,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1062,6 +1076,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1126,6 +1141,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1196,6 +1212,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

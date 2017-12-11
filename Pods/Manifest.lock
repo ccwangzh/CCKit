@@ -15,25 +15,34 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - CCAdditions (0.1.0)
+  - CCCommon (0.1.0)
   - CCNetworking (0.1.0):
     - AFNetworking (~> 3.1.0)
+  - CCSecurity (0.1.0)
 
 DEPENDENCIES:
-  - AFNetworking (= 3.1.0)
   - CCAdditions (from `.`)
+  - CCCommon (from `.`)
   - CCNetworking (from `.`)
+  - CCSecurity (from `.`)
 
 EXTERNAL SOURCES:
   CCAdditions:
     :path: .
+  CCCommon:
+    :path: .
   CCNetworking:
+    :path: .
+  CCSecurity:
     :path: .
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CCAdditions: f938c27bc01d3e66fcc994031bed9b01941376b5
+  CCCommon: 0fec6491d0b392fa76dfd92f8c7617932f1c5cc5
   CCNetworking: 8cf60657d00a7b45090252817e996e1db463f05f
+  CCSecurity: cd989b998fb5acbecffcb6c03b7d575ef39230a6
 
-PODFILE CHECKSUM: 6bee8d9560c41b25256ccd727d32db97ee60789f
+PODFILE CHECKSUM: cd208fc088e4ad852e980df2b7d7f4f272c7cf5f
 
 COCOAPODS: 1.3.1

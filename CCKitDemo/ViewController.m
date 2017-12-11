@@ -8,7 +8,10 @@
 #import "ViewController.h"
 
 #import <CCAdditions/UIColor+CCAddition.h>
+#import <CCAdditions/NSString+CCAddition.h>
 #import <CCNetworking/CCNetworking.h>
+#import <CCCommon/CCURLProtocol.h>
+#import <CCSecurity/CCCipher.h>
 
 @interface ViewController ()
 
@@ -20,6 +23,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor randomColor];
+    NSLog(@"%@", [@"aad" md5Value]);
+    [NSURLProtocol registerClass:[CCURLProtocol class]];
+    CCCipher *c = [CCCipher cipherWithAlgorithm:kCCAlgorithm3DES operation:kCCEncrypt options: kCCOptionPKCS7Padding | kCCOptionECBMode];
+    NSLog(@"%@", c);
 }
 
 

@@ -10,7 +10,8 @@
 #endif
 #endif
 
+#import "CCCipher.h"
 
-FOUNDATION_EXPORT double Pods_CCNetworkingVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_CCNetworkingVersionString[];
+FOUNDATION_EXPORT double CCSecurityVersionNumber;
+FOUNDATION_EXPORT const unsigned char CCSecurityVersionString[];
 

@@ -10,6 +10,8 @@
 #endif
 #endif
 
+#import "NSObject+CCAddition.h"
+#import "NSString+CCAddition.h"
 #import "UIColor+CCAddition.h"
 
 FOUNDATION_EXPORT double CCAdditionsVersionNumber;

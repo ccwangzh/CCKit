@@ -1,0 +1,6 @@
+framework module CCSecurity {
+  umbrella header "CCSecurity-umbrella.h"
+
+  export *
+  module * { export * }
+}
